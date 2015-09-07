@@ -14,13 +14,13 @@ public class Fibonacci {
 
     public static void main(String[] args) {
         System.out.println("Starting... " + find_index(5));
-        //System.out.println(Fibonacci.fib(7));
-        fib(7);
-//        int index = 0;
+        System.out.println(find_index(5));
+//        int n = 0;
 //        while(true) {
-//            System.out.println(Fibonacci.fib(index));
-//            index++;
+//            System.out.println(fib(n));
+//            n++;
 //        }
+
     }
 
     /**
@@ -28,28 +28,42 @@ public class Fibonacci {
      * @return Computes the n-th number in Fibonacci series
      */
     public static BigInteger fib(int n) {
+        int prev1=0, prev2=1;
 
-        int f1 = 0;
-        int f2 = 1;
-        int fn = 0;
-        for ( int i = 2; i < n; i++ )
-        {
-            fn = f1 + f2;
-            f1 = f2;
-            f2 = fn;
-            System.out.println(fn);
+        for(int i=0; i<n; i++) {
+            int savePrev1 = prev1;
+            prev1 = prev2;
+            prev2 = savePrev1 + prev2;
         }
 
-//        if(n == 0) return BigInteger.valueOf(0);
-//        if(n <= 2) return BigInteger.valueOf(1);
-//
-//        return fib(n - 1).add(fib(n - 2));
-        return null;
+        return BigInteger.valueOf(prev1);
     }
 
     public static int find_index(int precision) {
-        System.out.println("Golden ratio: " + goldenRatio.setScale(5, RoundingMode.HALF_UP));
+        BigDecimal ratio = goldenRatio.setScale(precision, RoundingMode.HALF_UP);
+        System.out.println("Golden ratio: " + goldenRatio.setScale(precision, RoundingMode.HALF_UP));
 
-        return precision;
+        for (int n = 0; n < 100; n++) {
+            BigDecimal result = null;
+            BigDecimal a = new BigDecimal(fib(n));
+            System.out.println("a " + a);
+
+            BigDecimal b = new BigDecimal(fib(n-1));
+            System.out.println("b " + b);
+
+
+            if(n > 2){
+
+                result = a.divide(b, precision);
+                //result = new BigDecimal(fib(n).divide(fib(n-1)));
+                System.out.println("res " + result);
+
+            }
+                if (result != null && result.equals(ratio)) {
+                    System.out.println("vastus " + n);
+                    return n;
+                }
+
+        }
     }
 }
