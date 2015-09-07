@@ -14,7 +14,7 @@ public class Fibonacci {
 
     public static void main(String[] args) {
         System.out.println("Starting... " + find_index(5));
-        System.out.println("YAY" + find_index(5));
+        System.out.println("YAY" + find_index(10));
 //        int n = 0;
 //        while(true) {
 //            System.out.println(fib(n));
@@ -59,7 +59,7 @@ public class Fibonacci {
                 System.out.println("ratio " + ratio);
 
                 if (result.equals(ratio)) {
-                    System.out.println("Vastus " + n);
+                    System.out.println("Vastus " + n++);
                     return n;
                 }
             }
