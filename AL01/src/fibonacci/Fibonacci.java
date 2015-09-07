@@ -42,11 +42,8 @@ public class Fibonacci {
 
             if(n > 2){
                 result = a.divide(b, precision, BigDecimal.ROUND_UP );
-                //System.out.println("res " + result);
-                //System.out.println("ratio " + ratio);
 
                 if (result.equals(ratio)) {
-                    //System.out.println("Vastus " + ++n);
                     return n;
                 }
             }
