@@ -14,7 +14,7 @@ public class Fibonacci {
 
     public static void main(String[] args) {
         System.out.println("Starting... " + find_index(5));
-        System.out.println(find_index(5));
+        System.out.println("YAY" + find_index(5));
 //        int n = 0;
 //        while(true) {
 //            System.out.println(fib(n));
@@ -42,8 +42,8 @@ public class Fibonacci {
     public static int find_index(int precision) {
         BigDecimal ratio = goldenRatio.setScale(precision, RoundingMode.HALF_UP);
         System.out.println("Golden ratio: " + goldenRatio.setScale(precision, RoundingMode.HALF_UP));
-
-        for (int n = 0; n < 100; n++) {
+        int n = 0;
+        while (true) {
             BigDecimal result = null;
             BigDecimal a = new BigDecimal(fib(n));
             System.out.println("a " + a);
@@ -53,17 +53,18 @@ public class Fibonacci {
 
 
             if(n > 2){
-
-                result = a.divide(b, precision);
+                result = a.divide(b, precision, BigDecimal.ROUND_HALF_UP );
                 //result = new BigDecimal(fib(n).divide(fib(n-1)));
                 System.out.println("res " + result);
+                System.out.println("ratio " + ratio);
 
-            }
-                if (result != null && result.equals(ratio)) {
-                    System.out.println("vastus " + n);
+                if (result.equals(ratio)) {
+                    System.out.println("Vastus " + n);
                     return n;
                 }
+            }
 
+            n++;
         }
     }
 }
