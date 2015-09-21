@@ -35,13 +35,13 @@ public class GuessMyNumber {
      * @return guessed number
      */
     public int playGame(int[] array) {
-        boolean sorted = false;
+        boolean sorted = true;
         int length = array.length;
-        if(length > 100)
-        for (int i = 0; i < 100; i++) {
-            if(array[i] < array[i+1]) sorted = true;
+        for (int i = 1; i < Math.min(100, length); i++) {
+            if (array[i-1] > array[i]) sorted = false;
         }
-        if(!sorted){
+
+        if (!sorted) {
             Arrays.sort(array);
         }
         int pivotIndex = length / 2;
