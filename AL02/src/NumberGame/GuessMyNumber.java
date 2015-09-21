@@ -35,17 +35,22 @@ public class GuessMyNumber {
      * @return guessed number
      */
     public int playGame(int[] array) {
-        Arrays.sort(array);
+        boolean sorted = false;
         int length = array.length;
+        if(length > 100)
+        for (int i = 0; i < 100; i++) {
+            if(array[i] < array[i+1]) sorted = true;
+        }
+        if(!sorted){
+            Arrays.sort(array);
+        }
         int pivotIndex = length / 2;
 
         while (oracle(array[pivotIndex]) != 0) {
             if (oracle(array[pivotIndex]) == 1) {
-                //array = Arrays.copyOfRange(array, pivotIndex, length);
                 pivotIndex = pivotIndex + 1;
 
             } else if (oracle(array[pivotIndex]) == -1) {
-                //array = Arrays.copyOfRange(array, 0, pivotIndex);
                 pivotIndex = pivotIndex - 1;
             }
 
