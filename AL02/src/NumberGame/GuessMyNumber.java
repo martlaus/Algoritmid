@@ -39,11 +39,11 @@ public class GuessMyNumber {
         int length = array.length;
         int pivotIndex = length / 2;
 
-        if(length > 39000){
-            for (int i = 0; i < array.length; i++) {
-                if(oracle(array[i]) == 0) return oracle(array[i]);
-            }
-        }
+//        if(length > 39000){
+//            for (int i = 0; i < array.length; i++) {
+//                if(oracle(array[i]) == 0) return oracle(array[i]);
+//            }
+//        }
 
         while (oracle(array[pivotIndex]) != 0) {
             if (oracle(array[pivotIndex]) == 1) {
