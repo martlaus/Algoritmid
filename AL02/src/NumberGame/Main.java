@@ -13,7 +13,7 @@ public class Main {
         System.out.println("Starting game...");
 
         List<Integer> list = new ArrayList<>();
-        for (int i = 1; i < 40000; i++) {
+        for (int i = 1; i < 15; i++) {
             list.add(i);
         }
 
@@ -26,7 +26,7 @@ public class Main {
         }
 
 
-        GuessMyNumber guessMyNumber = new GuessMyNumber(37856);
+        GuessMyNumber guessMyNumber = new GuessMyNumber(6);
         System.out.println(guessMyNumber.playGame(array));
     }
 

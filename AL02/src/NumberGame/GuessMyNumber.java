@@ -44,13 +44,16 @@ public class GuessMyNumber {
         if (!sorted) {
             Arrays.sort(array);
         }
-        int pivotIndex = length / 2;
 
+        int pivotIndex = length / 2;
+        int low = 0;
         while (oracle(array[pivotIndex]) != 0) {
             if (oracle(array[pivotIndex]) == 1) {
-                pivotIndex = pivotIndex + 1;
+                low = pivotIndex +1;
+                pivotIndex = (length + low) / 2;
             } else if (oracle(array[pivotIndex]) == -1) {
-                pivotIndex = pivotIndex - 1;
+                length = pivotIndex - 1;
+                pivotIndex = (length + low) / 2;
             }
         }
 
