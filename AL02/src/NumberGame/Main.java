@@ -13,7 +13,7 @@ public class Main {
         System.out.println("Starting game...");
 
         List<Integer> list = new ArrayList<>();
-        for (int i = 1; i < 16; i++) {
+        for (int i = 1; i < 15; i++) {
             list.add(i);
         }
 
