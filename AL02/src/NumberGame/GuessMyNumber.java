@@ -39,7 +39,10 @@ public class GuessMyNumber {
         int length = array.length;
 
         for (int i = 1; i < Math.min(100, length); i++) {
-            if (array[i - 1] > array[i]) sorted = false;
+            if (array[i - 1] > array[i]) {
+                sorted = false;
+                break;
+            }
         }
 
         if (!sorted) {
@@ -47,7 +50,7 @@ public class GuessMyNumber {
                 if (oracle(array[i]) == 0) return array[i];
             }
         }
-        
+
         int pivotIndex = length / 2;
         int low = 0;
         while (oracle(array[pivotIndex]) != 0) {

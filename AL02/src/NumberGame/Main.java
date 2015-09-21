@@ -1,6 +1,7 @@
 package NumberGame;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -27,6 +28,7 @@ public class Main {
 
 
         GuessMyNumber guessMyNumber = new GuessMyNumber(39786);
+        Arrays.sort(array);
         System.out.println(guessMyNumber.playGame(array));
     }
 
