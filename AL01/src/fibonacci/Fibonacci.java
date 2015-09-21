@@ -13,6 +13,11 @@ public class Fibonacci {
 
     public static void main(String[] args) {
         System.out.println("Anwser " + find_index(5));
+        int i = 0;
+        while(true) {
+            System.out.println(fib(i));
+            i++;
+        }
     }
 
     /**
