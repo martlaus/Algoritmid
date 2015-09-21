@@ -26,8 +26,8 @@
       <file leaf-file-name="GuessMyNumber.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/NumberGame/GuessMyNumber.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24465558">
-              <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.80047506">
+              <caret line="50" column="44" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#165#166#0" expanded="true" />
@@ -442,12 +442,12 @@
       <created>1442821505738</created>
       <option name="number" value="Default" />
       <updated>1442821505738</updated>
-      <workItem from="1442821514376" duration="9005000" />
+      <workItem from="1442821514376" duration="9048000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9005000" />
+    <option name="totallyTimeSpent" value="9048000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
@@ -521,8 +521,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/NumberGame/GuessMyNumber.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24465558">
-          <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.80047506">
+          <caret line="50" column="44" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#165#166#0" expanded="true" />
