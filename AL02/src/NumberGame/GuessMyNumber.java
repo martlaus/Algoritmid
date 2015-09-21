@@ -45,25 +45,26 @@ public class GuessMyNumber {
             }
         }
 
-        if (!sorted) {
-            for (int i = 0; i < array.length; i++) {
-                if (oracle(array[i]) == 0) return array[i];
+        if (sorted) {
+            int pivotIndex = length / 2;
+            int low = 0;
+            while (oracle(array[pivotIndex]) != 0) {
+                pivotIndex = (length + low) / 2;
+
+                if (oracle(array[pivotIndex]) == 1) {
+                    low = low + 1;
+                } else if (oracle(array[pivotIndex]) == -1) {
+                    length = length - 1;
+                }
             }
+            return array[pivotIndex];
         }
 
-        int pivotIndex = length / 2;
-        int low = 0;
-        while (oracle(array[pivotIndex]) != 0) {
-            pivotIndex = (length + low) / 2;
-
-            if (oracle(array[pivotIndex]) == 1) {
-                low = low + 1;
-            } else if (oracle(array[pivotIndex]) == -1) {
-                length = length - 1;
-            }
+        for (int number : array) {
+            if (oracle(number) == 0) return number;
         }
-        return array[pivotIndex];
 
 
+        return -1;
     }
 }
