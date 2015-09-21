@@ -48,12 +48,12 @@ public class GuessMyNumber {
         int pivotIndex = length / 2;
         int low = 0;
         while (oracle(array[pivotIndex]) != 0) {
+            pivotIndex = (length + low) / 2;
+
             if (oracle(array[pivotIndex]) == 1) {
-                low = pivotIndex +1;
-                pivotIndex = (length + low) / 2;
+                low = low +1;
             } else if (oracle(array[pivotIndex]) == -1) {
-                length = pivotIndex - 1;
-                pivotIndex = (length + low) / 2;
+                length = length - 1;
             }
         }
 
