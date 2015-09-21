@@ -26,7 +26,7 @@ public class Main {
         }
 
 
-        GuessMyNumber guessMyNumber = new GuessMyNumber(7);
+        GuessMyNumber guessMyNumber = new GuessMyNumber(6);
         System.out.println(guessMyNumber.playGame(array));
     }
 

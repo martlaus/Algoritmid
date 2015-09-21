@@ -42,11 +42,11 @@ public class GuessMyNumber {
         while (oracle(array[pivotIndex]) != 0) {
             if (oracle(array[pivotIndex]) == 1) {
                 //array = Arrays.copyOfRange(array, pivotIndex, length);
-                pivotIndex = pivotIndex + pivotIndex / 2;
+                pivotIndex = pivotIndex + 1;
 
             } else if (oracle(array[pivotIndex]) == -1) {
                 //array = Arrays.copyOfRange(array, 0, pivotIndex);
-                pivotIndex = pivotIndex / 2;
+                pivotIndex = pivotIndex - 1;
             }
 
         }
