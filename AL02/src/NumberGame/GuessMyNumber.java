@@ -37,26 +37,30 @@ public class GuessMyNumber {
     public int playGame(int[] array) {
         boolean sorted = true;
         int length = array.length;
+
         for (int i = 1; i < Math.min(100, length); i++) {
             if (array[i - 1] > array[i]) sorted = false;
         }
 
         if (!sorted) {
-            Arrays.sort(array);
+            for (int i = 0; i < array.length; i++) {
+                if (oracle(array[i]) == 0) return array[i];
+            }
         }
-
+        
         int pivotIndex = length / 2;
         int low = 0;
         while (oracle(array[pivotIndex]) != 0) {
             pivotIndex = (length + low) / 2;
 
             if (oracle(array[pivotIndex]) == 1) {
-                low = low +1;
+                low = low + 1;
             } else if (oracle(array[pivotIndex]) == -1) {
                 length = length - 1;
             }
         }
-
         return array[pivotIndex];
+
+
     }
 }
