@@ -7,8 +7,11 @@ import java.util.List;
 public class Dancers implements IDancers {
 
 
-    Tree avlTree = new Tree();
+    public Tree avlTree = new Tree();
 
+    public Tree getAvlTree() {
+        return avlTree;
+    }
 
     @Override
     public SimpleEntry<IDancer, IDancer> findPartnerFor(IDancer searcher) {
@@ -18,6 +21,7 @@ public class Dancers implements IDancers {
                 Dancer d = (Dancer) searcher;
                 d.key = d.key + 10000;
                 avlTree.insert(d);
+
             } else {
                 return new SimpleEntry(searcher, woman);
 
@@ -28,11 +32,11 @@ public class Dancers implements IDancers {
             if (male == null) {
 
                 avlTree.insert((Dancer) searcher);
+
             } else {
                 return new SimpleEntry(searcher, male);
             }
         }
-
 
         return null;
     }

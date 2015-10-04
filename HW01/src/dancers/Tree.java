@@ -90,7 +90,7 @@ public class Tree {
             recursiveBalance(cur.parent);
         } else {
             this.root = cur;
-            System.out.println("------------ Balancing finished " + root.isMale() + " ----------------");
+            //System.out.println("------------ Balancing finished " + root.isMale() + " ----------------");
         }
     }
 
@@ -124,7 +124,7 @@ public class Tree {
     }
 
     public Dancer searchAndRemoveWomen(int height) {
-        diff = 10000;
+        diff = 100000;
         res = null;
         Dancer back = searchAndRemoveWomen(this.root, height);
         if (res != null) {
@@ -133,31 +133,35 @@ public class Tree {
         return back;
     }
 
-    public Dancer searchAndRemoveWomen(Dancer p, int maleHeight) {
-        if (p == null) {
+    public Dancer searchAndRemoveWomen(Dancer dancer, int maleHeight) {
+        if (dancer == null) {
             return res;
         }
 
         //find tallest woman, that is shorter than man from left
-        if (p.key > maleHeight) {
-            return searchAndRemoveWomen(p.left, maleHeight);
+        if (dancer.isMale()) {
+            return searchAndRemoveWomen(dancer.left, maleHeight);
+        }
+
+        if (dancer.key > maleHeight) {
+            return searchAndRemoveWomen(dancer.left, maleHeight);
 
             //find tallest woman, that is shorter than man from right
         } else {
-            int newDiff = Math.abs(p.key - maleHeight);
+            int newDiff = Math.abs(dancer.key - maleHeight);
             if (newDiff < diff) {
-                res = p;
-                diff = Math.abs(p.key - maleHeight);
+                res = dancer;
+                diff = Math.abs(dancer.key - maleHeight);
             }
 
-            return searchAndRemoveWomen(p.right, maleHeight);
+            return searchAndRemoveWomen(dancer.right, maleHeight);
         }
 
 
     }
 
     public Dancer searchAndRemoveMen(int height) {
-        diff = 10000;
+        diff = 100000;
         res = null;
         Dancer back = searchAndRemoveMen(this.root, height);
         if (res != null) {
@@ -171,7 +175,9 @@ public class Tree {
         if (dancer == null) {
             return res;
         }
-
+        if (!dancer.isMale()) {
+            return searchAndRemoveWomen(dancer.right, femaleHeight);
+        }
         //find shortest man, that is taller than woman
         if (dancer.key > femaleHeight) {
             int newDiff = Math.abs(dancer.key - femaleHeight);
@@ -400,8 +406,13 @@ public class Tree {
         if (n.parent != null) {
             p = n.parent.key;
         }
-
-        System.out.println("Left: " + l + " Key: " + n.getHeight() + " Right: " + r + " Parent: " + p + " Balance: " + n.balance);
+        String sex;
+        if (n.isMale()) {
+            sex = "male";
+        } else {
+            sex = "female";
+        }
+        System.out.println(sex + " Left: " + l + " Key: " + n.key + " Right: " + r + " Parent: " + p + " Balance: " + n.balance);
 
         if (n.left != null) {
             debug(n.left);
