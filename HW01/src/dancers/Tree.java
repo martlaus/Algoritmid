@@ -21,36 +21,37 @@ public class Tree {
     /**
      * Recursive method to insert a node into a tree.
      *
-     * @param p The node currently compared, usually you start with the root.
-     * @param q The node to be inserted.
+     * @param root The node currently compared, usually you start with the root.
+     * @param newDancer The node to be inserted.
      */
-    public void insertAVL(Dancer p, Dancer q) {
+    public void insertAVL(Dancer root, Dancer newDancer) {
         // If  node to compare is null, the node is inserted. If the root is null, it is the root of the tree.
-        if (p == null) {
-            this.root = q;
+        if (root == null) {
+            this.root = newDancer;
         } else {
 
             // If compare node is smaller, continue with the left node
-            if (q.key < p.key) {
-                if (p.left == null) {
-                    p.left = q;
-                    q.parent = p;
+            if (newDancer.key < root.key) {
+                if (root.left == null) {
+                    root.left = newDancer;
+                    newDancer.parent = root;
 
                     // Node is inserted now, continue checking the balance
-                    recursiveBalance(p);
+                    recursiveBalance(root);
                 } else {
-                    insertAVL(p.left, q);
+                    insertAVL(root.left, newDancer);
                 }
 
-            } else if (q.key > p.key) {
-                if (p.right == null) {
-                    p.right = q;
-                    q.parent = p;
+                //if new node is greater or equal add to right
+            } else if (newDancer.key >= root.key) {
+                if (root.right == null) {
+                    root.right = newDancer;
+                    newDancer.parent = root;
 
                     // Node is inserted now, continue checking the balance
-                    recursiveBalance(p);
+                    recursiveBalance(root);
                 } else {
-                    insertAVL(p.right, q);
+                    insertAVL(root.right, newDancer);
                 }
             } else {
                 // do nothing: This node already exists

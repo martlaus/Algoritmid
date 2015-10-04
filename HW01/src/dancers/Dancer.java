@@ -1,5 +1,7 @@
 package dancers;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * Created by mart on 2.10.15.
  */
@@ -12,9 +14,10 @@ public class Dancer implements IDancer, Comparable<Dancer> {
     int height;
     int id = 0;
     boolean male;
-
+    AtomicInteger atomicInteger = new AtomicInteger();
 
     public Dancer(boolean male, int height) {
+        this.id = atomicInteger.incrementAndGet();
         this.male = male;
         this.key = height;
         this.height = height;
