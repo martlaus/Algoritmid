@@ -13,18 +13,26 @@ public class Dancers implements IDancers {
         return avlTree;
     }
 
+    public void addDancer(Dancer d) {
+        if (d.isMale()) {
+            d.setKey(d.key + 10000);
+        }
+        avlTree.insert(d);
+    }
+
     @Override
     public SimpleEntry<IDancer, IDancer> findPartnerFor(IDancer searcher) {
         if (searcher.isMale()) {
-            Dancer woman = avlTree.searchAndRemoveWomen(searcher.getHeight());
+            Dancer d = (Dancer) searcher;
+            d.setKey(d.key + 10000);
+
+            Dancer woman = avlTree.searchAndRemoveWomen(d.getKey());
             if (woman == null) {
-                Dancer d = (Dancer) searcher;
-                d.key = d.key + 10000;
+
                 avlTree.insert(d);
 
             } else {
                 return new SimpleEntry(searcher, woman);
-
             }
 
         } else {
@@ -48,5 +56,15 @@ public class Dancers implements IDancers {
         return list;
 
     }
+
+    @Override
+    public String toString() {
+        String res = "\n";
+        for (IDancer d : returnWaitingList()) {
+            res += avlTree.debug((Dancer) d);
+        }
+        return res;
+    }
+
 
 }
