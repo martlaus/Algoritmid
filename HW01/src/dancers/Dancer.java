@@ -15,13 +15,6 @@ public class Dancer implements IDancer, Comparable<Dancer> {
     boolean male;
     AtomicInteger atomicInteger = new AtomicInteger();
 
-    public Dancer(int k) {
-        left = right = parent = null;
-        balance = 0;
-        key = k;
-    }
-
-
 
     public Dancer(boolean male, int height) {
         this.id = atomicInteger.incrementAndGet();
@@ -29,7 +22,6 @@ public class Dancer implements IDancer, Comparable<Dancer> {
         this.key = height;
         left = right = parent = null;
         balance = 0;
-        key = height;
     }
 
     @Override
@@ -46,7 +38,6 @@ public class Dancer implements IDancer, Comparable<Dancer> {
     public int getHeight() {
         return key;
     }
-
 
     @Override
     public int compareTo(Dancer o) {

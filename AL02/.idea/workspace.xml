@@ -2,19 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77ed637e-ff2a-4a22-8e0d-7f0792a7faf9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HW01/src/dancers/MyComparator.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HW01/out/production/HW1/dancers/AvlNode.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../HW01/src/dancers/AvlNode.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HW01/out/production/HW1/dancers/Dancer.class" afterPath="$PROJECT_DIR$/../HW01/out/production/HW1/dancers/Dancer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HW01/out/production/HW1/dancers/Dancers.class" afterPath="$PROJECT_DIR$/../HW01/out/production/HW1/dancers/Dancers.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HW01/out/production/HW1/dancers/Main.class" afterPath="$PROJECT_DIR$/../HW01/out/production/HW1/dancers/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HW01/out/production/HW1/dancers/Tree.class" afterPath="$PROJECT_DIR$/../HW01/out/production/HW1/dancers/Tree.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HW01/src/dancers/Dancer.java" afterPath="$PROJECT_DIR$/../HW01/src/dancers/Dancer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HW01/src/dancers/Dancers.java" afterPath="$PROJECT_DIR$/../HW01/src/dancers/Dancers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HW01/src/dancers/IDancer.java" afterPath="$PROJECT_DIR$/../HW01/src/dancers/IDancer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HW01/src/dancers/Main.java" afterPath="$PROJECT_DIR$/../HW01/src/dancers/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HW01/src/dancers/Tree.java" afterPath="$PROJECT_DIR$/../HW01/src/dancers/Tree.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HW01/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../HW01/.idea/workspace.xml" />
     </list>
     <ignored path="AL02.iws" />

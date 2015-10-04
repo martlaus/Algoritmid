@@ -14,9 +14,8 @@ public class Tree {
 
     public void insert(Dancer d) {
         // create new node
-        Dancer n = new Dancer(d.getHeight());
         // start recursive procedure for inserting the node
-        insertAVL(this.root, n);
+        insertAVL(this.root, d);
     }
 
     /**
@@ -394,7 +393,7 @@ public class Tree {
             p = n.parent.key;
         }
 
-        System.out.println("Left: " + l + " Key: " + n + " Right: " + r + " Parent: " + p + " Balance: " + n.balance);
+        System.out.println("Left: " + l + " Key: " + n.getHeight() + " Right: " + r + " Parent: " + p + " Balance: " + n.balance);
 
         if (n.left != null) {
             debug(n.left);
