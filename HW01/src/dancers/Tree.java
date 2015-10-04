@@ -126,7 +126,11 @@ public class Tree {
     public Dancer searchAndRemoveWomen(int height) {
         diff = 10000;
         res = null;
-        return searchAndRemoveWomen(this.root, height);
+        Dancer back = searchAndRemoveWomen(this.root, height);
+        if (res != null) {
+            removeFoundNode(res);
+        }
+        return back;
     }
 
     public Dancer searchAndRemoveWomen(Dancer p, int maleHeight) {
@@ -136,57 +140,54 @@ public class Tree {
 
         //find tallest woman, that is shorter than man from left
         if (p.key > maleHeight) {
-            searchAndRemoveWomen(p.left, maleHeight);
+            return searchAndRemoveWomen(p.left, maleHeight);
 
             //find tallest woman, that is shorter than man from right
-        } else if (p.key <= maleHeight) {
+        } else {
             int newDiff = Math.abs(p.key - maleHeight);
             if (newDiff < diff) {
                 res = p;
                 diff = Math.abs(p.key - maleHeight);
             }
 
-            searchAndRemoveWomen(p.right, maleHeight);
-        }
-        if (res != null) {
-            removeFoundNode(res);
+            return searchAndRemoveWomen(p.right, maleHeight);
         }
 
-        return res;
+
     }
 
     public Dancer searchAndRemoveMen(int height) {
         diff = 10000;
         res = null;
-        return searchAndRemoveMen(this.root, height);
+        Dancer back = searchAndRemoveMen(this.root, height);
+        if (res != null) {
+            removeFoundNode(res);
+        }
+        return back;
+
     }
 
-    public Dancer searchAndRemoveMen(Dancer p, int femaleHeight) {
-        if (p == null) {
+    public Dancer searchAndRemoveMen(Dancer dancer, int femaleHeight) {
+        if (dancer == null) {
             return res;
         }
 
         //find shortest man, that is taller than woman
-        if (p.key > femaleHeight) {
-            int newDiff = Math.abs(p.key - femaleHeight);
+        if (dancer.key > femaleHeight) {
+            int newDiff = Math.abs(dancer.key - femaleHeight);
             if (newDiff < diff) {
-                res = p;
-                diff = Math.abs(p.key - femaleHeight);
+                res = dancer;
+                diff = Math.abs(dancer.key - femaleHeight);
             }
 
-            searchAndRemoveMen(p.left, femaleHeight);
+            return searchAndRemoveMen(dancer.left, femaleHeight);
 
             //find shortest man, that is taller than woman
-        } else if (p.key <= femaleHeight) {
+        } else {
 
-            searchAndRemoveMen(p.right, femaleHeight);
+            return searchAndRemoveMen(dancer.right, femaleHeight);
         }
 
-        if (res != null) {
-            removeFoundNode(res);
-        }
-
-        return res;
     }
 
     /**

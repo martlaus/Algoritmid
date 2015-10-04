@@ -36,15 +36,24 @@ public class Dancer implements IDancer, Comparable<Dancer> {
 
     @Override
     public int getHeight() {
-        return key;
+        if (male) {
+            return key - 10000;
+        } else {
+            return key;
+        }
     }
+
+    public void setHeight(int height) {
+        this.key = height;
+    }
+
 
     @Override
     public int compareTo(Dancer o) {
         if (this.getHeight() == o.getHeight()) {
             if (o.isMale()) {
-                return -1;
-            } else return 1;
+                return 1;
+            } else return -1;
         } else {
             return this.getHeight() - o.getHeight();
         }

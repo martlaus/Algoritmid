@@ -12,25 +12,25 @@ public class Main {
         AbstractMap.SimpleEntry<IDancer, IDancer> d1 = dancers.findPartnerFor(new Dancer(true, 196));
         printString(d1);
 
-        AbstractMap.SimpleEntry<IDancer, IDancer> d2 = dancers.findPartnerFor(new Dancer(false, 180));
+        AbstractMap.SimpleEntry<IDancer, IDancer> d2 = dancers.findPartnerFor(new Dancer(true, 180));
         printString(d2);
 
-        AbstractMap.SimpleEntry<IDancer, IDancer> d3 = dancers.findPartnerFor(new Dancer(false, 170));
+        AbstractMap.SimpleEntry<IDancer, IDancer> d3 = dancers.findPartnerFor(new Dancer(true, 170));
         printString(d3);
 
         AbstractMap.SimpleEntry<IDancer, IDancer> d4 = dancers.findPartnerFor(new Dancer(true, 155));
         printString(d4);
 
-        AbstractMap.SimpleEntry<IDancer, IDancer> d5 = dancers.findPartnerFor(new Dancer(true, 175));
+        AbstractMap.SimpleEntry<IDancer, IDancer> d5 = dancers.findPartnerFor(new Dancer(false, 150));
         printString(d5);
 
-        AbstractMap.SimpleEntry<IDancer, IDancer> d6 = dancers.findPartnerFor(new Dancer(false, 160));
+        AbstractMap.SimpleEntry<IDancer, IDancer> d6 = dancers.findPartnerFor(new Dancer(true, 160));
         printString(d6);
 
         AbstractMap.SimpleEntry<IDancer, IDancer> d7 = dancers.findPartnerFor(new Dancer(true, 200));
         printString(d7);
 
-        AbstractMap.SimpleEntry<IDancer, IDancer> d8 = dancers.findPartnerFor(new Dancer(false, 150));
+        AbstractMap.SimpleEntry<IDancer, IDancer> d8 = dancers.findPartnerFor(new Dancer(true, 150));
         printString(d8);
 
         for (IDancer d : dancers.returnWaitingList()) {
