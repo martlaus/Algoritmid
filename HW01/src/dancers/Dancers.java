@@ -3,7 +3,6 @@ package dancers;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class Dancers implements IDancers {
@@ -19,7 +18,7 @@ public class Dancers implements IDancers {
 
 
         if (searcher.isMale()) {
-            AvlNode woman = avlTreeWomen.searchAndRemoveWomen(searcher.getHeight());
+            Dancer woman = avlTreeWomen.searchAndRemoveWomen(searcher.getHeight());
             if (woman == null) {
                 avlTreeMen.insert((Dancer) searcher);
             } else {
@@ -28,7 +27,7 @@ public class Dancers implements IDancers {
             }
 
         } else {
-            AvlNode male = avlTreeMen.searchAndRemoveMen(searcher.getHeight());
+            Dancer male = avlTreeMen.searchAndRemoveMen(searcher.getHeight());
             if (male == null) {
 
                 avlTreeWomen.insert((Dancer) searcher);
@@ -45,8 +44,19 @@ public class Dancers implements IDancers {
 
     @Override
     public List<IDancer> returnWaitingList() {
-        // TODO Auto-generated method stub
-        return null;
+        List<IDancer> listMen = (List<IDancer>) (List<?>) avlTreeMen.inorder();
+        List<IDancer> listWomen = (List<IDancer>) (List<?>) avlTreeWomen.inorder();
+        List<IDancer> newList = new ArrayList<>();
+        newList.addAll(listMen);
+        newList.addAll(listWomen);
+        Collections.sort(newList, new MyComparator());
+//        for (Dancer n : listMen) {
+//            System.out.println(n.getDancer().isMale() + " element: " + n.getDancer().getHeight());
+//        }
+//        for (Dancer n : listWomen) {
+//            System.out.println(n.getDancer().isMale() + " element: " + n.getDancer().getHeight());
+//        }
+        return newList;
     }
 
 }

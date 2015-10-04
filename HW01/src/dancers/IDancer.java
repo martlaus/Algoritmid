@@ -6,7 +6,11 @@ package dancers;
  */
 public interface IDancer {
 
-    public int getID();
-    public boolean isMale();
-    public int getHeight();
+    int getID();
+
+    boolean isMale();
+
+    int getHeight();
+
+
 }

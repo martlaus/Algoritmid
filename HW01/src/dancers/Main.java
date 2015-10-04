@@ -11,10 +11,15 @@ public class Main {
         System.out.println("Found partner " + dancers.findPartnerFor(new Dancer(true, 155)));
         System.out.println("Found partner " + dancers.findPartnerFor(new Dancer(true, 175)));
         System.out.println("Found partner " + dancers.findPartnerFor(new Dancer(true, 200)));
-        System.out.println("Found partner " + dancers.findPartnerFor(new Dancer(false, 180)));
-        System.out.println("Found partner " + dancers.findPartnerFor(new Dancer(false, 170)));
-        System.out.println("Found partner " + dancers.findPartnerFor(new Dancer(false, 160)));
-        System.out.println("Found partner " + dancers.findPartnerFor(new Dancer(false, 150)));
+        System.out.println("Found partner " + dancers.findPartnerFor(new Dancer(false, 380)));
+        System.out.println("Found partner " + dancers.findPartnerFor(new Dancer(false, 370)));
+        System.out.println("Found partner " + dancers.findPartnerFor(new Dancer(false, 360)));
+        System.out.println("Found partner " + dancers.findPartnerFor(new Dancer(false, 350)));
+
+        for (IDancer d : dancers.returnWaitingList()) {
+
+            System.out.println(d.isMale() + " tantsija " + d.getHeight());
+        }
 
     }
 

@@ -1,23 +1,35 @@
 package dancers;
 
-import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by mart on 2.10.15.
  */
-public class Dancer implements IDancer{
+public class Dancer implements IDancer, Comparable<Dancer> {
+    public Dancer left;
+    public Dancer right;
+    public Dancer parent;
+    public int key;
+    public int balance;
     int id = 0;
     boolean male;
-    int height;
     AtomicInteger atomicInteger = new AtomicInteger();
 
-    public Dancer() {}
+    public Dancer(int k) {
+        left = right = parent = null;
+        balance = 0;
+        key = k;
+    }
+
+
 
     public Dancer(boolean male, int height) {
         this.id = atomicInteger.incrementAndGet();
         this.male = male;
-        this.height = height;
+        this.key = height;
+        left = right = parent = null;
+        balance = 0;
+        key = height;
     }
 
     @Override
@@ -32,6 +44,18 @@ public class Dancer implements IDancer{
 
     @Override
     public int getHeight() {
-        return height;
+        return key;
+    }
+
+
+    @Override
+    public int compareTo(Dancer o) {
+        if (this.getHeight() == o.getHeight()) {
+            if (o.isMale()) {
+                return -1;
+            } else return 1;
+        } else {
+            return this.getHeight() - o.getHeight();
+        }
     }
 }
