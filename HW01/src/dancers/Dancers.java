@@ -13,10 +13,7 @@ public class Dancers implements IDancers {
 
 
     @Override
-    public SimpleEntry<IDancer, IDancer> findPartnerFor(IDancer searcher)
-            throws IllegalArgumentException {
-
-
+    public SimpleEntry<IDancer, IDancer> findPartnerFor(IDancer searcher) {
         if (searcher.isMale()) {
             Dancer woman = avlTreeWomen.searchAndRemoveWomen(searcher.getHeight());
             if (woman == null) {
@@ -50,12 +47,7 @@ public class Dancers implements IDancers {
         newList.addAll(listMen);
         newList.addAll(listWomen);
         Collections.sort(newList, new MyComparator());
-//        for (Dancer n : listMen) {
-//            System.out.println(n.getDancer().isMale() + " element: " + n.getDancer().getHeight());
-//        }
-//        for (Dancer n : listWomen) {
-//            System.out.println(n.getDancer().isMale() + " element: " + n.getDancer().getHeight());
-//        }
+
         return newList;
     }
 

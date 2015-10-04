@@ -148,6 +148,9 @@ public class Tree {
 
             searchAndRemoveWomen(p.right, maleHeight);
         }
+        if (res != null) {
+            removeFoundNode(res);
+        }
 
         return res;
     }
@@ -177,6 +180,10 @@ public class Tree {
         } else if (p.key <= femaleHeight) {
 
             searchAndRemoveMen(p.right, femaleHeight);
+        }
+
+        if (res != null) {
+            removeFoundNode(res);
         }
 
         return res;
