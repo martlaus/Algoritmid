@@ -7,7 +7,6 @@ import org.junit.Test;
 
 import java.util.AbstractMap;
 import java.util.Arrays;
-import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
@@ -36,42 +35,29 @@ public class MyDancersTests {
     @Test
     public void testWithWomen() {
         Dancers dancers = new Dancers();
-        dancers.addDancer(new Dancer(1, true, 175));
-        dancers.addDancer(new Dancer(2, false, 175));
-        dancers.addDancer(new Dancer(3, true, 180));
-        dancers.addDancer(new Dancer(4, true, 190));
-        dancers.addDancer(new Dancer(5, false, 200));
-        dancers.addDancer(new Dancer(6, true, 210));
-        dancers.addDancer(new Dancer(7, true, 185));
-        dancers.addDancer(new Dancer(8, false, 190));
-        dancers.addDancer(new Dancer(9, true, 200));
-
-        List<IDancer> list = dancers.returnWaitingList();
-        System.out.println("Waiting: ");
-        for (IDancer d : list) {
-//            System.out.println();
-//            System.out.println("---------------------------------------------------");
-
-            dancers.getAvlTree().debug((Dancer) d);
-            System.out.println(d.toString());
-        }
-        System.out.println(list.size());
+        Dancer d1 = new Dancer(1, true, 175);
+        Dancer d2 = new Dancer(2, false, 175);
+        Dancer d3 = new Dancer(3, true, 180);
+        Dancer d4 = new Dancer(4, true, 190);
+        Dancer d5 = new Dancer(5, false, 200);
+        Dancer d6 = new Dancer(6, true, 210);
+        Dancer d7 = new Dancer(7, true, 185);
+        Dancer d8 = new Dancer(8, false, 190);
+        Dancer d9 = new Dancer(9, true, 200);
+        dancers.addDancer(d1);
+        dancers.addDancer(d2);
+        dancers.addDancer(d3);
+        dancers.addDancer(d4);
+        dancers.addDancer(d5);
+        dancers.addDancer(d6);
+        dancers.addDancer(d7);
+        dancers.addDancer(d8);
+        dancers.addDancer(d9);
 
 
         assertEquals(9, dancers.returnWaitingList().size());
 
         AbstractMap.SimpleEntry<IDancer, IDancer> entry1 = dancers.findPartnerFor(new Dancer(1, false, 190));
-
-        List<IDancer> list2 = dancers.returnWaitingList();
-        System.out.println("Waiting 2: ");
-        for (IDancer d : list2) {
-//            System.out.println();
-//            System.out.println("---------------------------------------------------");
-
-            dancers.getAvlTree().debug((Dancer) d);
-            System.out.println(d.toString());
-        }
-
 
         assertEquals(8, dancers.returnWaitingList().size());
         assertEquals(190, entry1.getKey().getHeight());
@@ -79,7 +65,6 @@ public class MyDancersTests {
         assertEquals(200, entry1.getValue().getHeight());
         assertTrue(entry1.getValue().isMale());
 
-        System.out.println("SECOND Partner find try");
         AbstractMap.SimpleEntry<IDancer, IDancer> entry2 = dancers.findPartnerFor(new Dancer(1, true, 190));
         assertEquals(7, dancers.returnWaitingList().size());
         assertEquals(190, entry2.getKey().getHeight());

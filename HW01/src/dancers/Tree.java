@@ -149,9 +149,16 @@ public class Tree {
     }
 
     public Dancer searchAndRemoveWomen(int height) {
+        Dancer copydResult;
         diff = Integer.MAX_VALUE;
         res = null;
         Dancer back = searchAndRemoveWomen(this.root, height);
+        if (back != null) {
+            copydResult = new Dancer(back);
+
+        } else {
+            copydResult = back;
+        }
         if (deletedElementRoot != null) {
             deletedElementRoot.getEqualHeightDancers().remove(back);
         }
@@ -187,7 +194,7 @@ public class Tree {
                 removeFoundNode(res);
             }
         }
-        return back;
+        return copydResult;
     }
 
     public Dancer searchAndRemoveWomen(Dancer dancer, int maleHeight) {
@@ -214,7 +221,7 @@ public class Tree {
                         }
                     }
                 } catch (Exception e) {
-                    //empty
+                    return searchAndRemoveWomen(dancer.left, maleHeight);
                 }
 
 
@@ -225,16 +232,23 @@ public class Tree {
                     diff = newDiff;
                 }
             }
-            return searchAndRemoveWomen(dancer.left, maleHeight);
+            return searchAndRemoveWomen(dancer.right, maleHeight);
         }
 
         return res;
     }
 
     public Dancer searchAndRemoveMen(int height) {
+        Dancer copydResult;
         res = null;
         diff = Integer.MAX_VALUE;
         Dancer back = searchAndRemoveMen(this.root, height);
+        if (back != null) {
+            copydResult = new Dancer(back);
+
+        } else {
+            copydResult = back;
+        }
         if (deletedElementRoot != null) {
             deletedElementRoot.getEqualHeightDancers().remove(back);
         }
@@ -243,10 +257,8 @@ public class Tree {
             Dancer node = new Dancer();
             List<Dancer> dancers = res.getEqualHeightDancers();
 
-            removeFoundNode(res);
-
-
             if (dancers != null) {
+                removeFoundNode(res);
                 for (int i = 0; i < dancers.size(); i++) {
                     Dancer d = dancers.get(i);
                     if (d.isMale()) {
@@ -275,7 +287,7 @@ public class Tree {
             }
         }
 
-        return back;
+        return copydResult;
     }
 
     public Dancer searchAndRemoveMen(Dancer dancer, int femaleHeight) {
@@ -298,7 +310,7 @@ public class Tree {
                         }
                     }
                 } catch (Exception e) {
-                    //empty
+                    //return searchAndRemoveWomen(dancer.right, femaleHeight); //?? meibi
                 }
 
             } else {

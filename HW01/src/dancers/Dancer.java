@@ -11,10 +11,11 @@ public class Dancer implements IDancer, Comparable<Dancer> {
     public Dancer parent;
     public int height;
     public int balance;
+    public List<Dancer> equalHeightDancers;
+    public IDancer originalIDancer;
     int ID = 0;
     boolean male;
     boolean inList = false;
-    List<Dancer> equalHeightDancers;
 
     public Dancer(int ID, boolean male, int height) {
         this.ID = ID;
@@ -23,11 +24,44 @@ public class Dancer implements IDancer, Comparable<Dancer> {
         left = right = parent = null;
         balance = 0;
         this.inList = false;
+        this.originalIDancer = this;
     }
 
     public Dancer() {
         left = right = parent = null;
         balance = 0;
+        this.originalIDancer = this;
+    }
+
+    public Dancer(int ID, int height, boolean male) {
+        this.ID = ID;
+        this.male = male;
+        this.height = height;
+        left = right = parent = null;
+        balance = 0;
+        this.inList = false;
+        this.originalIDancer = this;
+    }
+
+    public Dancer(Dancer dancer) {
+        this.left = dancer.left;
+        this.right = dancer.right;
+        this.parent = dancer.parent;
+        this.height = dancer.getHeight();
+        this.balance = dancer.balance;
+        this.ID = dancer.ID;
+        this.male = dancer.male;
+        this.inList = dancer.inList;
+        this.equalHeightDancers = dancer.equalHeightDancers;
+        this.originalIDancer = dancer.originalIDancer;
+    }
+
+    public IDancer getOriginalIDancer() {
+        return originalIDancer;
+    }
+
+    public void setOriginalIDancer(IDancer originalIDancer) {
+        this.originalIDancer = originalIDancer;
     }
 
     @Override
@@ -82,13 +116,30 @@ public class Dancer implements IDancer, Comparable<Dancer> {
     }
 
     public Dancer replace(Dancer replacement) {
-        setID(replacement.getID());
-        setMale(replacement.isMale());
-        setHeight(replacement.getHeight());
+        try {
+            setID(replacement.getID());
+
+        } catch (Exception e) {
+            setID(0);
+        }
+
+        try {
+            setMale(replacement.isMale());
+
+        } catch (Exception e) {
+            setMale(false);
+        }
+
+        try {
+            setHeight(replacement.getHeight());
+
+        } catch (Exception e) {
+            setHeight(0);
+        }
         setLeft(this.left);
         setRight(this.right);
         setParent(this.parent);
-
+        setOriginalIDancer(replacement.originalIDancer);
         return this;
     }
 

@@ -20,6 +20,7 @@ public class Dancers implements IDancers {
     public SimpleEntry<IDancer, IDancer> findPartnerFor(IDancer searcher) {
         if (searcher.isMale()) {
             Dancer d = (Dancer) searcher;
+            d.setOriginalIDancer(searcher);
 
             Dancer woman = avlTree.searchAndRemoveWomen(d.getHeight());
             if (woman == null) {
@@ -27,7 +28,8 @@ public class Dancers implements IDancers {
                 avlTree.insert(d);
 
             } else {
-                return new SimpleEntry(searcher, woman);
+
+                return new SimpleEntry<>(searcher, woman.getOriginalIDancer());
             }
 
         } else {
@@ -37,7 +39,7 @@ public class Dancers implements IDancers {
                 avlTree.insert((Dancer) searcher);
 
             } else {
-                return new SimpleEntry(searcher, male);
+                return new SimpleEntry<>(searcher, male.getOriginalIDancer());
             }
         }
 
