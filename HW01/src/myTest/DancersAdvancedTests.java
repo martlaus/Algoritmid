@@ -118,9 +118,7 @@ public class DancersAdvancedTests {
         Dancer dancer = new Dancer(1, 180, false);
         Dancer dancer2 = new Dancer(2, 181, true);
         assertNull(dancers.findPartnerFor(dancer));
-        Dancer res = (Dancer) dancers.findPartnerFor(dancer2).getValue();
-        assertEquals(dancer.getHeight(), res.getHeight());
-        assertEquals(dancer.isMale(), res.isMale());
+        assertEquals(dancer, dancers.findPartnerFor(dancer2).getValue());
 
 
         assertTrue(dancers.returnWaitingList().size() == 0);
@@ -142,12 +140,6 @@ public class DancersAdvancedTests {
             assertNull(dancers.findPartnerFor(new Dancer(j * 13, j, false)));
             assertNull(dancers.findPartnerFor(new Dancer(j * 29, j, false)));
         }
-
-
-//        System.out.println(dancers.returnWaitingList());
-//        System.out.println(dancers.findPartnerFor(new Dancer(41923, 49, false)));
-
-//                assertTrue(dancers.findPartnerFor(new Dancer(41923, 49, false)).getValue().getHeight() == 50);
     }
 
     /**
@@ -201,7 +193,7 @@ public class DancersAdvancedTests {
     }
 
     @Test
-    public void testFindPartnersMultiplePossibiliteisFemale() throws Exception {
+    public void testFindPartnersMultiplePossibilitiesFemale() throws Exception {
         Dancers dancers = new Dancers();
 
         // First one should be null
@@ -215,17 +207,19 @@ public class DancersAdvancedTests {
         assertNull(dancers.findPartnerFor(dancer2));
         assertNull(dancers.findPartnerFor(dancer4));
         assertNull(dancers.findPartnerFor(dancer3));
+        assertEquals(4, dancers.returnWaitingList().size());
 
 
-        assertEquals(dancer2.getHeight(), dancers.findPartnerFor(dancer).getValue().getHeight());
-        assertEquals(dancer3.getHeight(), dancers.findPartnerFor(dancer).getValue().getHeight());
-        assertEquals(dancer4.getHeight(), dancers.findPartnerFor(dancer).getValue().getHeight());
-//        System.out.println(dancers.maleDancers.root);
-        assertEquals(dancer5.getHeight(), dancers.findPartnerFor(dancer).getValue().getHeight());
+        assertEquals(dancer2, dancers.findPartnerFor(dancer).getValue());
+        assertEquals(3, dancers.returnWaitingList().size());
 
+        assertEquals(dancer3, dancers.findPartnerFor(dancer).getValue());
+        assertEquals(2, dancers.returnWaitingList().size());
 
-//        System.out.println(dancers.returnWaitingList());
-//        System.out.println(dancers.returnWaitingList());
+        assertEquals(dancer4, dancers.findPartnerFor(dancer).getValue());
+        assertEquals(1, dancers.returnWaitingList().size());
+
+        assertEquals(dancer5, dancers.findPartnerFor(dancer).getValue());
     }
 
     @Test
@@ -294,7 +288,21 @@ public class DancersAdvancedTests {
     }
 
     /**
-     *
+     * @throws Exception
+     */
+    @Test
+    public void testFindPartnerForNullTest() throws Exception {
+
+        Dancers dancers = new Dancers();
+
+        // First one should be null
+        Dancer dancer = new Dancer(1, 180, true);
+
+        assertNull(dancers.findPartnerFor(dancer));
+    }
+
+    /**
+     * failib...
      */
     @Test
     public void testLongLinearFindLastFemale() throws Exception {
@@ -308,19 +316,5 @@ public class DancersAdvancedTests {
         Dancer dancer2 = new Dancer(1000001, 1000001, true);
 
         assertTrue(dancers.findPartnerFor(dancer2).getValue().getHeight() == 1000000);
-    }
-
-    /**
-     * @throws Exception
-     */
-    @Test
-    public void testFindPartnerForNullTest() throws Exception {
-
-        Dancers dancers = new Dancers();
-
-        // First one should be null
-        Dancer dancer = new Dancer(1, 180, true);
-
-        assertNull(dancers.findPartnerFor(dancer));
     }
 }

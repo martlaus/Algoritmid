@@ -221,7 +221,13 @@ public class Tree {
                         }
                     }
                 } catch (Exception e) {
-                    return searchAndRemoveWomen(dancer.left, maleHeight);
+                    Dancer temp = searchAndRemoveWomen(dancer.right, maleHeight);
+                    if (temp == null) {
+                        return searchAndRemoveWomen(dancer.left, maleHeight);
+                    } else {
+                        return temp;
+                    }
+
                 }
 
 
@@ -342,47 +348,54 @@ public class Tree {
      * @param dancer The node to be removed.
      */
     public void removeFoundNode(Dancer dancer) {
-        Dancer r;
+        Dancer lastElement;
         // at least one child of q, q will be removed directly
         if (dancer.left == null || dancer.right == null) {
             // the root is deleted
             if (dancer.parent == null) {
                 if (!dancer.isInList()) {
-                    this.root = null;
+                    if (dancer.left != null) {
+                        this.root = dancer.left;
+                    } else if (dancer.right != null) {
+                        this.root = dancer.right;
+                    } else {
+                        this.root = null;
+
+                    }
                 }
                 dancer = null;
                 return;
             }
-            r = dancer;
+            lastElement = dancer;
         } else {
             // q has two children --> will be replaced by successor
-            r = successor(dancer);
-            dancer.height = r.height;
+            lastElement = successor(dancer);
+            dancer.height = lastElement.height;
         }
 
         Dancer p;
-        if (r.left != null) {
-            p = r.left;
+        if (lastElement.left != null) {
+            p = lastElement.left;
         } else {
-            p = r.right;
+            p = lastElement.right;
         }
 
         if (p != null) {
-            p.parent = r.parent;
+            p.parent = lastElement.parent;
         }
 
-        if (r.parent == null) {
+        if (lastElement.parent == null) {
             this.root = p;
         } else {
-            if (r == r.parent.left) {
-                r.parent.left = p;
+            if (lastElement == lastElement.parent.left) {
+                lastElement.parent.left = p;
             } else {
-                r.parent.right = p;
+                lastElement.parent.right = p;
             }
             // balancing must be done until the root is reached.
-            recursiveBalance(r.parent);
+            recursiveBalance(lastElement.parent);
         }
-        r = null;
+        lastElement = null;
     }
 
     /**

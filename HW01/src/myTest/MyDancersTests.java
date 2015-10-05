@@ -33,48 +33,6 @@ public class MyDancersTests {
     }
 
     @Test
-    public void testWithWomen() {
-        Dancers dancers = new Dancers();
-        Dancer d1 = new Dancer(1, true, 175);
-        Dancer d2 = new Dancer(2, false, 175);
-        Dancer d3 = new Dancer(3, true, 180);
-        Dancer d4 = new Dancer(4, true, 190);
-        Dancer d5 = new Dancer(5, false, 200);
-        Dancer d6 = new Dancer(6, true, 210);
-        Dancer d7 = new Dancer(7, true, 185);
-        Dancer d8 = new Dancer(8, false, 190);
-        Dancer d9 = new Dancer(9, true, 200);
-        dancers.addDancer(d1);
-        dancers.addDancer(d2);
-        dancers.addDancer(d3);
-        dancers.addDancer(d4);
-        dancers.addDancer(d5);
-        dancers.addDancer(d6);
-        dancers.addDancer(d7);
-        dancers.addDancer(d8);
-        dancers.addDancer(d9);
-
-
-        assertEquals(9, dancers.returnWaitingList().size());
-
-        AbstractMap.SimpleEntry<IDancer, IDancer> entry1 = dancers.findPartnerFor(new Dancer(1, false, 190));
-
-        assertEquals(8, dancers.returnWaitingList().size());
-        assertEquals(190, entry1.getKey().getHeight());
-        assertFalse(entry1.getKey().isMale());
-        assertEquals(200, entry1.getValue().getHeight());
-        assertTrue(entry1.getValue().isMale());
-
-        AbstractMap.SimpleEntry<IDancer, IDancer> entry2 = dancers.findPartnerFor(new Dancer(1, true, 190));
-        assertEquals(7, dancers.returnWaitingList().size());
-        assertEquals(190, entry2.getKey().getHeight());
-        assertTrue(entry2.getKey().isMale());
-        assertEquals(175, entry2.getValue().getHeight());
-        assertFalse(entry2.getValue().isMale());
-
-    }
-
-    @Test
     public void testFindPartnerFor() throws Exception {
         Dancers dancers = new Dancers();
 
@@ -130,7 +88,47 @@ public class MyDancersTests {
         System.out.println(dancers.findPartnerFor(new Dancer(1, true, 250)));
 
         assertEquals(11, dancers.returnWaitingList().size());
+    }
 
+    @Test
+    public void testWithWomen() {
+        Dancers dancers = new Dancers();
+        Dancer d1 = new Dancer(1, true, 175);
+        Dancer d2 = new Dancer(2, false, 175);
+        Dancer d3 = new Dancer(3, true, 180);
+        Dancer d4 = new Dancer(4, true, 190);
+        Dancer d5 = new Dancer(5, false, 200);
+        Dancer d6 = new Dancer(6, true, 210);
+        Dancer d7 = new Dancer(7, true, 185);
+        Dancer d8 = new Dancer(8, false, 190);
+        Dancer d9 = new Dancer(9, true, 200);
+        dancers.addDancer(d1);
+        dancers.addDancer(d2);
+        dancers.addDancer(d3);
+        dancers.addDancer(d4);
+        dancers.addDancer(d5);
+        dancers.addDancer(d6);
+        dancers.addDancer(d7);
+        dancers.addDancer(d8);
+        dancers.addDancer(d9);
+
+
+        assertEquals(9, dancers.returnWaitingList().size());
+
+        AbstractMap.SimpleEntry<IDancer, IDancer> entry1 = dancers.findPartnerFor(new Dancer(1, false, 190));
+
+        assertEquals(8, dancers.returnWaitingList().size());
+        assertEquals(190, entry1.getKey().getHeight());
+        assertFalse(entry1.getKey().isMale());
+        assertEquals(200, entry1.getValue().getHeight());
+        assertTrue(entry1.getValue().isMale());
+
+        AbstractMap.SimpleEntry<IDancer, IDancer> entry2 = dancers.findPartnerFor(new Dancer(1, true, 190));
+        assertEquals(7, dancers.returnWaitingList().size());
+        assertEquals(190, entry2.getKey().getHeight());
+        assertTrue(entry2.getKey().isMale());
+        assertEquals(175, entry2.getValue().getHeight());
+        assertFalse(entry2.getValue().isMale());
 
     }
 }
