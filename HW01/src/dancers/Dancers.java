@@ -17,6 +17,9 @@ public class Dancers implements IDancers {
 
     @Override
     public SimpleEntry<IDancer, IDancer> findPartnerFor(IDancer searcher) {
+        if (searcher == null) {
+            throw new IllegalArgumentException();
+        }
         Dancer d = (Dancer) searcher;
         d.setOriginalIDancer(searcher);
 
