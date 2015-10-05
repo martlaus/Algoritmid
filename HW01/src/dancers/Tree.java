@@ -68,12 +68,17 @@ public class Tree {
                     temp.setInList(true);
                     myDancerNodes.add(temp);
                     root.setEqualHeightMyDancerNodes(myDancerNodes);
+
+                    recursiveBalance(root);
+
                 } else {
                     List<MyDancerNode> myDancerNodes = root.getEqualHeightMyDancerNodes();
                     if (myDancerNodes == null) myDancerNodes = new ArrayList<>();
                     newMyDancerNode.setInList(true);
                     myDancerNodes.add(newMyDancerNode);
                     root.setEqualHeightMyDancerNodes(myDancerNodes);
+
+                    recursiveBalance(root);
                 }
 
             }
