@@ -5,55 +5,52 @@ import java.util.List;
 /**
  * Created by mart on 2.10.15.
  */
-public class Dancer implements IDancer, Comparable<Dancer> {
-    public Dancer left;
-    public Dancer right;
-    public Dancer parent;
+public class MyDancerNode implements IDancer, Comparable<MyDancerNode> {
+    public MyDancerNode left;
+    public MyDancerNode right;
+    public MyDancerNode parent;
     public int height;
     public int balance;
-    public List<Dancer> equalHeightDancers;
+    public List<MyDancerNode> equalHeightMyDancerNodes;
     public IDancer originalIDancer;
     int ID = 0;
     boolean male;
     boolean inList = false;
 
-    public Dancer(int ID, boolean male, int height) {
+    public MyDancerNode(int ID, boolean male, int height) {
         this.ID = ID;
         this.male = male;
         this.height = height;
         left = right = parent = null;
         balance = 0;
         this.inList = false;
-        this.originalIDancer = this;
     }
 
-    public Dancer() {
+    public MyDancerNode() {
         left = right = parent = null;
         balance = 0;
-        this.originalIDancer = this;
     }
 
-    public Dancer(int ID, int height, boolean male) {
+    public MyDancerNode(int ID, int height, boolean male) {
         this.ID = ID;
         this.male = male;
         this.height = height;
         left = right = parent = null;
         balance = 0;
         this.inList = false;
-        this.originalIDancer = this;
     }
 
-    public Dancer(Dancer dancer) {
-        this.left = dancer.left;
-        this.right = dancer.right;
-        this.parent = dancer.parent;
-        this.height = dancer.getHeight();
-        this.balance = dancer.balance;
-        this.ID = dancer.ID;
-        this.male = dancer.male;
-        this.inList = dancer.inList;
-        this.equalHeightDancers = dancer.equalHeightDancers;
-        this.originalIDancer = dancer.originalIDancer;
+    public MyDancerNode(MyDancerNode myDancerNode) {
+        this.left = myDancerNode.left;
+        this.right = myDancerNode.right;
+        this.parent = myDancerNode.parent;
+        this.height = myDancerNode.getHeight();
+        this.balance = myDancerNode.balance;
+        this.ID = myDancerNode.ID;
+        this.male = myDancerNode.male;
+        this.inList = myDancerNode.inList;
+        this.equalHeightMyDancerNodes = myDancerNode.equalHeightMyDancerNodes;
+        this.originalIDancer = myDancerNode.originalIDancer;
     }
 
     public IDancer getOriginalIDancer() {
@@ -92,7 +89,7 @@ public class Dancer implements IDancer, Comparable<Dancer> {
     }
 
     @Override
-    public int compareTo(Dancer o) {
+    public int compareTo(MyDancerNode o) {
         if (getHeight() < o.getHeight())
             return -1;
         else if (getHeight() == o.getHeight()) {
@@ -115,7 +112,7 @@ public class Dancer implements IDancer, Comparable<Dancer> {
         this.inList = inList;
     }
 
-    public Dancer replace(Dancer replacement) {
+    public MyDancerNode replace(MyDancerNode replacement) {
         try {
             setID(replacement.getID());
 
@@ -143,38 +140,29 @@ public class Dancer implements IDancer, Comparable<Dancer> {
         return this;
     }
 
-    public void setLeft(Dancer left) {
+    public void setLeft(MyDancerNode left) {
         this.left = left;
     }
 
-    public void setRight(Dancer right) {
+    public void setRight(MyDancerNode right) {
         this.right = right;
     }
 
-    public void setParent(Dancer parent) {
+    public void setParent(MyDancerNode parent) {
         this.parent = parent;
     }
 
-    public List<Dancer> getEqualHeightDancers() {
-        return equalHeightDancers;
+    public List<MyDancerNode> getEqualHeightMyDancerNodes() {
+        return equalHeightMyDancerNodes;
     }
 
-    public void setEqualHeightDancers(List<Dancer> equalHeightDancers) {
-        this.equalHeightDancers = equalHeightDancers;
+    public void setEqualHeightMyDancerNodes(List<MyDancerNode> equalHeightMyDancerNodes) {
+        this.equalHeightMyDancerNodes = equalHeightMyDancerNodes;
     }
-    //    @Override
-//    public int compareTo(Dancer o) {
-//        if (this.getHeight() == o.getHeight()) {
-//            if (o.isMale()) {
-//                return -1;
-//            } else return -1;
-//        } else {
-//            return this.getHeight() - o.getHeight();
-//        }
-//    }
 
-//    @Override
-//    public String toString() {
-//        return "{ " + this.getID() + " " + this.isMale() + " " + this.getHeight() + " }";
-//    }
+
+    @Override
+    public String toString() {
+        return "{ " + this.getID() + " " + this.isMale() + " " + this.getHeight() + " }";
+    }
 }

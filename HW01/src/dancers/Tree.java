@@ -8,12 +8,12 @@ import java.util.List;
  */
 public class Tree {
 
-    protected Dancer root; // the root node
+    protected MyDancerNode root; // the root node
     protected int diff;
-    protected Dancer res;
-    Dancer deletedElementRoot = null;
+    protected MyDancerNode res;
+    MyDancerNode deletedElementRoot = null;
 
-    public void insert(Dancer d) {
+    public void insert(MyDancerNode d) {
         // create new node
         // start recursive procedure for inserting the node
         insertAVL(this.root, d);
@@ -23,59 +23,59 @@ public class Tree {
      * Recursive method to insert a node into a tree.
      *
      * @param root      The node currently compared, usually you start with the root.
-     * @param newDancer The node to be inserted.
+     * @param newMyDancerNode The node to be inserted.
      */
-    public void insertAVL(Dancer root, Dancer newDancer) {
+    public void insertAVL(MyDancerNode root, MyDancerNode newMyDancerNode) {
         // If  node to compare is null, the node is inserted. If the root is null, it is the root of the tree.
         if (root == null) {
-            this.root = newDancer;
+            this.root = newMyDancerNode;
         } else {
 
             // If compare node is smaller, continue with the left node
-            if (newDancer.height < root.height) {
+            if (newMyDancerNode.height < root.height) {
                 if (root.left == null) {
-                    root.left = newDancer;
-                    newDancer.parent = root;
+                    root.left = newMyDancerNode;
+                    newMyDancerNode.parent = root;
 
                     // Node is inserted now, continue checking the balance
                     recursiveBalance(root);
                 } else {
 
-                    insertAVL(root.left, newDancer);
+                    insertAVL(root.left, newMyDancerNode);
                 }
 
                 //if new node is greater add to right
-            } else if (newDancer.height > root.height) {
+            } else if (newMyDancerNode.height > root.height) {
                 if (root.right == null) {
-                    root.right = newDancer;
-                    newDancer.parent = root;
+                    root.right = newMyDancerNode;
+                    newMyDancerNode.parent = root;
 
                     // Node is inserted now, continue checking the balance
                     recursiveBalance(root);
                 } else {
-                    insertAVL(root.right, newDancer);
+                    insertAVL(root.right, newMyDancerNode);
                 }
 
                 //if they are equal, the male should be first
-            } else if (newDancer.height == root.height) {
+            } else if (newMyDancerNode.height == root.height) {
                 //change male to first
-                if (!root.isMale() && newDancer.isMale()) {
-                    Dancer temp = new Dancer();
+                if (!root.isMale() && newMyDancerNode.isMale()) {
+                    MyDancerNode temp = new MyDancerNode();
                     temp.replace(root);
-                    temp.setEqualHeightDancers(root.getEqualHeightDancers());
-                    root.replace(newDancer);
+                    temp.setEqualHeightMyDancerNodes(root.getEqualHeightMyDancerNodes());
+                    root.replace(newMyDancerNode);
 
-                    List<Dancer> dancers = temp.getEqualHeightDancers();
-                    if (dancers == null) dancers = new ArrayList<>();
+                    List<MyDancerNode> myDancerNodes = temp.getEqualHeightMyDancerNodes();
+                    if (myDancerNodes == null) myDancerNodes = new ArrayList<>();
                     temp.setInList(true);
-                    dancers.add(temp);
-                    root.setEqualHeightDancers(dancers);
+                    myDancerNodes.add(temp);
+                    root.setEqualHeightMyDancerNodes(myDancerNodes);
                 } else {
-                    List<Dancer> dancers = root.getEqualHeightDancers();
-                    if (dancers == null) dancers = new ArrayList<>();
-                    newDancer.setInList(true);
-                    dancers.add(newDancer);
-                    root.setEqualHeightDancers(dancers);
+                    List<MyDancerNode> myDancerNodes = root.getEqualHeightMyDancerNodes();
+                    if (myDancerNodes == null) myDancerNodes = new ArrayList<>();
+                    newMyDancerNode.setInList(true);
+                    myDancerNodes.add(newMyDancerNode);
+                    root.setEqualHeightMyDancerNodes(myDancerNodes);
                 }
 
             }
@@ -87,7 +87,7 @@ public class Tree {
      *
      * @param cur : The node to check the balance for, usually you start with the parent of a leaf.
      */
-    public void recursiveBalance(Dancer cur) {
+    public void recursiveBalance(MyDancerNode cur) {
 
         // we do not use the balance in this class, but the store it anyway
         setBalance(cur);
@@ -133,7 +133,7 @@ public class Tree {
      * @param p The node to start the search.
      * @param q The KEY of node to remove.
      */
-    public void removeAVL(Dancer p, int q) {
+    public void removeAVL(MyDancerNode p, int q) {
         if (p == null) {
             return;
         } else {
@@ -148,43 +148,43 @@ public class Tree {
         }
     }
 
-    public Dancer searchAndRemoveWomen(int height) {
-        Dancer copydResult;
+    public MyDancerNode searchAndRemoveWomen(int height) {
+        MyDancerNode copydResult;
         diff = Integer.MAX_VALUE;
         res = null;
-        Dancer back = searchAndRemoveWomen(this.root, height);
+        MyDancerNode back = searchAndRemoveWomen(this.root, height);
         if (back != null) {
-            copydResult = new Dancer(back);
+            copydResult = new MyDancerNode(back);
 
         } else {
             copydResult = back;
         }
         if (deletedElementRoot != null) {
-            deletedElementRoot.getEqualHeightDancers().remove(back);
+            deletedElementRoot.getEqualHeightMyDancerNodes().remove(back);
         }
         if (res != null) {
             //pane lapsed listist tagasi kustutamisel
-            Dancer node = new Dancer();
-            List<Dancer> dancers = res.getEqualHeightDancers();
-            if (dancers != null) {
-                for (Dancer d : dancers) {
+            MyDancerNode node = new MyDancerNode();
+            List<MyDancerNode> myDancerNodes = res.getEqualHeightMyDancerNodes();
+            if (myDancerNodes != null) {
+                for (MyDancerNode d : myDancerNodes) {
                     if (d.isMale()) {
                         node.replace(d);
-                        dancers.remove(d);
+                        myDancerNodes.remove(d);
                         break;
                     }
 
 
                     if (node.getHeight() == 0) {
-                        Dancer dd = dancers.get(0);
+                        MyDancerNode dd = myDancerNodes.get(0);
                         node.replace(dd);
-                        dancers.remove(dd);
+                        myDancerNodes.remove(dd);
                     }
-                    List<Dancer> dancers1 = new ArrayList<>();
-                    for (Dancer dancer : dancers) {
-                        dancers1.add(dancer);
+                    List<MyDancerNode> dancers1 = new ArrayList<>();
+                    for (MyDancerNode myDancerNode : myDancerNodes) {
+                        dancers1.add(myDancerNode);
                     }
-                    node.setEqualHeightDancers(dancers1);
+                    node.setEqualHeightMyDancerNodes(dancers1);
                     removeFoundNode(res);
                     insert(node);
                 }
@@ -197,33 +197,33 @@ public class Tree {
         return copydResult;
     }
 
-    public Dancer searchAndRemoveWomen(Dancer dancer, int maleHeight) {
-        if (dancer == null) {
+    public MyDancerNode searchAndRemoveWomen(MyDancerNode myDancerNode, int maleHeight) {
+        if (myDancerNode == null) {
             return res;
         }
 
         //find tallest woman, that is shorter than man from left
-        if (dancer.getHeight() >= maleHeight) {
-            return searchAndRemoveWomen(dancer.left, maleHeight);
+        if (myDancerNode.getHeight() >= maleHeight) {
+            return searchAndRemoveWomen(myDancerNode.left, maleHeight);
 
             //find tallest woman, that is shorter than man from right
-        } else if (dancer.getHeight() < maleHeight) {
-            if (dancer.isMale()) {
+        } else if (myDancerNode.getHeight() < maleHeight) {
+            if (myDancerNode.isMale()) {
                 //System.out.println("vaata tema listist naisi");
                 try {
-                    List<Dancer> dancers = dancer.getEqualHeightDancers();
-                    for (Dancer d : dancers) {
+                    List<MyDancerNode> myDancerNodes = myDancerNode.getEqualHeightMyDancerNodes();
+                    for (MyDancerNode d : myDancerNodes) {
                         int newDiff = Math.abs(d.getHeight() - maleHeight);
                         if (!d.isMale() && newDiff < diff && newDiff != 0) {
-                            deletedElementRoot = dancer;
+                            deletedElementRoot = myDancerNode;
                             res = d;
                             diff = newDiff;
                         }
                     }
                 } catch (Exception e) {
-                    Dancer temp = searchAndRemoveWomen(dancer.right, maleHeight);
+                    MyDancerNode temp = searchAndRemoveWomen(myDancerNode.right, maleHeight);
                     if (temp == null) {
-                        return searchAndRemoveWomen(dancer.left, maleHeight);
+                        return searchAndRemoveWomen(myDancerNode.left, maleHeight);
                     } else {
                         return temp;
                     }
@@ -232,57 +232,57 @@ public class Tree {
 
 
             } else {
-                int newDiff = Math.abs(dancer.getHeight() - maleHeight);
+                int newDiff = Math.abs(myDancerNode.getHeight() - maleHeight);
                 if (newDiff < diff && newDiff != 0) {
-                    res = dancer;
+                    res = myDancerNode;
                     diff = newDiff;
                 }
             }
-            return searchAndRemoveWomen(dancer.right, maleHeight);
+            return searchAndRemoveWomen(myDancerNode.right, maleHeight);
         }
 
         return res;
     }
 
-    public Dancer searchAndRemoveMen(int height) {
-        Dancer copydResult;
+    public MyDancerNode searchAndRemoveMen(int height) {
+        MyDancerNode copydResult;
         res = null;
         diff = Integer.MAX_VALUE;
-        Dancer back = searchAndRemoveMen(this.root, height);
+        MyDancerNode back = searchAndRemoveMen(this.root, height);
         if (back != null) {
-            copydResult = new Dancer(back);
+            copydResult = new MyDancerNode(back);
 
         } else {
             copydResult = back;
         }
         if (deletedElementRoot != null) {
-            deletedElementRoot.getEqualHeightDancers().remove(back);
+            deletedElementRoot.getEqualHeightMyDancerNodes().remove(back);
         }
         if (res != null) {
             //pane lapsed listist tagasi kustutamisel
-            Dancer node = new Dancer();
-            List<Dancer> dancers = res.getEqualHeightDancers();
+            MyDancerNode node = new MyDancerNode();
+            List<MyDancerNode> myDancerNodes = res.getEqualHeightMyDancerNodes();
 
-            if (dancers != null) {
+            if (myDancerNodes != null) {
                 removeFoundNode(res);
-                for (int i = 0; i < dancers.size(); i++) {
-                    Dancer d = dancers.get(i);
+                for (int i = 0; i < myDancerNodes.size(); i++) {
+                    MyDancerNode d = myDancerNodes.get(i);
                     if (d.isMale()) {
                         node.replace(d);
-                        dancers.remove(d);
+                        myDancerNodes.remove(d);
                         break;
                     }
 
                     if (node.getHeight() == 0) {
-                        Dancer dd = dancers.get(0);
+                        MyDancerNode dd = myDancerNodes.get(0);
                         node.replace(dd);
-                        dancers.remove(dd);
+                        myDancerNodes.remove(dd);
                     }
-                    List<Dancer> dancers1 = new ArrayList<>();
-                    for (Dancer dancer : dancers) {
-                        dancers1.add(dancer);
+                    List<MyDancerNode> dancers1 = new ArrayList<>();
+                    for (MyDancerNode myDancerNode : myDancerNodes) {
+                        dancers1.add(myDancerNode);
                     }
-                    node.setEqualHeightDancers(dancers1);
+                    node.setEqualHeightMyDancerNodes(dancers1);
                     insert(node);
                 }
 
@@ -296,44 +296,44 @@ public class Tree {
         return copydResult;
     }
 
-    public Dancer searchAndRemoveMen(Dancer dancer, int femaleHeight) {
-        if (dancer == null) {
+    public MyDancerNode searchAndRemoveMen(MyDancerNode myDancerNode, int femaleHeight) {
+        if (myDancerNode == null) {
             return res;
         }
 
         //find shortest man, that is taller than woman
-        if (dancer.getHeight() > femaleHeight) {
-            if (!dancer.isMale()) {
+        if (myDancerNode.getHeight() > femaleHeight) {
+            if (!myDancerNode.isMale()) {
                 //System.out.println("vaata tema listist mehi");
                 try {
-                    List<Dancer> dancers = dancer.getEqualHeightDancers();
-                    for (Dancer d : dancers) {
+                    List<MyDancerNode> myDancerNodes = myDancerNode.getEqualHeightMyDancerNodes();
+                    for (MyDancerNode d : myDancerNodes) {
                         int newDiff = Math.abs(d.getHeight() - femaleHeight);
                         if (d.isMale() && newDiff < diff && newDiff != 0) {
-                            deletedElementRoot = dancer;
+                            deletedElementRoot = myDancerNode;
                             res = d;
                             diff = newDiff;
                         }
                     }
                 } catch (Exception e) {
-                    //return searchAndRemoveWomen(dancer.right, femaleHeight); //?? meibi
+                    //return searchAndRemoveWomen(myDancerNode.right, femaleHeight); //?? meibi
                 }
 
             } else {
-                int newDiff = Math.abs(dancer.getHeight() - femaleHeight);
+                int newDiff = Math.abs(myDancerNode.getHeight() - femaleHeight);
                 if (newDiff < diff && newDiff != 0) {
-                    res = dancer;
+                    res = myDancerNode;
                     diff = newDiff;
                 }
             }
 
 
-            return searchAndRemoveMen(dancer.left, femaleHeight);
+            return searchAndRemoveMen(myDancerNode.left, femaleHeight);
 
             //find shortest man, that is taller than woman
-        } else if (dancer.getHeight() <= femaleHeight) {
+        } else if (myDancerNode.getHeight() <= femaleHeight) {
 
-            return searchAndRemoveMen(dancer.right, femaleHeight);
+            return searchAndRemoveMen(myDancerNode.right, femaleHeight);
 
         }
 
@@ -345,35 +345,35 @@ public class Tree {
     /**
      * Removes a node from a AVL-Tree, while balancing will be done if necessary.
      *
-     * @param dancer The node to be removed.
+     * @param myDancerNode The node to be removed.
      */
-    public void removeFoundNode(Dancer dancer) {
-        Dancer lastElement;
+    public void removeFoundNode(MyDancerNode myDancerNode) {
+        MyDancerNode lastElement;
         // at least one child of q, q will be removed directly
-        if (dancer.left == null || dancer.right == null) {
+        if (myDancerNode.left == null || myDancerNode.right == null) {
             // the root is deleted
-            if (dancer.parent == null) {
-                if (!dancer.isInList()) {
-                    if (dancer.left != null) {
-                        this.root = dancer.left;
-                    } else if (dancer.right != null) {
-                        this.root = dancer.right;
+            if (myDancerNode.parent == null) {
+                if (!myDancerNode.isInList()) {
+                    if (myDancerNode.left != null) {
+                        this.root = myDancerNode.left;
+                    } else if (myDancerNode.right != null) {
+                        this.root = myDancerNode.right;
                     } else {
                         this.root = null;
 
                     }
                 }
-                dancer = null;
+                myDancerNode = null;
                 return;
             }
-            lastElement = dancer;
+            lastElement = myDancerNode;
         } else {
             // q has two children --> will be replaced by successor
-            lastElement = successor(dancer);
-            dancer.height = lastElement.height;
+            lastElement = successor(myDancerNode);
+            myDancerNode.height = lastElement.height;
         }
 
-        Dancer p;
+        MyDancerNode p;
         if (lastElement.left != null) {
             p = lastElement.left;
         } else {
@@ -404,9 +404,9 @@ public class Tree {
      * @param n The node for the rotation.
      * @return The root of the rotated tree.
      */
-    public Dancer rotateLeft(Dancer n) {
+    public MyDancerNode rotateLeft(MyDancerNode n) {
 
-        Dancer v = n.right;
+        MyDancerNode v = n.right;
         v.parent = n.parent;
 
         n.right = v.left;
@@ -438,9 +438,9 @@ public class Tree {
      * @param n The node for the rotation
      * @return The root of the new rotated tree.
      */
-    public Dancer rotateRight(Dancer n) {
+    public MyDancerNode rotateRight(MyDancerNode n) {
 
-        Dancer v = n.left;
+        MyDancerNode v = n.left;
         v.parent = n.parent;
 
         n.left = v.right;
@@ -471,7 +471,7 @@ public class Tree {
      * @param u The node for the rotation.
      * @return The root after the double rotation.
      */
-    public Dancer doubleRotateLeftRight(Dancer u) {
+    public MyDancerNode doubleRotateLeftRight(MyDancerNode u) {
         u.left = rotateLeft(u.left);
         return rotateRight(u);
     }
@@ -480,7 +480,7 @@ public class Tree {
      * @param u The node for the rotation.
      * @return The root after the double rotation.
      */
-    public Dancer doubleRotateRightLeft(Dancer u) {
+    public MyDancerNode doubleRotateRightLeft(MyDancerNode u) {
         u.right = rotateRight(u.right);
         return rotateLeft(u);
     }
@@ -491,15 +491,15 @@ public class Tree {
      * @param q The predecessor.
      * @return The successor of node q.
      */
-    public Dancer successor(Dancer q) {
+    public MyDancerNode successor(MyDancerNode q) {
         if (q.right != null) {
-            Dancer r = q.right;
+            MyDancerNode r = q.right;
             while (r.left != null) {
                 r = r.left;
             }
             return r;
         } else {
-            Dancer p = q.parent;
+            MyDancerNode p = q.parent;
             while (p != null && q == p.right) {
                 q = p;
                 p = q.parent;
@@ -514,7 +514,7 @@ public class Tree {
      * @param cur
      * @return The height of a node (-1, if node is not existent eg. NULL).
      */
-    private int height(Dancer cur) {
+    private int height(MyDancerNode cur) {
         if (cur == null) {
             return -1;
         }
@@ -545,7 +545,7 @@ public class Tree {
      *
      * @param n The node to write information about.
      */
-    public String debug(Dancer n) {
+    public String debug(MyDancerNode n) {
         int l = 0;
         int r = 0;
         int p = 0;
@@ -576,7 +576,7 @@ public class Tree {
         return res;
     }
 
-    private void setBalance(Dancer cur) {
+    private void setBalance(MyDancerNode cur) {
         cur.balance = height(cur.right) - height(cur.left);
     }
 
@@ -585,8 +585,8 @@ public class Tree {
      *
      * @return A Array-List of the tree in inorder traversal.
      */
-    final protected List<Dancer> inorder() {
-        ArrayList<Dancer> ret = new ArrayList<Dancer>();
+    final protected List<IDancer> inorder() {
+        ArrayList<IDancer> ret = new ArrayList<>();
         inorder(root, ret);
         return ret;
     }
@@ -597,18 +597,18 @@ public class Tree {
      * @param n  The current node.
      * @param io The list to save the inorder traversal.
      */
-    final protected void inorder(Dancer n, ArrayList<Dancer> io) {
+    final protected void inorder(MyDancerNode n, ArrayList<IDancer> io) {
         if (n == null) {
             return;
         }
         inorder(n.left, io);
-        io.add(n);
+        io.add(n.getOriginalIDancer());
 
         try {
-            List<Dancer> dancers = n.getEqualHeightDancers();
-            if (dancers.size() > 0) {
-                for (Dancer d : dancers) {
-                    io.add(d);
+            List<MyDancerNode> myDancerNodes = n.getEqualHeightMyDancerNodes();
+            if (myDancerNodes.size() > 0) {
+                for (MyDancerNode d : myDancerNodes) {
+                    io.add(d.getOriginalIDancer());
                 }
             }
 

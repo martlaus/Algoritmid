@@ -17,6 +17,7 @@
         <JAVADOC />
         <SOURCES>
           <root url="jar://$USER_HOME$/.ideaLibSources/junit-4.11-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ideaLibSources/hamcrest-core-1.3-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

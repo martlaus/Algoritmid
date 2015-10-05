@@ -7,39 +7,39 @@ public class Dancers implements IDancers {
 
     public Tree avlTree = new Tree();
 
-//    public Tree getAvlTree() {
-//        return avlTree;
-//    }
-//
-//    public void addDancer(Dancer d) {
-//        avlTree.insert(d);
-//    }
+    public Tree getAvlTree() {
+        return avlTree;
+    }
+
+    public void addDancer(MyDancerNode d) {
+        avlTree.insert(d);
+    }
 
     @Override
     public SimpleEntry<IDancer, IDancer> findPartnerFor(IDancer searcher) {
         if (searcher == null) {
             throw new IllegalArgumentException();
         }
-        Dancer d = (Dancer) searcher;
+        MyDancerNode d = new MyDancerNode(searcher.getID(), searcher.getHeight(), searcher.isMale());
         d.setOriginalIDancer(searcher);
 
         if (searcher.isMale()) {
-            Dancer woman = avlTree.searchAndRemoveWomen(d.getHeight());
+            MyDancerNode woman = avlTree.searchAndRemoveWomen(d.getHeight());
             if (woman == null) {
                 avlTree.insert(d);
             } else {
-                IDancer temp = ((Dancer) searcher).getOriginalIDancer();
+                IDancer temp = ((MyDancerNode) searcher).getOriginalIDancer();
 
                 return new SimpleEntry<>(temp, woman.getOriginalIDancer());
             }
 
         } else {
-            Dancer male = avlTree.searchAndRemoveMen(searcher.getHeight());
+            MyDancerNode male = avlTree.searchAndRemoveMen(searcher.getHeight());
             if (male == null) {
 
                 avlTree.insert(d);
             } else {
-                IDancer temp = ((Dancer) searcher).getOriginalIDancer();
+                IDancer temp = ((MyDancerNode) searcher).getOriginalIDancer();
 
                 return new SimpleEntry<>(temp, male.getOriginalIDancer());
             }
@@ -50,16 +50,16 @@ public class Dancers implements IDancers {
 
     @Override
     public List<IDancer> returnWaitingList() {
-        return (List<IDancer>) (List<?>) avlTree.inorder();
+        return avlTree.inorder();
 
     }
 
-//    @Override
-//    public String toString() {
-//        String res = "\n";
-//        for (IDancer d : returnWaitingList()) {
-//            res += avlTree.debug((Dancer) d);
-//        }
-//        return res;
-//    }
+    @Override
+    public String toString() {
+        String res = "\n";
+        for (IDancer d : returnWaitingList()) {
+            res += avlTree.debug((MyDancerNode) d);
+        }
+        return res;
+    }
 }

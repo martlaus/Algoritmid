@@ -8,8 +8,8 @@ import java.util.Comparator;
 public class MyComparator implements Comparator<IDancer> {
     @Override
     public int compare(IDancer o1, IDancer o2) {
-        Dancer d1 = (Dancer) o1;
-        Dancer d2 = (Dancer) o2;
+        MyDancerNode d1 = (MyDancerNode) o1;
+        MyDancerNode d2 = (MyDancerNode) o2;
         return d1.compareTo(d2);
     }
 }
