@@ -7,9 +7,9 @@ public class Dancers implements IDancers {
 
     public Tree avlTree = new Tree();
 
-    public Tree getAvlTree() {
-        return avlTree;
-    }
+//    public Tree getAvlTree() {
+//        return avlTree;
+//    }
 
     public void addDancer(MyDancerNode d) {
         avlTree.insert(d);
@@ -52,12 +52,12 @@ public class Dancers implements IDancers {
 
     }
 
-    @Override
-    public String toString() {
-        String res = "\n";
-        for (IDancer d : returnWaitingList()) {
-            res += avlTree.debug((MyDancerNode) d);
-        }
-        return res;
-    }
+//    @Override
+//    public String toString() {
+//        String res = "\n";
+//        for (IDancer d : returnWaitingList()) {
+//            res += avlTree.debug((MyDancerNode) d);
+//        }
+//        return res;
+//    }
 }

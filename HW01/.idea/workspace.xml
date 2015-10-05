@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="caf669c8-3bc6-4d3a-8884-d237919f0734" name="Default" comment="update">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dancers/Dancers.java" afterPath="$PROJECT_DIR$/src/dancers/Dancers.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dancers/MyDancerNode.java" afterPath="$PROJECT_DIR$/src/dancers/MyDancerNode.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HW1.iws" />
@@ -50,11 +51,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tree.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Tree.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dancers/Tree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.3548386">
-              <caret line="607" column="0" selection-start-line="607" selection-start-column="0" selection-end-line="607" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.33333334">
+              <caret line="115" column="24" selection-start-line="115" selection-start-column="14" selection-end-line="115" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dancers/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,8 +78,8 @@
       <file leaf-file-name="MyDancerNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dancers/MyDancerNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="67.354836">
-              <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+            <state vertical-scroll-proportion="-9.67742">
+              <caret line="166" column="7" selection-start-line="163" selection-start-column="6" selection-end-line="166" selection-end-column="7" />
               <folding>
                 <element signature="e#1582#1583#0" expanded="true" />
                 <element signature="e#1620#1621#0" expanded="true" />
@@ -86,18 +99,16 @@
                 <element signature="e#3469#3470#0" expanded="true" />
                 <element signature="e#3519#3520#0" expanded="true" />
                 <element signature="e#3555#3556#0" expanded="true" />
-                <element signature="e#3876#3877#0" expanded="true" />
-                <element signature="e#3972#3973#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dancers.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Dancers.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dancers/Dancers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7157895">
-              <caret line="41" column="53" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="7" selection-start-line="9" selection-start-column="6" selection-end-line="11" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -138,9 +149,9 @@
         <option value="$PROJECT_DIR$/src/dancers/Dancer.java" />
         <option value="$PROJECT_DIR$/src/dancers/Tree.java" />
         <option value="$PROJECT_DIR$/src/myTest/Testing.java" />
-        <option value="$PROJECT_DIR$/src/dancers/MyDancerNode.java" />
         <option value="$PROJECT_DIR$/src/myTest/MyDancersTests.java" />
         <option value="$PROJECT_DIR$/src/dancers/Dancers.java" />
+        <option value="$PROJECT_DIR$/src/dancers/MyDancerNode.java" />
       </list>
     </option>
   </component>
@@ -672,7 +683,7 @@
       <option name="number" value="Default" />
       <updated>1443811068880</updated>
       <workItem from="1443811071942" duration="19432000" />
-      <workItem from="1443966997134" duration="78080000" />
+      <workItem from="1443966997134" duration="78252000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1443970279739</created>
@@ -770,11 +781,17 @@
       <option name="project" value="LOCAL" />
       <updated>1444075456324</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="update">
+      <created>1444075621081</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1444075621081</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97512000" />
+    <option name="totallyTimeSpent" value="97684000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -964,8 +981,6 @@
             <element signature="e#3469#3470#0" expanded="true" />
             <element signature="e#3519#3520#0" expanded="true" />
             <element signature="e#3555#3556#0" expanded="true" />
-            <element signature="e#3876#3877#0" expanded="true" />
-            <element signature="e#3972#3973#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1056,16 +1071,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dancers/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5520995">
-          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/IllegalArgumentException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33281493">
@@ -1117,20 +1122,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dancers/Tree.java">
+    <entry file="file://$PROJECT_DIR$/src/myTest/MyDancersTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.3548386">
-          <caret line="607" column="0" selection-start-line="607" selection-start-column="0" selection-end-line="607" selection-end-column="0" />
+        <state vertical-scroll-proportion="-2.516129">
+          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/dancers/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dancers/Dancers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="7" selection-start-line="9" selection-start-column="6" selection-end-line="11" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/dancers/MyDancerNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="67.354836">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        <state vertical-scroll-proportion="-9.67742">
+          <caret line="166" column="7" selection-start-line="163" selection-start-column="6" selection-end-line="166" selection-end-column="7" />
           <folding>
             <element signature="e#1582#1583#0" expanded="true" />
             <element signature="e#1620#1621#0" expanded="true" />
@@ -1150,27 +1173,17 @@
             <element signature="e#3469#3470#0" expanded="true" />
             <element signature="e#3519#3520#0" expanded="true" />
             <element signature="e#3555#3556#0" expanded="true" />
-            <element signature="e#3876#3877#0" expanded="true" />
-            <element signature="e#3972#3973#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/myTest/MyDancersTests.java">
+    <entry file="file://$PROJECT_DIR$/src/dancers/Tree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.516129">
-          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="115" column="24" selection-start-line="115" selection-start-column="14" selection-end-line="115" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dancers/Dancers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7157895">
-          <caret line="41" column="53" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>

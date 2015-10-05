@@ -161,8 +161,8 @@ public class MyDancerNode implements IDancer, Comparable<MyDancerNode> {
     }
 
 
-    @Override
-    public String toString() {
-        return "{ " + this.getID() + " " + this.isMale() + " " + this.getHeight() + " }";
-    }
+//    @Override
+//    public String toString() {
+//        return "{ " + this.getID() + " " + this.isMale() + " " + this.getHeight() + " }";
+//    }
 }
