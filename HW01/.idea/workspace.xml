@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="caf669c8-3bc6-4d3a-8884-d237919f0734" name="Default" comment="update">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dancers/Dancer.java" afterPath="$PROJECT_DIR$/src/dancers/Dancer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HW1/dancers/Tree.class" afterPath="$PROJECT_DIR$/out/production/HW1/dancers/Tree.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dancers/Dancers.java" afterPath="$PROJECT_DIR$/src/dancers/Dancers.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/myTest/DancersAdvancedTests.java" afterPath="$PROJECT_DIR$/src/myTest/DancersAdvancedTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/myTest/MyDancersTests.java" afterPath="$PROJECT_DIR$/src/myTest/MyDancersTests.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dancers/Tree.java" afterPath="$PROJECT_DIR$/src/dancers/Tree.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -34,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/src/myTest/MyDancersTests.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="77" column="9" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
+              <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -42,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DancersAdvancedTests.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DancersAdvancedTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/myTest/DancersAdvancedTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15168539">
-              <caret line="156" column="32" selection-start-line="156" selection-start-column="32" selection-end-line="156" selection-end-column="32" />
+            <state vertical-scroll-proportion="-1.032258">
+              <caret line="307" column="36" selection-start-line="307" selection-start-column="36" selection-end-line="307" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -57,24 +56,24 @@
       <file leaf-file-name="Tree.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dancers/Tree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="312" column="89" selection-start-line="312" selection-start-column="89" selection-end-line="312" selection-end-column="89" />
+            <state vertical-scroll-proportion="-3.483871">
+              <caret line="306" column="18" selection-start-line="306" selection-start-column="18" selection-end-line="306" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#17017#17025#0" expanded="true" />
+                <element signature="e#17655#17663#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dancers.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Dancers.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dancers/Dancers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.3548386">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state vertical-scroll-proportion="-1.8203592">
+              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
               <folding>
-                <element signature="e#266#267#0" expanded="true" />
-                <element signature="e#299#300#0" expanded="true" />
+                <element signature="e#296#297#0" expanded="true" />
+                <element signature="e#329#330#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -86,11 +85,11 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
               <folding>
-                <element signature="e#1542#1543#0" expanded="true" />
-                <element signature="e#1580#1581#0" expanded="true" />
-                <element signature="e#1643#1644#0" expanded="true" />
-                <element signature="e#1697#1698#0" expanded="true" />
-                <element signature="e#2041#2042#0" expanded="true" />
+                <element signature="e#1543#1544#0" expanded="true" />
+                <element signature="e#1581#1582#0" expanded="true" />
+                <element signature="e#1644#1645#0" expanded="true" />
+                <element signature="e#1698#1699#0" expanded="true" />
+                <element signature="e#2042#2043#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -127,11 +126,11 @@
         <option value="$PROJECT_DIR$/src/test/DancersTests.java" />
         <option value="$PROJECT_DIR$/src/myTest/DancersTests.java" />
         <option value="$PROJECT_DIR$/src/dancers/Main.java" />
-        <option value="$PROJECT_DIR$/src/dancers/Dancers.java" />
         <option value="$PROJECT_DIR$/src/dancers/Dancer.java" />
         <option value="$PROJECT_DIR$/src/myTest/MyDancersTests.java" />
         <option value="$PROJECT_DIR$/src/dancers/Tree.java" />
         <option value="$PROJECT_DIR$/src/myTest/DancersAdvancedTests.java" />
+        <option value="$PROJECT_DIR$/src/dancers/Dancers.java" />
       </list>
     </option>
   </component>
@@ -241,8 +240,8 @@
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/P2MD5" />
   </component>
-  <component name="RunManager" selected="JUnit.DancersAdvancedTests.testManyWithSameHeight">
-    <configuration default="false" name="DancersAdvancedTests.testManyWithSameHeightOtherWay" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MyDancersTests">
+    <configuration default="false" name="MyDancersTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="myTest.*" />
@@ -253,8 +252,34 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="myTest" />
-      <option name="MAIN_CLASS_NAME" value="myTest.DancersAdvancedTests" />
-      <option name="METHOD_NAME" value="testManyWithSameHeightOtherWay" />
+      <option name="MAIN_CLASS_NAME" value="myTest.MyDancersTests" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="MyDancersTests.testWithWomen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="myTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="HW1" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="myTest" />
+      <option name="MAIN_CLASS_NAME" value="myTest.MyDancersTests" />
+      <option name="METHOD_NAME" value="testWithWomen" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -268,7 +293,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="DancersAdvancedTests.testManyWithSameHeight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="MyDancersTests.testOnlyMenDance" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="myTest.*" />
@@ -279,8 +304,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="myTest" />
-      <option name="MAIN_CLASS_NAME" value="myTest.DancersAdvancedTests" />
-      <option name="METHOD_NAME" value="testManyWithSameHeight" />
+      <option name="MAIN_CLASS_NAME" value="myTest.MyDancersTests" />
+      <option name="METHOD_NAME" value="testOnlyMenDance" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -294,7 +319,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="DancersAdvancedTests.testSinglePairFemaleVariation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="DancersAdvancedTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="myTest.*" />
@@ -306,8 +331,8 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="myTest" />
       <option name="MAIN_CLASS_NAME" value="myTest.DancersAdvancedTests" />
-      <option name="METHOD_NAME" value="testSinglePairFemaleVariation" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -320,7 +345,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="DancersAdvancedTests.testSinglePairMaleVariation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="DancersAdvancedTests.testLongLinearFindLastFemale" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="myTest.*" />
@@ -332,33 +357,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="myTest" />
       <option name="MAIN_CLASS_NAME" value="myTest.DancersAdvancedTests" />
-      <option name="METHOD_NAME" value="testSinglePairMaleVariation" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="DancersAdvancedTests.testFindPartnersMultiplePossibiliteisFemale" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="myTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="HW1" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="myTest" />
-      <option name="MAIN_CLASS_NAME" value="myTest.DancersAdvancedTests" />
-      <option name="METHOD_NAME" value="testFindPartnersMultiplePossibiliteisFemale" />
+      <option name="METHOD_NAME" value="testLongLinearFindLastFemale" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -635,19 +634,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.DancersAdvancedTests.testManyWithSameHeightOtherWay" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.DancersAdvancedTests.testManyWithSameHeight" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.DancersAdvancedTests.testSinglePairFemaleVariation" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.DancersAdvancedTests.testSinglePairMaleVariation" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.DancersAdvancedTests.testFindPartnersMultiplePossibiliteisFemale" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.MyDancersTests" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.MyDancersTests.testWithWomen" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.MyDancersTests.testOnlyMenDance" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.DancersAdvancedTests" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.DancersAdvancedTests.testLongLinearFindLastFemale" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.DancersAdvancedTests.testManyWithSameHeight" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.DancersAdvancedTests.testFindPartnersMultiplePossibiliteisFemale" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.DancersAdvancedTests.testSinglePairMaleVariation" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.DancersAdvancedTests.testSinglePairFemaleVariation" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.DancersAdvancedTests.testManyWithSameHeightOtherWay" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.MyDancersTests" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.DancersAdvancedTests" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DancersAdvancedTests.testLongLinearFindLastFemale" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.MyDancersTests.testWithWomen" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.MyDancersTests.testOnlyMenDance" />
       </list>
     </recent_temporary>
   </component>
@@ -663,7 +662,7 @@
       <option name="number" value="Default" />
       <updated>1443811068880</updated>
       <workItem from="1443811071942" duration="19432000" />
-      <workItem from="1443966997134" duration="68315000" />
+      <workItem from="1443966997134" duration="74132000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1443970279739</created>
@@ -719,11 +718,23 @@
       <option name="project" value="LOCAL" />
       <updated>1444052769186</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update">
+      <created>1444065853634</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1444065853634</updated>
+    </task>
+    <task id="LOCAL-00011" summary="update">
+      <created>1444069967068</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1444069967068</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87747000" />
+    <option name="totallyTimeSpent" value="93564000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -746,7 +757,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42644873" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6612184" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986626" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18181819" sideWeight="0.49280575" order="0" side_tool="false" content_ui="combo" />
@@ -819,67 +830,31 @@
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/myTest/MyDancersTests.java</url>
-          <line>30</line>
-          <properties />
-          <option name="timeStamp" value="110" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/dancers/Tree.java</url>
-          <line>300</line>
+          <line>306</line>
           <properties />
           <option name="timeStamp" value="122" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/myTest/MyDancersTests.java</url>
-          <line>130</line>
-          <properties />
-          <option name="timeStamp" value="142" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/myTest/MyDancersTests.java</url>
-          <line>98</line>
-          <properties />
-          <option name="timeStamp" value="150" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/dancers/Dancers.java</url>
-          <line>41</line>
-          <properties />
-          <option name="timeStamp" value="158" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/myTest/DancersAdvancedTests.java</url>
-          <line>223</line>
-          <properties />
-          <option name="timeStamp" value="165" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/myTest/MyDancersTests.java</url>
-          <line>68</line>
-          <properties />
-          <option name="timeStamp" value="171" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/dancers/Dancers.java</url>
-          <line>31</line>
-          <properties />
-          <option name="timeStamp" value="172" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/dancers/Tree.java</url>
-          <line>154</line>
+          <line>355</line>
           <properties />
-          <option name="timeStamp" value="173" />
+          <option name="timeStamp" value="180" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/myTest/MyDancersTests.java</url>
+          <line>125</line>
+          <properties />
+          <option name="timeStamp" value="181" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/dancers/Tree.java</url>
           <line>223</line>
           <properties />
-          <option name="timeStamp" value="174" />
+          <option name="timeStamp" value="182" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="175" />
+      <option name="time" value="183" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -889,6 +864,7 @@
         <watch expression="io.size()" language="JAVA" custom="" />
         <watch expression="res" language="JAVA" custom="" />
         <watch expression="originalDancer" language="JAVA" custom="" />
+        <watch expression="dancers.returnWaitingList().size()" language="JAVA" custom="" />
       </configuration>
     </watches-manager>
   </component>
@@ -902,8 +878,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="46" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
           <folding>
-            <element signature="e#266#267#0" expanded="true" />
-            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#296#297#0" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -914,7 +890,7 @@
           <caret line="409" column="0" selection-start-line="409" selection-start-column="0" selection-end-line="409" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#17017#17025#0" expanded="true" />
+            <element signature="e#17655#17663#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -934,11 +910,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1542#1543#0" expanded="true" />
-            <element signature="e#1580#1581#0" expanded="true" />
-            <element signature="e#1643#1644#0" expanded="true" />
-            <element signature="e#1697#1698#0" expanded="true" />
-            <element signature="e#2041#2042#0" expanded="true" />
+            <element signature="e#1543#1544#0" expanded="true" />
+            <element signature="e#1581#1582#0" expanded="true" />
+            <element signature="e#1644#1645#0" expanded="true" />
+            <element signature="e#1698#1699#0" expanded="true" />
+            <element signature="e#2042#2043#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -963,14 +939,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/AbstractMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63773584">
-          <caret line="583" column="24" selection-start-line="583" selection-start-column="24" selection-end-line="583" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1052,22 +1020,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding>
-            <element signature="e#1542#1543#0" expanded="true" />
-            <element signature="e#1580#1581#0" expanded="true" />
-            <element signature="e#1643#1644#0" expanded="true" />
-            <element signature="e#1697#1698#0" expanded="true" />
-            <element signature="e#2041#2042#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dancers/Dancers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.3548386">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="e#266#267#0" expanded="true" />
-            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#1543#1544#0" expanded="true" />
+            <element signature="e#1581#1582#0" expanded="true" />
+            <element signature="e#1644#1645#0" expanded="true" />
+            <element signature="e#1698#1699#0" expanded="true" />
+            <element signature="e#2042#2043#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1075,7 +1032,7 @@
     <entry file="file://$PROJECT_DIR$/src/myTest/MyDancersTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="77" column="9" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
+          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1084,21 +1041,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dancers/Tree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="312" column="89" selection-start-line="312" selection-start-column="89" selection-end-line="312" selection-end-column="89" />
+        <state vertical-scroll-proportion="-3.483871">
+          <caret line="306" column="18" selection-start-line="306" selection-start-column="18" selection-end-line="306" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#17017#17025#0" expanded="true" />
+            <element signature="e#17655#17663#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/AbstractMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="598" column="15" selection-start-line="598" selection-start-column="15" selection-end-line="598" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/myTest/DancersAdvancedTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15168539">
-          <caret line="156" column="32" selection-start-line="156" selection-start-column="32" selection-end-line="156" selection-end-column="32" />
+        <state vertical-scroll-proportion="-1.032258">
+          <caret line="307" column="36" selection-start-line="307" selection-start-column="36" selection-end-line="307" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dancers/Dancers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.8203592">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+          <folding>
+            <element signature="e#296#297#0" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
           </folding>
         </state>
       </provider>

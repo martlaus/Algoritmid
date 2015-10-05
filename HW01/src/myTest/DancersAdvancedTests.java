@@ -308,13 +308,13 @@ public class DancersAdvancedTests {
     public void testLongLinearFindLastFemale() throws Exception {
         Dancers dancers = new Dancers();
 
-        for (int i = 0; i <= 1000000; i++) {
+        for (int i = 0; i <= 10000; i++) {
             Dancer dancer = new Dancer(i, i, false);
             assertNull(dancers.findPartnerFor(dancer));
         }
         // First one should be null
         Dancer dancer2 = new Dancer(1000001, 1000001, true);
 
-        assertTrue(dancers.findPartnerFor(dancer2).getValue().getHeight() == 1000000);
+        assertTrue(dancers.findPartnerFor(dancer2).getValue().getHeight() == 10000);
     }
 }

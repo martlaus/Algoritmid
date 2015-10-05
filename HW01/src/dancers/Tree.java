@@ -113,9 +113,9 @@ public class Tree {
         if (cur.parent != null) {
             recursiveBalance(cur.parent);
         } else {
-            System.out.println(cur);
+            //System.out.println(cur);
             this.root = cur;
-            System.out.println("------------ Balancing finished " + root.isMale() + " " + root.getHeight() + " ----------------");
+            // System.out.println("------------ Balancing finished " + root.isMale() + " " + root.getHeight() + " ----------------");
         }
     }
 
@@ -209,7 +209,7 @@ public class Tree {
             //find tallest woman, that is shorter than man from right
         } else if (dancer.getHeight() < maleHeight) {
             if (dancer.isMale()) {
-                System.out.println("vaata tema listist naisi");
+                //System.out.println("vaata tema listist naisi");
                 try {
                     List<Dancer> dancers = dancer.getEqualHeightDancers();
                     for (Dancer d : dancers) {
@@ -304,7 +304,7 @@ public class Tree {
         //find shortest man, that is taller than woman
         if (dancer.getHeight() > femaleHeight) {
             if (!dancer.isMale()) {
-                System.out.println("vaata tema listist mehi");
+                //System.out.println("vaata tema listist mehi");
                 try {
                     List<Dancer> dancers = dancer.getEqualHeightDancers();
                     for (Dancer d : dancers) {
