@@ -81,11 +81,11 @@ public class MyDancersTests {
 
         assertEquals(9, dancers.returnWaitingList().size());
 
-        System.out.println(dancers.findPartnerFor(new Dancer(1, true, 150)));
+        //System.out.println(dancers.findPartnerFor(new Dancer(1, true, 150)));
 
         assertEquals(10, dancers.returnWaitingList().size());
 
-        System.out.println(dancers.findPartnerFor(new Dancer(1, true, 250)));
+        //System.out.println(dancers.findPartnerFor(new Dancer(1, true, 250)));
 
         assertEquals(11, dancers.returnWaitingList().size());
     }

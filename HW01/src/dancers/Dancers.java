@@ -1,11 +1,9 @@
 package dancers;
 
 import java.util.AbstractMap.SimpleEntry;
-import java.util.Collections;
 import java.util.List;
 
 public class Dancers implements IDancers {
-
 
     public Tree avlTree = new Tree();
 
@@ -28,12 +26,8 @@ public class Dancers implements IDancers {
                 avlTree.insert(d);
             } else {
                 IDancer temp = ((Dancer) searcher).getOriginalIDancer();
-                if (temp != null) {
-                    return new SimpleEntry<>(temp, woman.getOriginalIDancer());
 
-                } else {
-                    return new SimpleEntry<>(searcher, woman.getOriginalIDancer());
-                }
+                return new SimpleEntry<>(temp, woman.getOriginalIDancer());
             }
 
         } else {
@@ -41,16 +35,10 @@ public class Dancers implements IDancers {
             if (male == null) {
 
                 avlTree.insert(d);
-
             } else {
                 IDancer temp = ((Dancer) searcher).getOriginalIDancer();
-                if (temp != null) {
-                    return new SimpleEntry<>(temp, male.getOriginalIDancer());
 
-                } else {
-                    return new SimpleEntry<>(searcher, male.getOriginalIDancer());
-
-                }
+                return new SimpleEntry<>(temp, male.getOriginalIDancer());
             }
         }
 
@@ -59,18 +47,7 @@ public class Dancers implements IDancers {
 
     @Override
     public List<IDancer> returnWaitingList() {
-        List<IDancer> list = (List<IDancer>) (List<?>) avlTree.inorder();
-        System.out.println("PRESORTED :");
-
-        for (IDancer d : list) {
-            System.out.println(d.toString());
-        }
-        Collections.sort(list, new MyComparator()); //saab ära v6tta vb
-        System.out.println("SORTED :");
-        for (IDancer d : list) {
-            System.out.println(d.toString());
-        }
-        return list;
+        return (List<IDancer>) (List<?>) avlTree.inorder();
 
     }
 
@@ -82,6 +59,4 @@ public class Dancers implements IDancers {
         }
         return res;
     }
-
-
 }
