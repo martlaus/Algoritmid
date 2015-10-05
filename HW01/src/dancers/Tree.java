@@ -8,9 +8,10 @@ import java.util.List;
  */
 public class Tree {
 
-    public Dancer root; // the root node
+    protected Dancer root; // the root node
     protected int diff;
     protected Dancer res;
+    Dancer deletedElementRoot = null;
 
     public void insert(Dancer d) {
         // create new node
@@ -21,7 +22,7 @@ public class Tree {
     /**
      * Recursive method to insert a node into a tree.
      *
-     * @param root The node currently compared, usually you start with the root.
+     * @param root      The node currently compared, usually you start with the root.
      * @param newDancer The node to be inserted.
      */
     public void insertAVL(Dancer root, Dancer newDancer) {
@@ -31,7 +32,7 @@ public class Tree {
         } else {
 
             // If compare node is smaller, continue with the left node
-            if (newDancer.key < root.key) {
+            if (newDancer.height < root.height) {
                 if (root.left == null) {
                     root.left = newDancer;
                     newDancer.parent = root;
@@ -39,11 +40,12 @@ public class Tree {
                     // Node is inserted now, continue checking the balance
                     recursiveBalance(root);
                 } else {
+
                     insertAVL(root.left, newDancer);
                 }
 
-                //if new node is greater or equal add to right
-            } else if (newDancer.key >= root.key) {
+                //if new node is greater add to right
+            } else if (newDancer.height > root.height) {
                 if (root.right == null) {
                     root.right = newDancer;
                     newDancer.parent = root;
@@ -53,8 +55,29 @@ public class Tree {
                 } else {
                     insertAVL(root.right, newDancer);
                 }
-            } else {
-                // do nothing: This node already exists
+
+                //if they are equal, the male should be first
+            } else if (newDancer.height == root.height) {
+                //change male to first
+                if (!root.isMale() && newDancer.isMale()) {
+                    Dancer temp = new Dancer();
+                    temp.replace(root);
+                    temp.setEqualHeightDancers(root.getEqualHeightDancers());
+                    root.replace(newDancer);
+
+                    List<Dancer> dancers = temp.getEqualHeightDancers();
+                    if (dancers == null) dancers = new ArrayList<>();
+                    temp.setInList(true);
+                    dancers.add(temp);
+                    root.setEqualHeightDancers(dancers);
+                } else {
+                    List<Dancer> dancers = root.getEqualHeightDancers();
+                    if (dancers == null) dancers = new ArrayList<>();
+                    newDancer.setInList(true);
+                    dancers.add(newDancer);
+                    root.setEqualHeightDancers(dancers);
+                }
+
             }
         }
     }
@@ -90,8 +113,9 @@ public class Tree {
         if (cur.parent != null) {
             recursiveBalance(cur.parent);
         } else {
+            System.out.println(cur);
             this.root = cur;
-            System.out.println("------------ Balancing finished " + root.isMale() + " " + root.getKey() + " ----------------");
+            System.out.println("------------ Balancing finished " + root.isMale() + " " + root.getHeight() + " ----------------");
         }
     }
 
@@ -113,11 +137,11 @@ public class Tree {
         if (p == null) {
             return;
         } else {
-            if (p.key > q) {
+            if (p.height > q) {
                 removeAVL(p.left, q);
-            } else if (p.key < q) {
+            } else if (p.height < q) {
                 removeAVL(p.right, q);
-            } else if (p.key == q) {
+            } else if (p.height == q) {
                 // we found the node in the tree.. now lets go on!
                 removeFoundNode(p);
             }
@@ -125,11 +149,43 @@ public class Tree {
     }
 
     public Dancer searchAndRemoveWomen(int height) {
-        diff = 100000;
+        diff = Integer.MAX_VALUE;
         res = null;
         Dancer back = searchAndRemoveWomen(this.root, height);
+        if (deletedElementRoot != null) {
+            deletedElementRoot.getEqualHeightDancers().remove(back);
+        }
         if (res != null) {
-            removeFoundNode(res);
+            //pane lapsed listist tagasi kustutamisel
+            Dancer node = new Dancer();
+            List<Dancer> dancers = res.getEqualHeightDancers();
+            if (dancers != null) {
+                for (Dancer d : dancers) {
+                    if (d.isMale()) {
+                        node.replace(d);
+                        dancers.remove(d);
+                        break;
+                    }
+
+
+                    if (node.getHeight() == 0) {
+                        Dancer dd = dancers.get(0);
+                        node.replace(dd);
+                        dancers.remove(dd);
+                    }
+                    List<Dancer> dancers1 = new ArrayList<>();
+                    for (Dancer dancer : dancers) {
+                        dancers1.add(dancer);
+                    }
+                    node.setEqualHeightDancers(dancers1);
+                    removeFoundNode(res);
+                    insert(node);
+                }
+
+
+            } else {
+                removeFoundNode(res);
+            }
         }
         return back;
     }
@@ -139,85 +195,157 @@ public class Tree {
             return res;
         }
 
-        if (dancer.isMale()) {
-            return searchAndRemoveWomen(dancer.left, maleHeight);
-        }
-
         //find tallest woman, that is shorter than man from left
-        if (dancer.getKey() > maleHeight) {
+        if (dancer.getHeight() >= maleHeight) {
             return searchAndRemoveWomen(dancer.left, maleHeight);
 
             //find tallest woman, that is shorter than man from right
-        } else {
-            int newDiff = Math.abs(dancer.getKey() - maleHeight);
-            if (newDiff == 0) return searchAndRemoveWomen(dancer.left, maleHeight);
-            if (newDiff < diff) {
-                res = dancer;
-                diff = Math.abs(dancer.getKey() - maleHeight);
-            }
+        } else if (dancer.getHeight() < maleHeight) {
+            if (dancer.isMale()) {
+                System.out.println("vaata tema listist naisi");
+                try {
+                    List<Dancer> dancers = dancer.getEqualHeightDancers();
+                    for (Dancer d : dancers) {
+                        int newDiff = Math.abs(d.getHeight() - maleHeight);
+                        if (!d.isMale() && newDiff < diff && newDiff != 0) {
+                            deletedElementRoot = dancer;
+                            res = d;
+                            diff = newDiff;
+                        }
+                    }
+                } catch (Exception e) {
+                    //empty
+                }
 
-            return searchAndRemoveWomen(dancer.right, maleHeight);
+
+            } else {
+                int newDiff = Math.abs(dancer.getHeight() - maleHeight);
+                if (newDiff < diff && newDiff != 0) {
+                    res = dancer;
+                    diff = newDiff;
+                }
+            }
+            return searchAndRemoveWomen(dancer.left, maleHeight);
         }
 
-
+        return res;
     }
 
     public Dancer searchAndRemoveMen(int height) {
-        diff = 100000;
         res = null;
+        diff = Integer.MAX_VALUE;
         Dancer back = searchAndRemoveMen(this.root, height);
-        if (res != null) {
-            removeFoundNode(res);
+        if (deletedElementRoot != null) {
+            deletedElementRoot.getEqualHeightDancers().remove(back);
         }
-        return back;
+        if (res != null) {
+            //pane lapsed listist tagasi kustutamisel
+            Dancer node = new Dancer();
+            List<Dancer> dancers = res.getEqualHeightDancers();
 
+            removeFoundNode(res);
+
+
+            if (dancers != null) {
+                for (int i = 0; i < dancers.size(); i++) {
+                    Dancer d = dancers.get(i);
+                    if (d.isMale()) {
+                        node.replace(d);
+                        dancers.remove(d);
+                        break;
+                    }
+
+                    if (node.getHeight() == 0) {
+                        Dancer dd = dancers.get(0);
+                        node.replace(dd);
+                        dancers.remove(dd);
+                    }
+                    List<Dancer> dancers1 = new ArrayList<>();
+                    for (Dancer dancer : dancers) {
+                        dancers1.add(dancer);
+                    }
+                    node.setEqualHeightDancers(dancers1);
+                    insert(node);
+                }
+
+
+            } else {
+                removeFoundNode(res);
+
+            }
+        }
+
+        return back;
     }
 
     public Dancer searchAndRemoveMen(Dancer dancer, int femaleHeight) {
         if (dancer == null) {
             return res;
         }
-        if (!dancer.isMale()) {
-            return searchAndRemoveWomen(dancer.right, femaleHeight);
-        }
+
         //find shortest man, that is taller than woman
-        if (dancer.getKey() > femaleHeight) {
-            int newDiff = Math.abs(dancer.getKey() - femaleHeight);
-            if (newDiff < diff) {
-                res = dancer;
-                diff = Math.abs(dancer.getKey() - femaleHeight);
+        if (dancer.getHeight() > femaleHeight) {
+            if (!dancer.isMale()) {
+                System.out.println("vaata tema listist mehi");
+                try {
+                    List<Dancer> dancers = dancer.getEqualHeightDancers();
+                    for (Dancer d : dancers) {
+                        int newDiff = Math.abs(d.getHeight() - femaleHeight);
+                        if (d.isMale() && newDiff < diff && newDiff != 0) {
+                            deletedElementRoot = dancer;
+                            res = d;
+                            diff = newDiff;
+                        }
+                    }
+                } catch (Exception e) {
+                    //empty
+                }
+
+            } else {
+                int newDiff = Math.abs(dancer.getHeight() - femaleHeight);
+                if (newDiff < diff && newDiff != 0) {
+                    res = dancer;
+                    diff = newDiff;
+                }
             }
+
 
             return searchAndRemoveMen(dancer.left, femaleHeight);
 
             //find shortest man, that is taller than woman
-        } else {
+        } else if (dancer.getHeight() <= femaleHeight) {
 
             return searchAndRemoveMen(dancer.right, femaleHeight);
+
         }
+
+        return res;
+
 
     }
 
     /**
      * Removes a node from a AVL-Tree, while balancing will be done if necessary.
      *
-     * @param q The node to be removed.
+     * @param dancer The node to be removed.
      */
-    public void removeFoundNode(Dancer q) {
+    public void removeFoundNode(Dancer dancer) {
         Dancer r;
         // at least one child of q, q will be removed directly
-        if (q.left == null || q.right == null) {
+        if (dancer.left == null || dancer.right == null) {
             // the root is deleted
-            if (q.parent == null) {
-                this.root = null;
-                q = null;
+            if (dancer.parent == null) {
+                if (!dancer.isInList()) {
+                    this.root = null;
+                }
+                dancer = null;
                 return;
             }
-            r = q;
+            r = dancer;
         } else {
             // q has two children --> will be replaced by successor
-            r = successor(q);
-            q.key = r.key;
+            r = successor(dancer);
+            dancer.height = r.height;
         }
 
         Dancer p;
@@ -332,8 +460,6 @@ public class Tree {
         return rotateLeft(u);
     }
 
-/***************************** Helper Functions ************************************/
-
     /**
      * Returns the successor of a given node in the tree (search recursivly).
      *
@@ -400,13 +526,13 @@ public class Tree {
         int p = 0;
         if (n == null) return "";
         if (n.left != null) {
-            l = n.left.key;
+            l = n.left.height;
         }
         if (n.right != null) {
-            r = n.right.key;
+            r = n.right.height;
         }
         if (n.parent != null) {
-            p = n.parent.key;
+            p = n.parent.height;
         }
         String sex;
         if (n.isMale()) {
@@ -414,7 +540,7 @@ public class Tree {
         } else {
             sex = "female";
         }
-        String res = sex + " Left: " + l + " Key: " + n.key + " Right: " + r + " Parent: " + p + " Balance: " + n.balance + "\n";
+        String res = sex + " Left: " + l + " Key: " + n.height + " Right: " + r + " Parent: " + p + " Balance: " + n.balance + "\n";
 
         if (n.left != null) {
             debug(n.left);
@@ -452,6 +578,19 @@ public class Tree {
         }
         inorder(n.left, io);
         io.add(n);
+
+        try {
+            List<Dancer> dancers = n.getEqualHeightDancers();
+            if (dancers.size() > 0) {
+                for (Dancer d : dancers) {
+                    io.add(d);
+                }
+            }
+
+        } catch (Exception e) {
+            //no left element
+        }
+
         inorder(n.right, io);
     }
 }
