@@ -20,28 +20,26 @@ public class Dancers implements IDancers {
         if (searcher == null) {
             throw new IllegalArgumentException();
         }
-        MyDancerNode d = new MyDancerNode(searcher.getID(), searcher.getHeight(), searcher.isMale());
-        d.setOriginalIDancer(searcher);
+        MyDancerNode myDancerNode = new MyDancerNode(searcher.getID(), searcher.getHeight(), searcher.isMale());
+        myDancerNode.setOriginalIDancer(searcher);
 
         if (searcher.isMale()) {
-            MyDancerNode woman = avlTree.searchAndRemoveWomen(d.getHeight());
+            MyDancerNode woman = avlTree.searchAndRemoveWomen(myDancerNode.getHeight());
             if (woman == null) {
-                avlTree.insert(d);
+                avlTree.insert(myDancerNode);
             } else {
-                IDancer temp = ((MyDancerNode) searcher).getOriginalIDancer();
 
-                return new SimpleEntry<>(temp, woman.getOriginalIDancer());
+                return new SimpleEntry<>(myDancerNode, woman.getOriginalIDancer());
             }
 
         } else {
             MyDancerNode male = avlTree.searchAndRemoveMen(searcher.getHeight());
             if (male == null) {
 
-                avlTree.insert(d);
+                avlTree.insert(myDancerNode);
             } else {
-                IDancer temp = ((MyDancerNode) searcher).getOriginalIDancer();
 
-                return new SimpleEntry<>(temp, male.getOriginalIDancer());
+                return new SimpleEntry<>(myDancerNode, male.getOriginalIDancer());
             }
         }
 
