@@ -1,7 +1,6 @@
 package dancers;
 
 import java.util.AbstractMap;
-import java.util.List;
 
 /**
  * Created by mart on 4.10.15.
@@ -32,15 +31,15 @@ public class Main {
         System.out.println(dancers);
 
 
-        List<IDancer> list = dancers.returnWaitingList();
-        for (IDancer d : list) {
-//            System.out.println();
-//            System.out.println("---------------------------------------------------");
-
-            dancers.getAvlTree().debug((MyDancerNode) d);
-            System.out.println(d.isMale() + " tantsija " + d.getHeight());
-        }
-        System.out.println(list.size());
+//        List<IDancer> list = dancers.returnWaitingList();
+//        for (IDancer d : list) {
+////            System.out.println();
+////            System.out.println("---------------------------------------------------");
+//
+//            dancers.getAvlTree().debug((MyDancerNode) d);
+//            System.out.println(d.isMale() + " tantsija " + d.getHeight());
+//        }
+//        System.out.println(list.size());
 
 
     }

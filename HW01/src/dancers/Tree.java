@@ -3,9 +3,7 @@ package dancers;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * This class is the complete and tested implementation of an AVL-tree.
- */
+
 public class Tree {
 
     protected MyDancerNode root; // the root node
@@ -338,7 +336,6 @@ public class Tree {
         }
 
         return res;
-
 
     }
 

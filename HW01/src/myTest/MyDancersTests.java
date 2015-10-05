@@ -131,12 +131,4 @@ public class MyDancersTests {
 
     }
 
-//    // Testis
-//    import mySpecialDancer
-//
-//    MySpecialDancer a = new MySpecialDancer(x,y,z);
-//
-//    findParnter(a);
-//
-//    (MyAnotherDancer) a << fails or not?
 }
