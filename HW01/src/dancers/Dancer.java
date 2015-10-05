@@ -173,8 +173,8 @@ public class Dancer implements IDancer, Comparable<Dancer> {
 //        }
 //    }
 
-    @Override
-    public String toString() {
-        return "{ " + this.getID() + " " + this.isMale() + " " + this.getHeight() + " }";
-    }
+//    @Override
+//    public String toString() {
+//        return "{ " + this.getID() + " " + this.isMale() + " " + this.getHeight() + " }";
+//    }
 }

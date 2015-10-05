@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="caf669c8-3bc6-4d3a-8884-d237919f0734" name="Default" comment="update">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HW1/dancers/Tree.class" afterPath="$PROJECT_DIR$/out/production/HW1/dancers/Tree.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dancers/Dancer.java" afterPath="$PROJECT_DIR$/src/dancers/Dancer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dancers/Dancers.java" afterPath="$PROJECT_DIR$/src/dancers/Dancers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/myTest/DancersAdvancedTests.java" afterPath="$PROJECT_DIR$/src/myTest/DancersAdvancedTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dancers/Tree.java" afterPath="$PROJECT_DIR$/src/dancers/Tree.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HW1.iws" />
@@ -32,8 +30,8 @@
       <file leaf-file-name="MyDancersTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/myTest/MyDancersTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+            <state vertical-scroll-proportion="-12.032258">
+              <caret line="87" column="20" selection-start-line="87" selection-start-column="10" selection-end-line="87" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,8 +42,8 @@
       <file leaf-file-name="DancersAdvancedTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/myTest/DancersAdvancedTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.032258">
-              <caret line="307" column="36" selection-start-line="307" selection-start-column="36" selection-end-line="307" selection-end-column="36" />
+            <state vertical-scroll-proportion="-5.064516">
+              <caret line="27" column="24" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,39 +54,37 @@
       <file leaf-file-name="Tree.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dancers/Tree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.483871">
-              <caret line="306" column="18" selection-start-line="306" selection-start-column="18" selection-end-line="306" selection-end-column="18" />
+            <state vertical-scroll-proportion="-5.064516">
+              <caret line="306" column="28" selection-start-line="306" selection-start-column="18" selection-end-line="306" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#17655#17663#0" expanded="true" />
+                <element signature="e#17656#17664#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dancers.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Dancers.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dancers/Dancers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.8203592">
-              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-              <folding>
-                <element signature="e#296#297#0" expanded="true" />
-                <element signature="e#329#330#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-6.967742">
+              <caret line="15" column="7" selection-start-line="9" selection-start-column="4" selection-end-line="15" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dancer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Dancer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dancers/Dancer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7941176">
+              <caret line="179" column="0" selection-start-line="175" selection-start-column="6" selection-end-line="179" selection-end-column="0" />
               <folding>
                 <element signature="e#1543#1544#0" expanded="true" />
                 <element signature="e#1581#1582#0" expanded="true" />
                 <element signature="e#1644#1645#0" expanded="true" />
                 <element signature="e#1698#1699#0" expanded="true" />
+                <element signature="e#2013#2014#0" expanded="true" />
                 <element signature="e#2042#2043#0" expanded="true" />
               </folding>
             </state>
@@ -126,11 +122,11 @@
         <option value="$PROJECT_DIR$/src/test/DancersTests.java" />
         <option value="$PROJECT_DIR$/src/myTest/DancersTests.java" />
         <option value="$PROJECT_DIR$/src/dancers/Main.java" />
-        <option value="$PROJECT_DIR$/src/dancers/Dancer.java" />
-        <option value="$PROJECT_DIR$/src/myTest/MyDancersTests.java" />
         <option value="$PROJECT_DIR$/src/dancers/Tree.java" />
         <option value="$PROJECT_DIR$/src/myTest/DancersAdvancedTests.java" />
+        <option value="$PROJECT_DIR$/src/myTest/MyDancersTests.java" />
         <option value="$PROJECT_DIR$/src/dancers/Dancers.java" />
+        <option value="$PROJECT_DIR$/src/dancers/Dancer.java" />
       </list>
     </option>
   </component>
@@ -240,7 +236,7 @@
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/P2MD5" />
   </component>
-  <component name="RunManager" selected="JUnit.MyDancersTests">
+  <component name="RunManager" selected="JUnit.DancersAdvancedTests">
     <configuration default="false" name="MyDancersTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -642,8 +638,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.MyDancersTests" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.DancersAdvancedTests" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.DancersAdvancedTests" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.MyDancersTests" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.DancersAdvancedTests.testLongLinearFindLastFemale" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.MyDancersTests.testWithWomen" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.MyDancersTests.testOnlyMenDance" />
@@ -662,7 +658,7 @@
       <option name="number" value="Default" />
       <updated>1443811068880</updated>
       <workItem from="1443811071942" duration="19432000" />
-      <workItem from="1443966997134" duration="74132000" />
+      <workItem from="1443966997134" duration="75438000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1443970279739</created>
@@ -730,11 +726,23 @@
       <option name="project" value="LOCAL" />
       <updated>1444069967068</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="update">
+      <created>1444071677099</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1444071677099</updated>
+    </task>
+    <task id="LOCAL-00013" summary="update">
+      <created>1444072668720</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1444072668720</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93564000" />
+    <option name="totallyTimeSpent" value="94870000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -756,11 +764,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6612184" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986626" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20950966" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986626" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18181819" sideWeight="0.49280575" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18181819" sideWeight="0.49280575" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986626" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -835,26 +843,8 @@
           <properties />
           <option name="timeStamp" value="122" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/dancers/Tree.java</url>
-          <line>355</line>
-          <properties />
-          <option name="timeStamp" value="180" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/myTest/MyDancersTests.java</url>
-          <line>125</line>
-          <properties />
-          <option name="timeStamp" value="181" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/dancers/Tree.java</url>
-          <line>223</line>
-          <properties />
-          <option name="timeStamp" value="182" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="183" />
+      <option name="time" value="193" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -877,10 +867,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="46" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
-          <folding>
-            <element signature="e#296#297#0" expanded="true" />
-            <element signature="e#329#330#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -890,7 +877,7 @@
           <caret line="409" column="0" selection-start-line="409" selection-start-column="0" selection-end-line="409" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#17655#17663#0" expanded="true" />
+            <element signature="e#17656#17664#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -914,6 +901,7 @@
             <element signature="e#1581#1582#0" expanded="true" />
             <element signature="e#1644#1645#0" expanded="true" />
             <element signature="e#1698#1699#0" expanded="true" />
+            <element signature="e#2013#2014#0" expanded="true" />
             <element signature="e#2042#2043#0" expanded="true" />
           </folding>
         </state>
@@ -939,14 +927,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dancers/MyComparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -978,16 +958,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dancers/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.ideaLibSources/junit-4.11-sources.jar!/org/junit/Assert.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.235955">
@@ -1015,41 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dancers/Dancer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding>
-            <element signature="e#1543#1544#0" expanded="true" />
-            <element signature="e#1581#1582#0" expanded="true" />
-            <element signature="e#1644#1645#0" expanded="true" />
-            <element signature="e#1698#1699#0" expanded="true" />
-            <element signature="e#2042#2043#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/myTest/MyDancersTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dancers/Tree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.483871">
-          <caret line="306" column="18" selection-start-line="306" selection-start-column="18" selection-end-line="306" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#17655#17663#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/AbstractMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
@@ -1058,23 +993,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/dancers/MyComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1434263">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/myTest/DancersAdvancedTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.032258">
-          <caret line="307" column="36" selection-start-line="307" selection-start-column="36" selection-end-line="307" selection-end-column="36" />
+        <state vertical-scroll-proportion="-5.064516">
+          <caret line="27" column="24" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/myTest/MyDancersTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.032258">
+          <caret line="87" column="20" selection-start-line="87" selection-start-column="10" selection-end-line="87" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dancers/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5520995">
+          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dancers/Tree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.064516">
+          <caret line="306" column="28" selection-start-line="306" selection-start-column="18" selection-end-line="306" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#17656#17664#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/dancers/Dancers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8203592">
-          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+        <state vertical-scroll-proportion="-6.967742">
+          <caret line="15" column="7" selection-start-line="9" selection-start-column="4" selection-end-line="15" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dancers/Dancer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7941176">
+          <caret line="179" column="0" selection-start-line="175" selection-start-column="6" selection-end-line="179" selection-end-column="0" />
           <folding>
-            <element signature="e#296#297#0" expanded="true" />
-            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#1543#1544#0" expanded="true" />
+            <element signature="e#1581#1582#0" expanded="true" />
+            <element signature="e#1644#1645#0" expanded="true" />
+            <element signature="e#1698#1699#0" expanded="true" />
+            <element signature="e#2013#2014#0" expanded="true" />
+            <element signature="e#2042#2043#0" expanded="true" />
           </folding>
         </state>
       </provider>

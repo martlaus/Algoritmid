@@ -7,13 +7,13 @@ public class Dancers implements IDancers {
 
     public Tree avlTree = new Tree();
 
-    public Tree getAvlTree() {
-        return avlTree;
-    }
-
-    public void addDancer(Dancer d) {
-        avlTree.insert(d);
-    }
+//    public Tree getAvlTree() {
+//        return avlTree;
+//    }
+//
+//    public void addDancer(Dancer d) {
+//        avlTree.insert(d);
+//    }
 
     @Override
     public SimpleEntry<IDancer, IDancer> findPartnerFor(IDancer searcher) {
@@ -51,12 +51,12 @@ public class Dancers implements IDancers {
 
     }
 
-    @Override
-    public String toString() {
-        String res = "\n";
-        for (IDancer d : returnWaitingList()) {
-            res += avlTree.debug((Dancer) d);
-        }
-        return res;
-    }
+//    @Override
+//    public String toString() {
+//        String res = "\n";
+//        for (IDancer d : returnWaitingList()) {
+//            res += avlTree.debug((Dancer) d);
+//        }
+//        return res;
+//    }
 }
