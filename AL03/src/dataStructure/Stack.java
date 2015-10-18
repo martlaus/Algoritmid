@@ -14,10 +14,7 @@ public class Stack {
 
     public void push(Object object) {
         if(top > stackArray.length - 2) {
-            //System.out.println("resizing " + stackArray.length);
             stackArray = resize(stackArray);
-            //System.out.println("resized " + stackArray.length);
-
         }
         stackArray[++top] = object;
     }

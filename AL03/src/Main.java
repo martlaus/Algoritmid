@@ -1,3 +1,4 @@
+import dataStructure.Queue;
 import dataStructure.Stack;
 
 public class Main {
@@ -16,5 +17,15 @@ public class Main {
             System.out.print(value);
             System.out.print(" ");
         }
-        System.out.println("");    }
+        System.out.println("\nQueue:");
+
+        Queue queue = new Queue();
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+        while(!queue.isEmpty()) {
+            System.out.println(queue.dequeue());
+        }
+
+    }
 }
