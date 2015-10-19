@@ -107,8 +107,8 @@ public class Comparison {
 
     public static List<Node> dataStructureComparisonTimesK(int n, int k) {
         ArrayList<SimpleEntry<String, Consumer<Integer>>> methods = getListOfMethods();
-        ArrayList<SimpleEntry<Long, String>> firstResults = new ArrayList<>();
-        ArrayList<SimpleEntry<Long, String>> secondResults = new ArrayList<>();
+        ArrayList<SimpleEntry<Long, String>> first = new ArrayList<>();
+        ArrayList<SimpleEntry<Long, String>> second = new ArrayList<>();
         ArrayList<Node> finalResults = new ArrayList<>();
 
         long startTime;
@@ -120,9 +120,7 @@ public class Comparison {
 
             long duration = System.nanoTime() - startTime;
 
-            firstResults.add(new AbstractMap.SimpleEntry<>(duration, entry.getKey()));
-
-            System.out.println("duration: " + duration + " " + entry.getKey());
+            first.add(new AbstractMap.SimpleEntry<>(duration, entry.getKey()));
         }
 
         for (AbstractMap.SimpleEntry<String, Consumer<Integer>> entry : methods) {
@@ -132,16 +130,14 @@ public class Comparison {
 
             long duration = System.nanoTime() - startTime;
 
-            secondResults.add(new AbstractMap.SimpleEntry<>(duration, entry.getKey()));
-
-            System.out.println("duration: " + duration + " " + entry.getKey());
+            second.add(new AbstractMap.SimpleEntry<>(duration, entry.getKey()));
         }
 
-        for (int i = 0; i < methods.size(); i++)
-            finalResults.add(new Node(methods.get(i).getKey(), ((float) secondResults.get(i).getKey() / (float) firstResults.get(i).getKey())));
+        for (int i = 0; i < methods.size(); i++) {
+            float times = second.get(i).getKey() / first.get(i).getKey();
+            finalResults.add(new Node(methods.get(i).getKey(), times));
+        }
 
         return finalResults;
     }
-
-
 }
