@@ -98,7 +98,6 @@ public class Comparison {
 
             results.add(new SimpleEntry<>(duration, entry.getKey()));
 
-            //System.out.println("duration: " + duration + " " + entry.getKey());
         }
 
         Collections.sort(results, (o1, o2) -> o1.getKey().compareTo(o2.getKey()));
