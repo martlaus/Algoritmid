@@ -1,4 +1,4 @@
-package datastructures;
+package dataStructures;
 
 /**
  * Created by mart on 19.10.15.

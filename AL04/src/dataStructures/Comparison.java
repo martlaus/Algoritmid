@@ -1,6 +1,4 @@
-package datastructures;
-
-import javafx.collections.transformation.SortedList;
+package dataStructures;
 
 import java.util.*;
 import java.util.AbstractMap.SimpleEntry;
@@ -15,7 +13,7 @@ public class Comparison {
     public static PriorityQueue<Integer> ascPriorityQueue(int n) {
         PriorityQueue<Integer> queue = new PriorityQueue<>(n);
 
-        for(int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++)
             queue.add(i);
 
         return queue;
@@ -25,7 +23,7 @@ public class Comparison {
         PriorityQueue<Integer> queue = new PriorityQueue<>(n);
         Random random = new Random();
 
-        for(int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++)
             queue.add(random.nextInt(n));
 
         return queue;
@@ -34,7 +32,7 @@ public class Comparison {
     public static TreeSet<Integer> ascTree(int n) {
         TreeSet<Integer> tree = new TreeSet<>();
 
-        for(int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++)
             tree.add(i);
 
         return tree;
@@ -44,26 +42,26 @@ public class Comparison {
         TreeSet<Integer> tree = new TreeSet<>();
         Random random = new Random();
 
-        for(int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++)
             tree.add(random.nextInt(n));
 
         return tree;
     }
 
-    public static Hashtable<Integer,Integer> ascHashTable(int n) {
-        Hashtable<Integer,Integer> hashtable = new Hashtable<>(n);
+    public static Hashtable<Integer, Integer> ascHashTable(int n) {
+        Hashtable<Integer, Integer> hashtable = new Hashtable<>(n);
 
-        for(int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++)
             hashtable.put(i, i);
 
         return hashtable;
     }
 
-    public static Hashtable<Integer,Integer> randomHashTable(int n) {
-        Hashtable<Integer,Integer> hashtable = new Hashtable<>(n);
+    public static Hashtable<Integer, Integer> randomHashTable(int n) {
+        Hashtable<Integer, Integer> hashtable = new Hashtable<>(n);
         Random random = new Random();
 
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             int value = random.nextInt();
 
             hashtable.put(value, value);
@@ -91,7 +89,7 @@ public class Comparison {
 
         long startTime;
 
-        for(AbstractMap.SimpleEntry<String, Consumer<Integer>> entry : methods) {
+        for (AbstractMap.SimpleEntry<String, Consumer<Integer>> entry : methods) {
             startTime = System.nanoTime();
 
             entry.getValue().accept(n);
@@ -116,7 +114,7 @@ public class Comparison {
 
         long startTime;
 
-        for(AbstractMap.SimpleEntry<String, Consumer<Integer>> entry : methods) {
+        for (AbstractMap.SimpleEntry<String, Consumer<Integer>> entry : methods) {
             startTime = System.nanoTime();
 
             entry.getValue().accept(n);
@@ -128,7 +126,7 @@ public class Comparison {
             System.out.println("duration: " + duration + " " + entry.getKey());
         }
 
-        for(AbstractMap.SimpleEntry<String, Consumer<Integer>> entry : methods) {
+        for (AbstractMap.SimpleEntry<String, Consumer<Integer>> entry : methods) {
             startTime = System.nanoTime();
 
             entry.getValue().accept(n * k);
@@ -140,7 +138,7 @@ public class Comparison {
             System.out.println("duration: " + duration + " " + entry.getKey());
         }
 
-        for(int i = 0; i < methods.size(); i++)
+        for (int i = 0; i < methods.size(); i++)
             finalResults.add(new Node(methods.get(i).getKey(), ((float) secondResults.get(i).getKey() / (float) firstResults.get(i).getKey())));
 
         return finalResults;
