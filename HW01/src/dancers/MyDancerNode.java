@@ -17,15 +17,6 @@ public class MyDancerNode implements IDancer, Comparable<MyDancerNode> {
     boolean male;
     boolean inList = false;
 
-    public MyDancerNode(int ID, boolean male, int height) {
-        this.ID = ID;
-        this.male = male;
-        this.height = height;
-        left = right = parent = null;
-        balance = 0;
-        this.inList = false;
-    }
-
     public MyDancerNode() {
         left = right = parent = null;
         balance = 0;

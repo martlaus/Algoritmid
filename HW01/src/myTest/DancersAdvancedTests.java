@@ -124,6 +124,19 @@ public class DancersAdvancedTests {
         assertTrue(dancers.returnWaitingList().size() == 0);
     }
 
+    @Test
+    public void testSinglePairOtherWay() throws Exception {
+        Dancers dancers = new Dancers();
+
+        MyDancerNode myDancerNode = new MyDancerNode(1, 181, true);
+        MyDancerNode myDancerNode2 = new MyDancerNode(2, 180, false);
+        assertNull(dancers.findPartnerFor(myDancerNode));
+        assertEquals(myDancerNode, dancers.findPartnerFor(myDancerNode2).getValue());
+
+
+        assertTrue(dancers.returnWaitingList().size() == 0);
+    }
+
     /**
      *
      */
@@ -317,4 +330,6 @@ public class DancersAdvancedTests {
 
         assertTrue(dancers.findPartnerFor(myDancerNode2).getValue().getHeight() == 10000);
     }
+
+
 }

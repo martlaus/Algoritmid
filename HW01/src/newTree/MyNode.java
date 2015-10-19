@@ -1,4 +1,6 @@
-package dancers;
+package newTree;
+
+import dancers.IDancer;
 
 import java.util.ArrayList;
 import java.util.List;

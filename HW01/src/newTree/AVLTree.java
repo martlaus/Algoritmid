@@ -1,4 +1,6 @@
-package dancers;
+package newTree;
+
+import dancers.IDancer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -288,7 +290,7 @@ public class AVLTree {
     }
 
 
-    final protected List<IDancer> inorder() {
+    final public List<IDancer> inorder() {
         ArrayList<IDancer> ret = new ArrayList<>();
         inorder(root, ret);
         return ret;

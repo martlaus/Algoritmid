@@ -1,19 +1,14 @@
 package dancers;
 
+import newTree.AVLTree;
+
 import java.util.AbstractMap.SimpleEntry;
 import java.util.List;
 
 public class Dancers implements IDancers {
 
     public Tree avlTree = new Tree();
-
-//    public Tree getAvlTree() {
-//        return avlTree;
-//    }
-
-    public void addDancer(MyDancerNode d) {
-        avlTree.insert(d);
-    }
+    //public AVLTree avlTree = new AVLTree();
 
     @Override
     public SimpleEntry<IDancer, IDancer> findPartnerFor(IDancer searcher) {
@@ -49,15 +44,5 @@ public class Dancers implements IDancers {
     @Override
     public List<IDancer> returnWaitingList() {
         return avlTree.inorder();
-
     }
-
-//    @Override
-//    public String toString() {
-//        String res = "\n";
-//        for (IDancer d : returnWaitingList()) {
-//            res += avlTree.debug((MyDancerNode) d);
-//        }
-//        return res;
-//    }
 }

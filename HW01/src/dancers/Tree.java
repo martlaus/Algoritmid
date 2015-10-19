@@ -20,7 +20,7 @@ public class Tree {
     /**
      * Recursive method to insert a node into a tree.
      *
-     * @param root      The node currently compared, usually you start with the root.
+     * @param root            The node currently compared, usually you start with the root.
      * @param newMyDancerNode The node to be inserted.
      */
     public void insertAVL(MyDancerNode root, MyDancerNode newMyDancerNode) {
@@ -116,40 +116,10 @@ public class Tree {
         if (cur.parent != null) {
             recursiveBalance(cur.parent);
         } else {
-            //System.out.println(cur);
             this.root = cur;
-            // System.out.println("------------ Balancing finished " + root.isMale() + " " + root.getHeight() + " ----------------");
         }
     }
 
-    /**
-     * Removes a node from the tree, if it is existent.
-     */
-    public void remove(int k) {
-        // First we must find the node, after this we can delete it.
-        removeAVL(this.root, k);
-    }
-
-    /**
-     * Finds a node and calls a method to remove the node.
-     *
-     * @param p The node to start the search.
-     * @param q The KEY of node to remove.
-     */
-    public void removeAVL(MyDancerNode p, int q) {
-        if (p == null) {
-            return;
-        } else {
-            if (p.height > q) {
-                removeAVL(p.left, q);
-            } else if (p.height < q) {
-                removeAVL(p.right, q);
-            } else if (p.height == q) {
-                // we found the node in the tree.. now lets go on!
-                removeFoundNode(p);
-            }
-        }
-    }
 
     public MyDancerNode searchAndRemoveWomen(int height) {
         MyDancerNode copydResult;
@@ -307,7 +277,6 @@ public class Tree {
         //find shortest man, that is taller than woman
         if (myDancerNode.getHeight() > femaleHeight) {
             if (!myDancerNode.isMale()) {
-                //System.out.println("vaata tema listist mehi");
                 try {
                     List<MyDancerNode> myDancerNodes = myDancerNode.getEqualHeightMyDancerNodes();
                     for (MyDancerNode d : myDancerNodes) {
@@ -542,41 +511,6 @@ public class Tree {
         }
     }
 
-    /**
-     * Only for debugging purposes. Gives all information about a node.
-     *
-     * @param n The node to write information about.
-     */
-    public String debug(MyDancerNode n) {
-        int l = 0;
-        int r = 0;
-        int p = 0;
-        if (n == null) return "";
-        if (n.left != null) {
-            l = n.left.height;
-        }
-        if (n.right != null) {
-            r = n.right.height;
-        }
-        if (n.parent != null) {
-            p = n.parent.height;
-        }
-        String sex;
-        if (n.isMale()) {
-            sex = "male";
-        } else {
-            sex = "female";
-        }
-        String res = sex + " Left: " + l + " Key: " + n.height + " Right: " + r + " Parent: " + p + " Balance: " + n.balance + "\n";
-
-        if (n.left != null) {
-            debug(n.left);
-        }
-        if (n.right != null) {
-            debug(n.right);
-        }
-        return res;
-    }
 
     private void setBalance(MyDancerNode cur) {
         cur.balance = height(cur.right) - height(cur.left);
