@@ -1,5 +1,7 @@
 package greedytsp;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -7,6 +9,7 @@ import java.util.Stack;
  */
 public class GreedyTSP {
 
+    List<Integer> list = new ArrayList<>();
     /* Greedy search */
     public static int[] greedySolution(int[][] adjacencyMatrix) {
         int numberOfNodes;
