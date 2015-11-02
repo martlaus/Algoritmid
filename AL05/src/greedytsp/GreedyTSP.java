@@ -7,26 +7,25 @@ import java.util.List;
  * Created by mart on 2.11.15.
  */
 public class GreedyTSP {
-    static List<Integer> list = new ArrayList<>();
+
+    private static int numberOfNodes;
+    private static List<Integer> list = new ArrayList<Integer>();
 
     /* Greedy search */
     public static int[] greedySolution(int[][] adjacencyMatrix) {
-        int numberOfNodes;
 
         numberOfNodes = adjacencyMatrix[1].length - 1;
         int[] visited = new int[numberOfNodes + 1];
-        int[] answer = new int[numberOfNodes + 2];
-
-        visited[0] = 0;
+        visited[1] = 1;
         list.add(0);
-        int element, dst = 0, i;
-        int min;
+        int element;
+        int dst = 0, i;
+        int min = Integer.MAX_VALUE;
         boolean minFlag = false;
-        int j = 1;
-        answer[0] = 0;
 
         while (!list.isEmpty()) {
-            element = list.get(list.size() - 1);
+            element = list.get(0);
+
             i = 1;
             min = Integer.MAX_VALUE;
             while (i <= numberOfNodes) {
@@ -40,18 +39,16 @@ public class GreedyTSP {
                 i++;
             }
             if (minFlag) {
-                visited[dst] = dst;
+                visited[dst] = 1;
                 list.add(dst);
-                answer[j] = dst;
-                j++;
                 minFlag = false;
                 continue;
             }
             list.remove(list.size() - 1);
         }
 
-        answer[j] = 0;
-        return answer;
+
+        return visited;
     }
 }
 
