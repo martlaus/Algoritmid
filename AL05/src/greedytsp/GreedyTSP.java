@@ -2,33 +2,30 @@ package greedytsp;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
 /**
  * Created by mart on 2.11.15.
  */
 public class GreedyTSP {
 
-    List<Integer> list = new ArrayList<>();
+    private static int numberOfNodes;
+    private static List<Integer> list = new ArrayList<Integer>();
+
     /* Greedy search */
     public static int[] greedySolution(int[][] adjacencyMatrix) {
-        int numberOfNodes;
-        Stack<Integer> stack = new Stack<>();
 
         numberOfNodes = adjacencyMatrix[1].length - 1;
         int[] visited = new int[numberOfNodes + 1];
-        int[] answer = new int[numberOfNodes + 2];
-
-        visited[0] = 0;
-        stack.push(0);
-        int element, dst = 0, i;
-        int min;
+        visited[1] = 1;
+        list.add(0);
+        int element;
+        int dst = 0, i;
+        int min = Integer.MAX_VALUE;
         boolean minFlag = false;
-        int j = 1;
-        answer[0] = 0;
 
-        while (!stack.isEmpty()) {
-            element = stack.peek();
+        while (!list.isEmpty()) {
+            element = list.get(0);
+
             i = 1;
             min = Integer.MAX_VALUE;
             while (i <= numberOfNodes) {
@@ -42,18 +39,16 @@ public class GreedyTSP {
                 i++;
             }
             if (minFlag) {
-                visited[dst] = dst;
-                stack.push(dst);
-                answer[j] = dst;
-                j++;
+                visited[dst] = 1;
+                list.add(dst);
                 minFlag = false;
                 continue;
             }
-            stack.pop();
+            list.remove(list.size() - 1);
         }
 
-        answer[j] = 0;
-        return answer;
+
+        return visited;
     }
 }
 
