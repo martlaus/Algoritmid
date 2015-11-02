@@ -55,7 +55,6 @@ public class GreedyTSP {
         answer[j] = 0;
         return answer;
     }
-
 }
 
 
