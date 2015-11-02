@@ -14,7 +14,7 @@ public class GreedyTSP {
 
         numberOfNodes = adjacencyMatrix[1].length - 1;
         int[] visited = new int[numberOfNodes + 1];
-        int[] anwser = new int[numberOfNodes + 2];
+        int[] answer = new int[numberOfNodes + 2];
 
         visited[0] = 0;
         stack.push(0);
@@ -22,7 +22,7 @@ public class GreedyTSP {
         int min;
         boolean minFlag = false;
         int j = 1;
-        anwser[0] = 0;
+        answer[0] = 0;
 
         while (!stack.isEmpty()) {
             element = stack.peek();
@@ -41,7 +41,7 @@ public class GreedyTSP {
             if (minFlag) {
                 visited[dst] = dst;
                 stack.push(dst);
-                anwser[j] = dst;
+                answer[j] = dst;
                 j++;
                 minFlag = false;
                 continue;
@@ -49,8 +49,8 @@ public class GreedyTSP {
             stack.pop();
         }
 
-        anwser[j] = 0;
-        return anwser;
+        answer[j] = 0;
+        return answer;
     }
 }
 
