@@ -2,30 +2,33 @@ package greedytsp;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * Created by mart on 2.11.15.
  */
 public class GreedyTSP {
-
-    private static int numberOfNodes;
-    private static List<Integer> list = new ArrayList<Integer>();
+    static List<Integer> list = new ArrayList<>();
 
     /* Greedy search */
     public static int[] greedySolution(int[][] adjacencyMatrix) {
+        int numberOfNodes;
+        Stack<Integer> stack = new Stack<>();
 
         numberOfNodes = adjacencyMatrix[1].length - 1;
         int[] visited = new int[numberOfNodes + 1];
-        visited[1] = 1;
+        int[] answer = new int[numberOfNodes + 2];
+
+        visited[0] = 0;
         list.add(0);
-        int element;
-        int dst = 0, i;
-        int min = Integer.MAX_VALUE;
+        int element, dst = 0, i;
+        int min;
         boolean minFlag = false;
+        int j = 1;
+        answer[0] = 0;
 
         while (!list.isEmpty()) {
-            element = list.get(0);
-
+            element = list.get(list.size() - 1);
             i = 1;
             min = Integer.MAX_VALUE;
             while (i <= numberOfNodes) {
@@ -39,17 +42,20 @@ public class GreedyTSP {
                 i++;
             }
             if (minFlag) {
-                visited[dst] = 1;
+                visited[dst] = dst;
                 list.add(dst);
+                answer[j] = dst;
+                j++;
                 minFlag = false;
                 continue;
             }
             list.remove(list.size() - 1);
         }
 
-
-        return visited;
+        answer[j] = 0;
+        return answer;
     }
+
 }
 
 

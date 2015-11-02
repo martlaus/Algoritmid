@@ -37,7 +37,7 @@ public class TesterMain {
         };
 
         System.out.println("the citys are visited as follows");
-        int[] ans = GreedyTSP.greedySolution(moodle);
+        int[] ans = GreedyTSP.greedySolution(res);
 
         System.out.println("\nAns");
 
