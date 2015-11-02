@@ -19,8 +19,8 @@ public class GreedyTSP {
 
         numberOfNodes = adjacencyMatrix[1].length - 1;
         int[] visited = new int[numberOfNodes + 1];
-        visited[1] = 1;
-        stack.push(1);
+        visited[0] = 0;
+        stack.push(0);
         int element, dst = 0, i;
         int min;
         boolean minFlag = false;
@@ -43,7 +43,7 @@ public class GreedyTSP {
             if (minFlag) {
                 visited[dst] = 1;
                 stack.push(dst);
-                resultList.add(dst - 1);
+                resultList.add(dst);
                 minFlag = false;
                 continue;
             }
