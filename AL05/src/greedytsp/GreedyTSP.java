@@ -24,7 +24,6 @@ public class GreedyTSP {
         int element, dst = 0, i;
         int min;
         boolean minFlag = false;
-        System.out.print(0 + "\t");
         resultList.add(0);
 
         while (!stack.isEmpty()) {
@@ -44,7 +43,6 @@ public class GreedyTSP {
             if (minFlag) {
                 visited[dst] = 1;
                 stack.push(dst);
-                System.out.print((dst - 1) + "\t");
                 resultList.add(dst - 1);
                 minFlag = false;
                 continue;
@@ -53,7 +51,6 @@ public class GreedyTSP {
         }
 
         resultList.add(0);
-        System.out.print(0 + "\t");
         return convertIntegers(resultList);
     }
 
