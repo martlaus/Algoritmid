@@ -2,6 +2,7 @@ package greedytsp;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * Created by mart on 2.11.15.
@@ -12,6 +13,8 @@ public class GreedyTSP {
     /* Greedy search */
     public static int[] greedySolution(int[][] adjacencyMatrix) {
         int numberOfNodes;
+        Stack<Integer> stack = new Stack<>();
+
         numberOfNodes = adjacencyMatrix[1].length - 1;
         int[] visited = new int[numberOfNodes + 1];
         int[] answer = new int[numberOfNodes + 2];
