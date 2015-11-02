@@ -1,6 +1,6 @@
 import greedytsp.GreedyTSP;
 
-public class Main {
+public class TesterMain {
 
     public static void main(String[] args) {
         System.out.println("Starting....");
@@ -37,6 +37,13 @@ public class Main {
         };
 
         System.out.println("the citys are visited as follows");
-        GreedyTSP.greedySolution(moodle);
+        int[] ans = GreedyTSP.greedySolution(moodle);
+
+        System.out.println("\nAns");
+
+        for (int i : ans) {
+            System.out.print(i + "\t");
+        }
+
     }
 }
