@@ -25,7 +25,7 @@ public class GreedyTSP {
         answer[0] = 0;
 
         while (!list.isEmpty()) {
-            element = list.get(0);
+            element = list.get(list.size() - 1);
             i = 1;
             min = Integer.MAX_VALUE;
             while (i <= numberOfNodes) {
