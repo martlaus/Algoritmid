@@ -1,5 +1,8 @@
 package greedytsp;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -9,6 +12,8 @@ public class GreedyTSP {
 
     /* Greedy search */
     public static int[] greedySolution(int[][] adjacencyMatrix) {
+        List<Integer> resultList = new ArrayList<>();
+
         int numberOfNodes;
         Stack<Integer> stack = new Stack<>();
 
@@ -21,6 +26,7 @@ public class GreedyTSP {
         int element, dst = 0, i;
         int min;
         boolean minFlag = false;
+        resultList.add(0);
         int j = 1;
         anwser[0] = 0;
 
@@ -43,17 +49,29 @@ public class GreedyTSP {
                 stack.push(dst);
                 anwser[j] = dst;
                 j++;
+                resultList.add(dst);
                 minFlag = false;
                 continue;
             }
             stack.pop();
         }
 
+        resultList.add(0);
         anwser[j] = 0;
-        return anwser;
+//        for (int k : anwser) {
+//            System.out.println(k);
+//        }
+        return convertIntegers(resultList);
     }
 
-
+    public static int[] convertIntegers(List<Integer> integers) {
+        int[] ret = new int[integers.size()];
+        Iterator<Integer> iterator = integers.iterator();
+        for (int i = 0; i < ret.length; i++) {
+            ret[i] = iterator.next();
+        }
+        return ret;
+    }
 }
 
 
