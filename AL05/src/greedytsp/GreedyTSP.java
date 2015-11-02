@@ -1,5 +1,8 @@
 package greedytsp;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -7,12 +10,9 @@ import java.util.Stack;
  */
 public class GreedyTSP {
 
-    public GreedyTSP() {
-    }
-
-
     /* Greedy search */
     public static int[] greedySolution(int[][] adjacencyMatrix) {
+        List<Integer> resultList = new ArrayList<>();
 
         int numberOfNodes;
         Stack<Integer> stack = new Stack<>();
@@ -24,7 +24,8 @@ public class GreedyTSP {
         int element, dst = 0, i;
         int min;
         boolean minFlag = false;
-        System.out.print(1 + "\t");
+        System.out.print(0 + "\t");
+        resultList.add(0);
 
         while (!stack.isEmpty()) {
             element = stack.peek();
@@ -43,12 +44,27 @@ public class GreedyTSP {
             if (minFlag) {
                 visited[dst] = 1;
                 stack.push(dst);
-                System.out.print(dst + "\t");
+                System.out.print((dst - 1) + "\t");
+                resultList.add(dst - 1);
                 minFlag = false;
                 continue;
             }
             stack.pop();
         }
-        return null;
+
+        resultList.add(0);
+        System.out.print(0 + "\t");
+        return convertIntegers(resultList);
+    }
+
+    public static int[] convertIntegers(List<Integer> integers) {
+        int[] ret = new int[integers.size()];
+        Iterator<Integer> iterator = integers.iterator();
+        for (int i = 0; i < ret.length; i++) {
+            ret[i] = iterator.next();
+        }
+        return ret;
     }
 }
+
+
