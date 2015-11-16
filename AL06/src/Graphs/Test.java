@@ -24,7 +24,7 @@ public class Test {
         int[] pair = {0, 3};
         Friends.bfs(matrix, pair);
         int[] ans = {0, 1, 3};
-        assertArrayEquals(ans, Friends.getShortestPath());
+        assertArrayEquals(ans, Friends.getConnectionList());
     }
 
 
@@ -32,7 +32,7 @@ public class Test {
     public void testBfs() throws Exception {
         Friends.bfs(INTS, new int[]{0, 4});
 
-        assertArrayEquals(new int[]{0, 1, 2, 4}, Friends.getShortestPath());
+        assertArrayEquals(new int[]{0, 1, 2, 4}, Friends.getConnectionList());
         assertEquals(3, Friends.getDistance());
     }
 }

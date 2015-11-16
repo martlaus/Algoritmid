@@ -35,14 +35,14 @@ public class Friends {
     }
 
     public static int getDistance() {
-        if (getShortestPath() != null) {
+        if (getConnectionList() != null) {
 
-            return getShortestPath().length - 1;
+            return getConnectionList().length - 1;
         }
         return 0;
     }
 
-    public static int[] getShortestPath() {
+    public static int[] getConnectionList() {
         if (shortestPath == null)
             return null;
 
