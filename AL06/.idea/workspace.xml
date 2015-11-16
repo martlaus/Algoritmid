@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46c9646b-d0ad-4d97-a911-09476c81960c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AL06/graphs/Friends.class" afterPath="$PROJECT_DIR$/out/production/AL06/graphs/Friends.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AL06/graphs/Test.class" afterPath="$PROJECT_DIR$/out/production/AL06/graphs/Test.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/graphs/Friends.java" afterPath="$PROJECT_DIR$/src/Graphs/Friends.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/graphs/Node.java" afterPath="$PROJECT_DIR$/src/Graphs/Node.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/graphs/Test.java" afterPath="$PROJECT_DIR$/src/Graphs/Test.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AL06.iws" />
@@ -28,7 +29,7 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="Friends.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/graphs/Friends.java">
+        <entry file="file://$PROJECT_DIR$/src/Graphs/Friends.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.45925927">
               <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
@@ -40,7 +41,7 @@
         </entry>
       </file>
       <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/graphs/Test.java">
+        <entry file="file://$PROJECT_DIR$/src/Graphs/Test.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
@@ -62,7 +63,7 @@
         </entry>
       </file>
       <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/graphs/Node.java">
+        <entry file="file://$PROJECT_DIR$/src/Graphs/Node.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
@@ -112,6 +113,7 @@
         <option value="$PROJECT_DIR$/src/graphs/Node.java" />
         <option value="$PROJECT_DIR$/src/graphs/Test.java" />
         <option value="$PROJECT_DIR$/src/graphs/Friends.java" />
+        <option value="$PROJECT_DIR$/src/Graphs/Friends.java" />
       </list>
     </option>
   </component>
@@ -205,7 +207,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="graphs" />
+              <option name="myItemId" value="Graphs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -247,15 +249,15 @@
     <configuration default="false" name="Test.small" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="graphs.*" />
+          <option name="PATTERN" value="Graphs.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="AL06" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="graphs" />
-      <option name="MAIN_CLASS_NAME" value="graphs.Test" />
+      <option name="PACKAGE_NAME" value="Graphs" />
+      <option name="MAIN_CLASS_NAME" value="Graphs.Test" />
       <option name="METHOD_NAME" value="small" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
@@ -273,15 +275,15 @@
     <configuration default="false" name="Test.testBfs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="graphs.*" />
+          <option name="PATTERN" value="Graphs.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="AL06" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="graphs" />
-      <option name="MAIN_CLASS_NAME" value="graphs.Test" />
+      <option name="PACKAGE_NAME" value="Graphs" />
+      <option name="MAIN_CLASS_NAME" value="Graphs.Test" />
       <option name="METHOD_NAME" value="testBfs" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
@@ -557,7 +559,7 @@
       <option name="number" value="Default" />
       <updated>1447667648075</updated>
       <workItem from="1447667655972" duration="6216000" />
-      <workItem from="1447685281458" duration="2481000" />
+      <workItem from="1447685281458" duration="2548000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1447687484091</created>
@@ -565,11 +567,17 @@
       <option name="project" value="LOCAL" />
       <updated>1447687484091</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="up">
+      <created>1447693149272</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1447693149272</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8697000" />
+    <option name="totallyTimeSpent" value="8764000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
@@ -612,7 +620,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/graphs/Friends.java</url>
+          <url>file://$PROJECT_DIR$/src/Graphs/Friends.java</url>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
@@ -633,7 +641,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/graphs/Friends.java">
+    <entry file="file://$PROJECT_DIR$/src/Graphs/Friends.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -651,7 +659,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphs/Test.java">
+    <entry file="file://$PROJECT_DIR$/src/Graphs/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
@@ -669,7 +677,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphs/Node.java">
+    <entry file="file://$PROJECT_DIR$/src/Graphs/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
@@ -708,7 +716,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphs/Node.java">
+    <entry file="file://$PROJECT_DIR$/src/Graphs/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
@@ -736,7 +744,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphs/Test.java">
+    <entry file="file://$PROJECT_DIR$/src/Graphs/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
@@ -746,7 +754,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphs/Friends.java">
+    <entry file="file://$PROJECT_DIR$/src/Graphs/Friends.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45925927">
           <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />

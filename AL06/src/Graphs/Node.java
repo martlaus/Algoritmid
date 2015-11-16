@@ -1,4 +1,4 @@
-package graphs;
+package Graphs;
 
 /**
  * Created by mart on 16.11.15.

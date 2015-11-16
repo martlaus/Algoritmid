@@ -1,4 +1,4 @@
-package graphs;
+package Graphs;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
