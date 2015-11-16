@@ -1,25 +1,28 @@
 package tsp;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 /**
  * Created by mart on 14.11.15.
  */
 public class Node {
-    public boolean visited;
     int value;
     String id;
     int rowIndex;
     int roadLength;
-    int minLength;
     int columnIndex;
+    List<Node> children;
+    Node parent;
 
-    public Node(int value, int rowIndex, int columnIndex) {
+    public Node(int value, int rowIndex, int columnIndex, Node parent) {
         this.value = value;
         this.id = UUID.randomUUID().toString();
         this.rowIndex = rowIndex;
-        this.visited = false;
         this.columnIndex = columnIndex;
+        this.parent = parent;
+        children = new ArrayList<>();
     }
 
     public int getValue() {
@@ -38,14 +41,6 @@ public class Node {
         this.id = id;
     }
 
-    public boolean isVisited() {
-        return visited;
-    }
-
-    public void setVisited(boolean visited) {
-        this.visited = visited;
-    }
-
     public int getRowIndex() {
         return rowIndex;
     }
@@ -62,14 +57,6 @@ public class Node {
         this.roadLength = roadLength;
     }
 
-    public int getMinLength() {
-        return minLength;
-    }
-
-    public void setMinLength(int minLength) {
-        this.minLength = minLength;
-    }
-
     public int getColumnIndex() {
         return columnIndex;
     }
@@ -78,5 +65,29 @@ public class Node {
         this.columnIndex = columnIndex;
     }
 
+    public Node getParent() {
+        return parent;
+    }
 
+    public void setParent(Node parent) {
+        this.parent = parent;
+    }
+
+    public List<Node> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<Node> children) {
+        this.children = children;
+    }
+
+    public int getLengthToTop(){
+        int res = 0;
+        if(parent != null) {
+            int dist = getValue();
+            int n = parent.getLengthToTop();
+            res += (dist + n);
+        }
+        return res;
+    }
 }
