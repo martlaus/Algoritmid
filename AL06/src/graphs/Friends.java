@@ -9,70 +9,62 @@ import java.util.Queue;
  * Created by mart on 16.11.15.
  */
 public class Friends {
-    static int[] myPair;
-    static List<List<Integer>> totalList = new ArrayList<>();
-    static int[] list;
+    private static ArrayList<Integer> shortestPath;
 
     public static void bfs(int[][] adjacencyMatrix, int[] pair) {
-        myPair = pair;
-        Queue<Integer> q = breadth_first_search(adjacencyMatrix, pair);
-        list = new int[q.size()+1];
-        list[0] = pair[0];
-        int len = q.size();
-        for(int i = 1; i <= len; i++) {
-            //System.out.println(q.peek());
-            list[i] = q.remove();
+        Queue<ArrayList<Integer>> queue = new LinkedList<>();
+
+        ArrayList<Integer> start = new ArrayList<>();
+
+        start.add(pair[0]);
+
+        queue.add(start);
+
+        while (!queue.isEmpty()) {
+            ArrayList<Integer> node = queue.remove();
+
+            for (ArrayList<Integer> child : getNodesSubNodes(adjacencyMatrix, node)) {
+                if (child.get(0) == pair[0] && child.get(child.size() - 1) == pair[1]) {
+                    shortestPath = child;
+                    return;
+                }
+
+                queue.add(child);
+            }
         }
     }
 
     public static int getDistance() {
-        return list.length;
+        if (getShortestPath() != null) {
+
+            return getShortestPath().length - 1;
+        }
+        return 0;
     }
 
-    public static int[] getConnectionList() {
+    public static int[] getShortestPath() {
+        if (shortestPath == null)
+            return null;
 
-
-        return list;
+        return shortestPath.stream().filter(i -> i != null).mapToInt(i -> i).toArray();
     }
 
-    public static Queue<Integer> breadth_first_search(int[][] matrix, int[] pair) {
-        Queue<Integer> queue = new LinkedList<>();
-        List<Integer> friends = new ArrayList<>();
+    public static ArrayList<ArrayList<Integer>> getNodesSubNodes(int[][] matrix, List<Integer> node) {
+        int lastFriend = node.get(node.size() - 1);
+        int[] friends = matrix[lastFriend];
 
-        int v = pair[0];
-        // Visit root.
-        queue.add(v);
-        outer:
-        while (!queue.isEmpty()) {
-            v = queue.peek();
-            // Visit each child.
-            for (int i = 0; i < matrix.length; i++) {
-                int value = matrix[v][i];
-                if (value != 0) {
-                    if (i == pair[1]) {
-                        //System.out.println("end?");
-                        //System.out.println("v " + v + " i " + i + " matrix " + matrix[v][i]);
+        ArrayList<ArrayList<Integer>> children = new ArrayList<>();
 
-                        friends.add(i);
-                        queue.add(i);
-                        break outer;
-                    } else {
+        for (int i = 0; i < friends.length; i++) {
+            if (friends[i] == 1 && !node.contains(i)) {
+                ArrayList<Integer> newNode = new ArrayList<>(node);
+                newNode.add(i);
 
-                        //System.out.println("v " + v + " i " + i + " matrix " + matrix[v][i]);
-                        friends.add(i);
-                        queue.remove();
-                        queue.add(i);
-                    }
-
-
-                }
+                children.add(newNode);
             }
-
-            totalList.add(friends);
-            friends.clear();
         }
 
-        //System.out.println("list ready");
-        return queue;
+        return children;
     }
+
 }
