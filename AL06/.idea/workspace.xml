@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="46c9646b-d0ad-4d97-a911-09476c81960c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Graphs/Friends.java" afterPath="$PROJECT_DIR$/src/Graphs/Friends.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Graphs/Test.java" afterPath="$PROJECT_DIR$/src/Graphs/Test.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AL06.iws" />
@@ -30,10 +29,12 @@
       <file leaf-file-name="Friends.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Graphs/Friends.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4888889">
-              <caret line="44" column="41" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+            <state vertical-scroll-proportion="3.2444444">
+              <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#719#720#0" expanded="true" />
+                <element signature="e#753#754#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -43,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/src/Graphs/Test.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -227,7 +228,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="dynamic.classpath" value="false" />
   </component>
-  <component name="RunManager" selected="JUnit.Test.testBfs">
+  <component name="RunManager" selected="JUnit.Test.small">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -545,8 +546,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.Test.testBfs" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.Test.small" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.Test.small" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.Test.testBfs" />
       </list>
     </recent_temporary>
   </component>
@@ -558,7 +559,7 @@
       <option name="number" value="Default" />
       <updated>1447667648075</updated>
       <workItem from="1447667655972" duration="6216000" />
-      <workItem from="1447685281458" duration="2665000" />
+      <workItem from="1447685281458" duration="2824000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1447687484091</created>
@@ -578,11 +579,17 @@
       <option name="project" value="LOCAL" />
       <updated>1447693399778</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="up">
+      <created>1447693502649</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1447693502649</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8881000" />
+    <option name="totallyTimeSpent" value="9040000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
@@ -652,6 +659,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#719#720#0" expanded="true" />
+            <element signature="e#753#754#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -752,7 +761,7 @@
     <entry file="file://$PROJECT_DIR$/src/Graphs/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -761,10 +770,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Graphs/Friends.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4888889">
-          <caret line="44" column="41" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+        <state vertical-scroll-proportion="3.2444444">
+          <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#719#720#0" expanded="true" />
+            <element signature="e#753#754#0" expanded="true" />
           </folding>
         </state>
       </provider>
