@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46c9646b-d0ad-4d97-a911-09476c81960c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AL06/graphs/Friends.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AL06/graphs/Node.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AL06/graphs/Test.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Graphs/Friends.java" afterPath="$PROJECT_DIR$/src/Graphs/Friends.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AL06.iws" />
@@ -32,7 +28,7 @@
       <file leaf-file-name="Friends.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Graphs/Friends.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.7555556">
+            <state vertical-scroll-proportion="2.1111112">
               <caret line="62" column="38" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -58,7 +54,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="190" column="6" selection-start-line="190" selection-start-column="6" selection-end-line="190" selection-end-column="6" />
-              <folding />
+              <folding>
+                <element signature="e#0#8063#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -560,7 +558,7 @@
       <option name="number" value="Default" />
       <updated>1447667648075</updated>
       <workItem from="1447667655972" duration="6216000" />
-      <workItem from="1447685281458" duration="2870000" />
+      <workItem from="1447685281458" duration="3503000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1447687484091</created>
@@ -592,11 +590,17 @@
       <option name="project" value="LOCAL" />
       <updated>1447693661397</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="up">
+      <created>1447693722073</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1447693722073</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9086000" />
+    <option name="totallyTimeSpent" value="9719000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
@@ -692,7 +696,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="190" column="6" selection-start-line="190" selection-start-column="6" selection-end-line="190" selection-end-column="6" />
-          <folding />
+          <folding>
+            <element signature="e#0#8063#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -720,7 +726,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="190" column="6" selection-start-line="190" selection-start-column="6" selection-end-line="190" selection-end-column="6" />
-          <folding />
+          <folding>
+            <element signature="e#0#8063#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -775,7 +783,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Graphs/Friends.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.7555556">
+        <state vertical-scroll-proportion="2.1111112">
           <caret line="62" column="38" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
