@@ -4,9 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TSP {
+    static int maximum = Integer.MAX_VALUE;
     private static int[] lowestValues;
-    static int maximum = 0;
-    static boolean firstBranch = true;
 
     public static int[] dfs(int[][] adjacencyMatrix) {
         int[] res = new int[adjacencyMatrix.length + 1];
@@ -21,14 +20,10 @@ public class TSP {
                 }
             }
             lowestValues[i] = min;
-            maximum += min;
-
         }
-
 
         List<Node> nodes = shortPath(adjacencyMatrix, 0, 0);
         res[0] = 0;
-        //System.out.println("result: ");
         int k = 1;
         for (Node node : nodes) {
 
@@ -44,59 +39,63 @@ public class TSP {
         int n = adjacencyMatrix.length;
         boolean[] visited = new boolean[n];
         visited[start] = true;
-        int len = getLikelyLowestBound(adjacencyMatrix);
         Node first = new Node(adjacencyMatrix[0][0], 0, 0, null);
-        return dfs(adjacencyMatrix, start, end, visited, 1, len, first);
+        return dfs(adjacencyMatrix, start, end, visited, 1, first);
     }
 
-    private static List<Node> dfs(int[][] matrix, int start, int end, boolean[] visited, int count, int len, Node parent) {
+    private static List<Node> dfs(int[][] matrix, int start, int end, boolean[] visited, int count, Node parent) {
         List<Node> arr = null;
 
         //recursive stop
         if (count == matrix.length) {
-            firstBranch = false;
             //System.out.println("branch end: " + start + "->" + end + " len: " + matrix[start][end]);
             Node node = new Node(matrix[start][end], start, end, parent);
-            //maximum = node.getLengthToTop();
+
+//            System.out.print("Path: ");
+//            node.printPath();
+//            System.out.println("");
+
+            if (node.getLengthToTop() < maximum) {
+                maximum = node.getLengthToTop();
+            }
             node.setRoadLength(matrix[start][end]);
             List<Node> nodes = new ArrayList<>();
             nodes.add(node);
             return nodes;
         }
-        int n = matrix.length;
+
         int min = Integer.MAX_VALUE;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < matrix.length; i++) {
             List<Node> nodes;
             if (!visited[i]) {
                 visited[i] = true;
                 Node node = new Node(matrix[start][i], start, i, parent);
 
+//                System.out.print("Path: ");
+//                node.printPath();
+//                System.out.println("");
+
                 //prune branches
-                //int lenToTop = node.getLengthToTop();
-                int bound = bound(start, matrix) + node.getValue();
+                int calculatedBound = bound(node.getVisitedRows()) + node.getLengthToTop();
                 //System.out.println("add node: " + start + "->" + i + " len: " + matrix[start][i] + " bound: " + (bound - ((bound * 45) / 100)));
-                boolean toPruneOrNotToPrune = maximum >= (bound - ((bound * 5) / 100)) || firstBranch;
-                if (toPruneOrNotToPrune) {
+                if (calculatedBound <= maximum) {
+                    nodes = dfs(matrix, i, 0, visited, count + 1, node);
+                    if (nodes != null && nodes.size() != 0) {
+                        int dfs = nodes.get(nodes.size() - 1).getRoadLength();
+                        int other = dfs + matrix[start][i];
+                        if (other <= min) {
+                            node.setRoadLength(other);
+                            nodes.add(node);
+                            min = other;
 
-                    nodes = dfs(matrix, i, 0, visited, count + 1, len, node);
-                    parent.setChildren(nodes);
-                    int dfs = nodes.get(nodes.size() - 1).getRoadLength();
-                    int other = dfs + matrix[start][i];
-                    if (other <= min) {
-                        node.setRoadLength(other);
-                        nodes.add(node);
-                        min = other;
-
-                        arr = nodes;
-
-                    } else {
-                        nodes.remove(nodes.size() - 1);
+                            arr = nodes;
+                        } else {
+                            nodes.remove(nodes.size() - 1);
+                        }
                     }
                 } else {
-                    System.out.println("pruning max: " + maximum + " bound: " + bound);
-
+                    //System.out.println("pruning max: " + maximum + " calcbound: " + calculatedBound + " tippu " + node.getLengthToTop() + " bound " + bound(node.getVisitedRows()));
                 }
-
 
                 visited[i] = false;
             }
@@ -106,37 +105,14 @@ public class TSP {
         return arr;
     }
 
-    private static int bound(int start, int[][] matrix) {
+    private static int bound(List<Integer> visited) {
         int res = 0;
-        for (int i = start; i < matrix.length; i++) {
-            res += lowestValues[i];
+        for (int i = 0; i < lowestValues.length; i++) {
+            if (!visited.contains(i)) {
+                res += lowestValues[i];
+            }
         }
         return res;
-    }
-
-    private static int getLikelyLowestBound(int[][] adjacencyMatrix) {
-        int rows = 0;
-        if (adjacencyMatrix.length < 10) {
-            rows = adjacencyMatrix.length - 1;
-        } else {
-            rows = 10;
-        }
-        int len = 0;
-        for (int i = 0; i < rows; i++) {
-
-            int min = Integer.MAX_VALUE;
-            for (int j = 0; j < adjacencyMatrix.length; j++) {
-                if (adjacencyMatrix[i][j] < min && adjacencyMatrix[i][j] != 0) {
-                    min = adjacencyMatrix[i][j];
-                }
-            }
-            len += min;
-        }
-        if (rows == 10) {
-            len = (len / rows) * (adjacencyMatrix.length - 10); //tuuni
-
-        }
-        return len / (adjacencyMatrix.length - 1);
     }
 
     /* Best first search */

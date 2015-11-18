@@ -13,16 +13,25 @@ public class Node {
     int rowIndex;
     int roadLength;
     int columnIndex;
-    List<Node> children;
     Node parent;
+    List<Integer> parents = null;
 
     public Node(int value, int rowIndex, int columnIndex, Node parent) {
+
         this.value = value;
         this.id = UUID.randomUUID().toString();
         this.rowIndex = rowIndex;
         this.columnIndex = columnIndex;
         this.parent = parent;
-        children = new ArrayList<>();
+        if (parent != null) {
+            if (parent.getParents() != null) {
+                this.parents = new ArrayList<>(parent.getParents());
+
+            } else {
+                this.parents = new ArrayList<>();
+            }
+            parents.add(parent.getRowIndex());
+        }
     }
 
     public int getValue() {
@@ -73,21 +82,35 @@ public class Node {
         this.parent = parent;
     }
 
-    public List<Node> getChildren() {
-        return children;
-    }
-
-    public void setChildren(List<Node> children) {
-        this.children = children;
-    }
-
-    public int getLengthToTop(){
+    public int getLengthToTop() {
         int res = 0;
-        if(parent != null) {
-            int dist = getValue();
+        if (parent != null) {
+            int dist = value;
             int n = parent.getLengthToTop();
             res += (dist + n);
         }
         return res;
+    }
+
+    public List<Integer> getVisitedRows() {
+        List<Integer> res = getParents();
+        res.add(rowIndex);
+        return res;
+    }
+
+    public void printPath() {
+        if (parent != null) {
+            System.out.print(rowIndex + " <- ");
+            parent.printPath();
+
+        }
+    }
+
+    public List<Integer> getParents() {
+        return parents;
+    }
+
+    public void setParents(List<Integer> parents) {
+        this.parents = parents;
     }
 }
