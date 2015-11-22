@@ -8,6 +8,8 @@ public class TSP {
     private static int[] lowestValues;
 
     public static int[] dfs(int[][] adjacencyMatrix) {
+        maximum = Integer.MAX_VALUE;
+
         int[] res = new int[adjacencyMatrix.length + 1];
 
         lowestValues = new int[adjacencyMatrix.length];
@@ -117,6 +119,8 @@ public class TSP {
 
     /* Best first search */
     public static int[] bfs(int[][] adjacencyMatrix) {
+
+
         return null;
     }
 
