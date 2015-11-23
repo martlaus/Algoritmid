@@ -44,7 +44,7 @@ public class MyTest {
             len += arr[res[i]][res[i + 1]];
         }
         System.out.println("pikkus " + len);
-        assertEquals(24, len);
+        assertEquals(22, len);
 
     }
 

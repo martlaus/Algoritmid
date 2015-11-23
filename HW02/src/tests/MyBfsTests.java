@@ -30,6 +30,22 @@ public class MyBfsTests {
     }
 
     @Test
+    public void twoCities() {
+
+        int[][] arr = {{0, 5},
+                {9, 0}};
+
+        int[] res = TSP.dfs(arr);
+        int len = 0;
+        for (int i = 0; i < res.length - 1; i++) {
+            len += arr[res[i]][res[i + 1]];
+        }
+        System.out.println("pikkus " + len);
+        assertEquals(14, len);
+
+    }
+
+    @Test
     public void eesti10() { //730
 
         int[][] arr = {{0, 128, 71, 85, 185, 68, 257, 232, 193, 199},

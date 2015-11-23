@@ -20,14 +20,14 @@ public class TSP {
         getEveryRowMin(adjacencyMatrix);
 
         List<Node> nodes = shortPath(adjacencyMatrix, 0, 0);
-        res[0] = 0;
-        int k = 1;
-        for (Node node : nodes) {
-
+        int k = 0;
+        for (int i = nodes.size() - 1; i >= 0; i--) {
+            Node node = nodes.get(i);
             res[k] = node.getRowIndex();
             //System.out.println("col " + node.columnIndex + " row " +node.getRowIndex() + " len " +node.getValue());
             k++;
         }
+        res[res.length - 1] = 0;
 
         return res;
     }
@@ -60,9 +60,7 @@ public class TSP {
             //System.out.println("branch end: " + start + "->" + end + " len: " + matrix[start][end]);
             Node node = new Node(matrix[start][end], start, end, parent);
 
-//            System.out.print("Path: ");
-//            node.printPath();
-//            System.out.println("");
+            //printPath(node);
 
             if (node.getLengthToTop() < best) {
                 best = node.getLengthToTop();
@@ -80,9 +78,7 @@ public class TSP {
                 visited[i] = true;
                 Node node = new Node(matrix[start][i], start, i, parent);
 
-//                System.out.print("Path: ");
-//                node.printPath();
-//                System.out.println("");
+                //printPath(node);
 
                 //prune branches
                 int calculatedBound = bound(node.getVisitedRows()) + node.getLengthToTop();
@@ -112,6 +108,12 @@ public class TSP {
         //System.out.println("dfs return min: " + min);
 
         return arr;
+    }
+
+    private static void printPath(Node node) {
+        System.out.print("Path: ");
+        node.printPath();
+        System.out.println("");
     }
 
     protected static int bound(List<Integer> visited) {
