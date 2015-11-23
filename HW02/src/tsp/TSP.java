@@ -30,7 +30,7 @@ public class TSP {
         }
 
         if (res[0] == res[1]) {
-            return new int[]{0};
+            return new int[]{res[0]};
         }
         return res;
     }
@@ -132,6 +132,7 @@ public class TSP {
         //setup
         best = Integer.MAX_VALUE;
         lowestValues = new int[adjacencyMatrix.length];
+        winner = null;
         getEveryRowMin(adjacencyMatrix);
 
         //algorithm
