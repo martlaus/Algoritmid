@@ -29,9 +29,9 @@ public class TSP {
             k++;
         }
 
-//        if (res[0] == res[1]) {
-//            return new int[]{res[0]};
-//        }
+        if (res[0] == res[1]) {
+            return new int[]{res[0]};
+        }
         return res;
     }
 
