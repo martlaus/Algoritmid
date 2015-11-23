@@ -2,7 +2,6 @@ package tsp;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Created by mart on 14.11.15.
@@ -19,18 +18,21 @@ public class Node {
     public Node(int value, int rowIndex, int columnIndex, Node parent) {
 
         this.value = value;
-        this.id = UUID.randomUUID().toString();
         this.rowIndex = rowIndex;
         this.columnIndex = columnIndex;
         this.parent = parent;
         if (parent != null) {
             if (parent.getParents() != null) {
                 this.parents = new ArrayList<>(parent.getParents());
-
             } else {
                 this.parents = new ArrayList<>();
             }
-            parents.add(parent.getRowIndex());
+
+            //if (!parents.contains(parent.getColumnIndex())) {
+            parents.add(parent.getColumnIndex());
+            //}
+        } else {
+            this.parents = null;
         }
     }
 
@@ -94,7 +96,13 @@ public class Node {
 
     public List<Integer> getVisitedRows() {
         List<Integer> res = getParents();
-        res.add(rowIndex);
+        if (res != null) {
+            if (!res.contains(rowIndex)) {
+
+                res.add(rowIndex);
+            }
+        }
+
         return res;
     }
 
