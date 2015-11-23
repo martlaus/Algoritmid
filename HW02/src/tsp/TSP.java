@@ -1,8 +1,8 @@
 package tsp;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
+import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class TSP {
@@ -29,9 +29,6 @@ public class TSP {
             k++;
         }
 
-        if (res[0] == res[1]) {
-            return new int[]{res[0]};
-        }
         return res;
     }
 
@@ -117,7 +114,7 @@ public class TSP {
         return arr;
     }
 
-    private static int bound(List<Integer> visited) {
+    protected static int bound(List<Integer> visited) {
         int res = 0;
         for (int i = 0; i < lowestValues.length; i++) {
             if (visited == null || !visited.contains(i)) {
@@ -136,7 +133,15 @@ public class TSP {
         getEveryRowMin(adjacencyMatrix);
 
         //algorithm
-        Queue<Node> queue = new LinkedList<>();
+        Queue<Node> queue = new PriorityQueue<>(11, (node1, node2) -> {
+            int i1 = node1.getBound();
+            int i2 = node2.getBound();
+            if (i1 < i2) {
+                return -1;
+            } else if (i1 > i2) {
+                return 1;
+            } else return 0;
+        });
         queue.add(new Node(adjacencyMatrix[0][0], 0, 0, null));
 
         while (!queue.isEmpty()) {

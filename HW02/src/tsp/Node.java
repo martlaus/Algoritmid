@@ -13,6 +13,7 @@ public class Node {
     int roadLength;
     int columnIndex;
     Node parent;
+    int bound;
     List<Integer> parents = null;
 
     public Node(int value, int rowIndex, int columnIndex, Node parent) {
@@ -34,6 +35,7 @@ public class Node {
         } else {
             this.parents = null;
         }
+        this.bound = TSP.bound(getVisitedRows()) + getLengthToTop();
     }
 
     public int getValue() {
@@ -120,5 +122,13 @@ public class Node {
 
     public void setParents(List<Integer> parents) {
         this.parents = parents;
+    }
+
+    public int getBound() {
+        return bound;
+    }
+
+    public void setBound(int bound) {
+        this.bound = bound;
     }
 }
