@@ -23,36 +23,36 @@ public class TSPTestV2 {
         System.out.println("testBfsSmall took " + duration + " milliseconds");
     }
 
-//    @Test
-//    public void testBfsMedium() throws Exception {
-//        long startTime = System.currentTimeMillis();
-//
-//        int[] res = TSP.bfs(TestData.mediumMatrix);
-//
-//        int len = getLen(res, TestData.mediumMatrix);
-//
-//        System.out.println("pikkus väiksem kui 772 " + len);
-//        assertTrue(len <= 772);
-//
-//        long duration = System.currentTimeMillis() - startTime;
-//
-//        System.out.println("testBfsMedium took " + duration + " milliseconds");
-//    }
-//
-//    @Test
-//    public void testBfsBig() throws Exception {
-//        long startTime = System.currentTimeMillis();
-//
-//        int[] res = TSP.bfs(TestData.bigMatrix);
-//
-//        int len = getLen(res, TestData.bigMatrix);
-//        System.out.println("pikkus väiksem kui 893 " + len);
-//        assertTrue(len <= 893);
-//
-//        long duration = System.currentTimeMillis() - startTime;
-//
-//        System.out.println("testBfsBig took " + duration + " milliseconds");
-//    }
+    @Test
+    public void testBfsMedium() throws Exception {
+        long startTime = System.currentTimeMillis();
+
+        int[] res = TSP.bfs(TestData.mediumMatrix);
+
+        int len = getLen(res, TestData.mediumMatrix);
+
+        System.out.println("pikkus väiksem kui 772 " + len);
+        assertTrue(len <= 772);
+
+        long duration = System.currentTimeMillis() - startTime;
+
+        System.out.println("testBfsMedium took " + duration + " milliseconds");
+    }
+
+    @Test
+    public void testBfsBig() throws Exception {
+        long startTime = System.currentTimeMillis();
+
+        int[] res = TSP.bfs(TestData.bigMatrix);
+
+        int len = getLen(res, TestData.bigMatrix);
+        System.out.println("pikkus väiksem kui 893 " + len);
+        assertTrue(len <= 893);
+
+        long duration = System.currentTimeMillis() - startTime;
+
+        System.out.println("testBfsBig took " + duration + " milliseconds");
+    }
 
     @Test
     public void testDfsSmall() throws Exception {

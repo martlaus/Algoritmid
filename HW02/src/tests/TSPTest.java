@@ -163,11 +163,11 @@ public class TSPTest {
         assertEquals(893, len);
     }
 
-//    @Test
-//    public void testBfsLarge() throws Exception {
-//        int res[] = TSP.bfs(MATRIX_LARGE);
-//        int len = getLen(res, MATRIX_LARGE);
-//        assertEquals(893, len);
-//    }
+    @Test
+    public void testBfsLarge() throws Exception {
+        int res[] = TSP.bfs(MATRIX_LARGE);
+        int len = getLen(res, MATRIX_LARGE);
+        assertEquals(893, len);
+    }
 
 }

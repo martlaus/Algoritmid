@@ -35,7 +35,7 @@ public class Node {
         } else {
             this.parents = null;
         }
-        this.bound = TSP.bound(getVisitedRows()) + getLengthToTop();
+        this.bound = (TSP.bound(getVisitedRows()) + getLengthToTop());
     }
 
     public int getValue() {

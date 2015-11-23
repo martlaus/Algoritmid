@@ -146,7 +146,7 @@ public class TSP {
 
         while (!queue.isEmpty()) {
             Node node = queue.remove();
-            if (bound(node.getVisitedRows()) < best) {
+            if (node.getBound() < best) {
                 for (Node child : getNodesSubNodes(adjacencyMatrix, node)) {
                     if (child.getParents().size() == (adjacencyMatrix.length - 1)) { // solution found
                         int col = child.getColumnIndex();
@@ -157,7 +157,7 @@ public class TSP {
                         }
                     }
 
-                    if (bound(child.getVisitedRows()) < best) { // promising child
+                    if (child.getBound() < best) { // promising child
                         queue.add(child);
                     }
                 }
