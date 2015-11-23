@@ -92,7 +92,14 @@ public class TSPTest {
     public void testDfsOneCity() throws Exception {
         int[][] cities = {{0}};
         int res[] = TSP.dfs(cities);
-        assertEquals(0, res.length);
+        assertEquals(2, res.length);
+    }
+
+    @Test
+    public void testBfsOneCity() throws Exception {
+        int[][] cities = {{0}};
+        int res[] = TSP.bfs(cities);
+        assertEquals(2, res.length);
     }
 
     @Test

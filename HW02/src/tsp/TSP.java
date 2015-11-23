@@ -158,9 +158,16 @@ public class TSP {
                 }
             }
         }
+        List<Integer> res;
+        if (winner != null) {
+            res = winner.getParents();
+            res.add(winner.getColumnIndex());
 
-        List<Integer> res = winner.getParents();
-        res.add(winner.getColumnIndex());
+        } else {
+            res = new ArrayList<>();
+            res.add(0);
+            res.add(0);
+        }
 
         return res.stream().mapToInt(i -> i).toArray();
     }
