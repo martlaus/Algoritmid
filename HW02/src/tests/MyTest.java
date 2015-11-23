@@ -137,9 +137,9 @@ public class MyTest {
         //assertArrayEquals(expect, res);
     }
 
-    @Test
-    public void eesti20() {
-
+//    @Test
+//    public void eesti20() {
+//
 //        int[][] arr = {{0, 128, 71, 85, 185, 68, 257, 232, 193, 199, 25, 130, 65, 171, 44, 252, 132, 344, 351, 214},
 //                {128, 0, 91, 62, 58, 81, 161, 108, 151, 97, 126, 48, 179, 72, 84, 265, 123, 233, 249, 207},
 //                {71, 91, 0, 29, 149, 87, 252, 199, 212, 143, 89, 149, 136, 163, 47, 271, 149, 288, 295, 233},
@@ -168,7 +168,7 @@ public class MyTest {
 //            assertEquals(expect[i], res[i]);
 //        }
 //        assertArrayEquals(expect, res);
-    }
+//    }
 
 
 }
