@@ -10,10 +10,11 @@ public class TSP {
     private static int[] lowestValues;
 
     public static int[] dfs(int[][] adjacencyMatrix) {
-        best = greedy(adjacencyMatrix);
+        if (adjacencyMatrix.length > 9) {
+            best = greedy(adjacencyMatrix);
+        }
 
         int[] res = new int[adjacencyMatrix.length + 1];
-
         lowestValues = new int[adjacencyMatrix.length];
         //get every row min
         getEveryRowMin(adjacencyMatrix);
@@ -23,7 +24,6 @@ public class TSP {
         for (int i = nodes.size() - 1; i >= 0; i--) {
             Node node = nodes.get(i);
             res[k] = node.getRowIndex();
-            //System.out.println("col " + node.columnIndex + " row " +node.getRowIndex() + " len " +node.getValue());
             k++;
         }
         res[res.length - 1] = 0;

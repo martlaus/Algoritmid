@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb503805-4de5-4f07-ae80-7895aa96f564" name="Default" comment="bigger queue">
+    <list default="true" id="eb503805-4de5-4f07-ae80-7895aa96f564" name="Default" comment="smaller queue">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tsp/TSP.java" afterPath="$PROJECT_DIR$/src/tsp/TSP.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -41,8 +41,8 @@
       <file leaf-file-name="TSP.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tsp/TSP.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.52427185">
-              <caret line="130" column="50" selection-start-line="130" selection-start-column="50" selection-end-line="130" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.407767">
+              <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -724,7 +724,7 @@
       <workItem from="1448395650404" duration="3721000" />
       <workItem from="1448400226527" duration="1211000" />
       <workItem from="1448401802040" duration="13000" />
-      <workItem from="1448402162682" duration="834000" />
+      <workItem from="1448402162682" duration="1001000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1447595760946</created>
@@ -822,11 +822,17 @@
       <option name="project" value="LOCAL" />
       <updated>1448402893314</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="smaller queue">
+      <created>1448403006236</created>
+      <option name="number" value="00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1448403006236</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107204000" />
+    <option name="totallyTimeSpent" value="107371000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
@@ -880,7 +886,8 @@
     <MESSAGE value="added greedy to get a len" />
     <MESSAGE value="3" />
     <MESSAGE value="bigger queue" />
-    <option name="LAST_COMMIT_MESSAGE" value="bigger queue" />
+    <MESSAGE value="smaller queue" />
+    <option name="LAST_COMMIT_MESSAGE" value="smaller queue" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1358,8 +1365,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tsp/TSP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52427185">
-          <caret line="130" column="50" selection-start-line="130" selection-start-column="50" selection-end-line="130" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.407767">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
