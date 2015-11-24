@@ -8,7 +8,6 @@ import java.util.List;
  */
 public class Node {
     int value;
-    String id;
     int rowIndex;
     int roadLength;
     int columnIndex;
@@ -44,14 +43,6 @@ public class Node {
 
     public void setValue(int value) {
         this.value = value;
-    }
-
-    public String getId() {
-        return "value " + value + " rowIndex " + rowIndex + "columnIndex " + columnIndex + " " + id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public int getRowIndex() {

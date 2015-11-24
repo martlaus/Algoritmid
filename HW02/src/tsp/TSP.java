@@ -11,7 +11,7 @@ public class TSP {
     private static Node winner;
 
     public static int[] dfs(int[][] adjacencyMatrix) {
-        best = Integer.MAX_VALUE;
+        best = greedy(adjacencyMatrix);
 
         int[] res = new int[adjacencyMatrix.length + 1];
 
@@ -129,7 +129,7 @@ public class TSP {
     /* Best first search */
     public static int[] bfs(int[][] adjacencyMatrix) {
         //setup
-        best = Integer.MAX_VALUE;
+        best = greedy(adjacencyMatrix);
         lowestValues = new int[adjacencyMatrix.length];
         winner = null;
         getEveryRowMin(adjacencyMatrix);
@@ -148,18 +148,18 @@ public class TSP {
 
         while (!queue.isEmpty()) {
             Node node = queue.remove();
-            if (node.getBound() < best) {
+            if (node.getBound() <= best) {
                 for (Node child : getNodesSubNodes(adjacencyMatrix, node)) {
                     if (child.getParents().size() == (adjacencyMatrix.length - 1)) { // solution found
                         int col = child.getColumnIndex();
                         Node lastNode = new Node(adjacencyMatrix[col][0], col, 0, child);
-                        if (lastNode.getLengthToTop() < best) {
+                        if (lastNode.getLengthToTop() <= best) {
                             best = lastNode.getLengthToTop();
                             winner = lastNode;
                         }
                     }
 
-                    if (child.getBound() < best) { // promising child
+                    if (child.getBound() <= best) { // promising child
                         queue.add(child);
                     }
                 }
@@ -195,5 +195,32 @@ public class TSP {
         }
 
         return children;
+    }
+
+
+    public static int greedy(int[][] matrix) {
+        List<Integer> visited = new ArrayList<>();
+        int minValue = Integer.MAX_VALUE;
+        int start = 0;
+        int tempStart = 0;
+        visited.add(0);
+        int res = 0;
+
+        while (visited.size() < matrix.length) {
+            for (int j = 0; j < matrix.length; j++) {
+                if (!visited.contains(j) && matrix[start][j] < minValue) {
+                    minValue = matrix[start][j];
+                    tempStart = j;
+                }
+            }
+            start = tempStart;
+            visited.add(tempStart);
+            res += minValue;
+            minValue = Integer.MAX_VALUE;
+        }
+
+        res += matrix[visited.get(visited.size() - 1)][0];
+
+        return res;
     }
 }
