@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb503805-4de5-4f07-ae80-7895aa96f564" name="Default" comment="3">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HW02/tsp/TSP.class" afterPath="$PROJECT_DIR$/out/production/HW02/tsp/TSP.class" />
+    <list default="true" id="eb503805-4de5-4f07-ae80-7895aa96f564" name="Default" comment="bigger queue">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tsp/TSP.java" afterPath="$PROJECT_DIR$/src/tsp/TSP.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -42,8 +41,8 @@
       <file leaf-file-name="TSP.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tsp/TSP.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7695962">
-              <caret line="130" column="49" selection-start-line="130" selection-start-column="49" selection-end-line="130" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.52427185">
+              <caret line="130" column="50" selection-start-line="130" selection-start-column="50" selection-end-line="130" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -725,7 +724,7 @@
       <workItem from="1448395650404" duration="3721000" />
       <workItem from="1448400226527" duration="1211000" />
       <workItem from="1448401802040" duration="13000" />
-      <workItem from="1448402162682" duration="718000" />
+      <workItem from="1448402162682" duration="834000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1447595760946</created>
@@ -817,11 +816,17 @@
       <option name="project" value="LOCAL" />
       <updated>1448402175959</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="bigger queue">
+      <created>1448402893314</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1448402893314</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107088000" />
+    <option name="totallyTimeSpent" value="107204000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
@@ -834,8 +839,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30401236" sideWeight="0.5121212" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25154322" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30401236" sideWeight="0.4878788" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.625" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30401236" sideWeight="0.4878788" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17727272" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -874,7 +879,8 @@
     <MESSAGE value="priority" />
     <MESSAGE value="added greedy to get a len" />
     <MESSAGE value="3" />
-    <option name="LAST_COMMIT_MESSAGE" value="3" />
+    <MESSAGE value="bigger queue" />
+    <option name="LAST_COMMIT_MESSAGE" value="bigger queue" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1352,8 +1358,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tsp/TSP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7695962">
-          <caret line="130" column="49" selection-start-line="130" selection-start-column="49" selection-end-line="130" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.52427185">
+          <caret line="130" column="50" selection-start-line="130" selection-start-column="50" selection-end-line="130" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

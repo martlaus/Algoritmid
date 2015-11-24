@@ -128,7 +128,7 @@ public class TSP {
         getEveryRowMin(adjacencyMatrix);
 
         //algorithm
-        Queue<Node> queue = new PriorityQueue<>(50, (node1, node2) -> {
+        Queue<Node> queue = new PriorityQueue<>(10, (node1, node2) -> {
             int i1 = node1.getBound();
             int i2 = node2.getBound();
             if (i1 < i2) {
