@@ -10,11 +10,10 @@ public class TSP {
     private static int[] lowestValues;
 
     public static int[] dfs(int[][] adjacencyMatrix) {
-        if (adjacencyMatrix.length > 9) {
-            best = greedy(adjacencyMatrix);
-        }
+        best = greedy(adjacencyMatrix);
 
         int[] res = new int[adjacencyMatrix.length + 1];
+
         lowestValues = new int[adjacencyMatrix.length];
         //get every row min
         getEveryRowMin(adjacencyMatrix);
@@ -122,9 +121,7 @@ public class TSP {
     /* Best first search */
     public static int[] bfs(int[][] adjacencyMatrix) {
         //setup
-        if (adjacencyMatrix.length > 9) {
-            best = greedy(adjacencyMatrix);
-        }
+        best = greedy(adjacencyMatrix);
         lowestValues = new int[adjacencyMatrix.length];
         Node winner = null;
         getEveryRowMin(adjacencyMatrix);
