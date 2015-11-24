@@ -77,8 +77,7 @@ public class TSP {
                 //printPath(node);
 
                 //prune branches
-                int calculatedBound = bound(node.getVisitedRows()) + node.getRoadLength();
-                if (calculatedBound <= best) {
+                if (node.getBound() <= best) {
                     nodes = dfs(matrix, i, 0, visited, count + 1, node);
                     if (nodes != null && nodes.size() != 0) {
                         int dfs = nodes.get(nodes.size() - 1).getRoadLength();
@@ -127,7 +126,7 @@ public class TSP {
         getEveryRowMin(adjacencyMatrix);
 
         //algorithm
-        Queue<Node> queue = new PriorityQueue<>(10, (node1, node2) -> {
+        Queue<Node> queue = new PriorityQueue<>(11, (node1, node2) -> {
             int i1 = node1.getBound();
             int i2 = node2.getBound();
             if (i1 < i2) {

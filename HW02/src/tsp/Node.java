@@ -29,22 +29,12 @@ public class Node {
                 this.parents = new ArrayList<>();
             }
 
-            //if (!parents.contains(parent.getColumnIndex())) {
             parents.add(parent.getColumnIndex());
-            //}
         } else {
             roadLength = value;
             this.parents = null;
         }
-        this.bound = (TSP.bound(getVisitedRows()) + getRoadLength());
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    public void setValue(int value) {
-        this.value = value;
+        this.bound = TSP.bound(getVisitedRows()) + roadLength;
     }
 
     public int getRowIndex() {
@@ -72,19 +62,10 @@ public class Node {
         this.columnIndex = columnIndex;
     }
 
-    public Node getParent() {
-        return parent;
-    }
-
-    public void setParent(Node parent) {
-        this.parent = parent;
-    }
-
     public List<Integer> getVisitedRows() {
-        List<Integer> res = getParents();
-        if (res != null) {
+        List<Integer> res = parents;
+        if (parents != null) {
             if (!res.contains(rowIndex)) {
-
                 res.add(rowIndex);
             }
         }
@@ -96,7 +77,6 @@ public class Node {
         if (parent != null) {
             System.out.print(rowIndex + " <- ");
             parent.printPath();
-
         }
     }
 
