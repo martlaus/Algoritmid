@@ -7,13 +7,13 @@ import java.util.List;
  * Created by mart on 14.11.15.
  */
 public class Node {
-    int value;
-    int rowIndex;
-    int roadLength;
-    int columnIndex;
-    Node parent;
-    int bound;
-    List<Integer> parents = null;
+    private int value;
+    private int rowIndex;
+    private int roadLength;
+    private int columnIndex;
+    private Node parent;
+    private int bound;
+    private List<Integer> parents = null;
 
     public Node(int value, int rowIndex, int columnIndex, Node parent) {
 
@@ -22,6 +22,7 @@ public class Node {
         this.columnIndex = columnIndex;
         this.parent = parent;
         if (parent != null) {
+            roadLength = value + parent.getRoadLength();
             if (parent.getParents() != null) {
                 this.parents = new ArrayList<>(parent.getParents());
             } else {
@@ -32,9 +33,10 @@ public class Node {
             parents.add(parent.getColumnIndex());
             //}
         } else {
+            roadLength = value;
             this.parents = null;
         }
-        this.bound = (TSP.bound(getVisitedRows()) + getLengthToTop());
+        this.bound = (TSP.bound(getVisitedRows()) + getRoadLength());
     }
 
     public int getValue() {
@@ -54,6 +56,7 @@ public class Node {
     }
 
     public int getRoadLength() {
+
         return roadLength;
     }
 
@@ -75,16 +78,6 @@ public class Node {
 
     public void setParent(Node parent) {
         this.parent = parent;
-    }
-
-    public int getLengthToTop() {
-        int res = 0;
-        if (parent != null) {
-            int dist = value;
-            int n = parent.getLengthToTop();
-            res += (dist + n);
-        }
-        return res;
     }
 
     public List<Integer> getVisitedRows() {

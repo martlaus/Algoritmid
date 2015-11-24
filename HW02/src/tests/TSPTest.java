@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 public class TSPTest {
 
-    static int[][] MATRIX_SMALL = {
+    private static final int[][] MATRIX_SMALL = {
             {0, 128, 71, 85, 185, 68, 257},
             {128, 0, 91, 62, 58, 81, 161},
             {71, 91, 0, 29, 149, 87, 252},
@@ -17,7 +17,7 @@ public class TSPTest {
             {257, 161, 252, 223, 107, 189, 0}
     };
 
-    static int[][] MATRIX_MEDIUM = {
+    private static final int[][] MATRIX_MEDIUM = {
             {0, 128, 71, 85, 185, 68, 257, 232, 193, 199},
             {128, 0, 91, 62, 58, 81, 161, 108, 151, 97},
             {71, 91, 0, 29, 149, 87, 252, 199, 212, 143},
@@ -30,7 +30,7 @@ public class TSPTest {
             {199, 97, 143, 114, 85, 178, 129, 84, 183, 0}
     };
 
-    static int[][] MATRIX_MEDIUM_LARGE = {
+    private static final int[][] MATRIX_MEDIUM_LARGE = {
             {0, 128, 71, 85, 185, 68, 257, 232, 193, 199, 25, 130, 65},
             {128, 0, 91, 62, 58, 81, 161, 108, 151, 97, 126, 48, 179},
             {71, 91, 0, 29, 149, 87, 252, 199, 212, 143, 89, 149, 136},
@@ -46,7 +46,7 @@ public class TSPTest {
             {65, 179, 136, 143, 215, 98, 287, 262, 223, 257, 54, 160, 0}
     };
 
-    static int[][] MATRIX_LARGE = {
+    private static final int[][] MATRIX_LARGE = {
             {0, 128, 71, 85, 185, 68, 257, 232, 193, 199, 25, 130, 65, 171, 44},
             {128, 0, 91, 62, 58, 81, 161, 108, 151, 97, 126, 48, 179, 72, 84},
             {71, 91, 0, 29, 149, 87, 252, 199, 212, 143, 89, 149, 136, 163, 47},

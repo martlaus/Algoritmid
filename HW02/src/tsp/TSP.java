@@ -6,9 +6,8 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class TSP {
-    static int best = Integer.MAX_VALUE;
+    private static int best = Integer.MAX_VALUE;
     private static int[] lowestValues;
-    private static Node winner;
 
     public static int[] dfs(int[][] adjacencyMatrix) {
         best = greedy(adjacencyMatrix);
@@ -19,7 +18,7 @@ public class TSP {
         //get every row min
         getEveryRowMin(adjacencyMatrix);
 
-        List<Node> nodes = shortPath(adjacencyMatrix, 0, 0);
+        List<Node> nodes = shortPath(adjacencyMatrix);
         int k = 0;
         for (int i = nodes.size() - 1; i >= 0; i--) {
             Node node = nodes.get(i);
@@ -44,12 +43,12 @@ public class TSP {
         }
     }
 
-    public static List<Node> shortPath(int[][] adjacencyMatrix, int start, int end) {
+    private static List<Node> shortPath(int[][] adjacencyMatrix) {
         int n = adjacencyMatrix.length;
         boolean[] visited = new boolean[n];
-        visited[start] = true;
+        visited[0] = true;
         Node first = new Node(adjacencyMatrix[0][0], 0, 0, null);
-        return dfs(adjacencyMatrix, start, end, visited, 1, first);
+        return dfs(adjacencyMatrix, 0, 0, visited, 1, first);
     }
 
     private static List<Node> dfs(int[][] matrix, int start, int end, boolean[] visited, int count, Node parent) {
@@ -57,13 +56,11 @@ public class TSP {
 
         //recursive stop
         if (count == matrix.length) {
-            //System.out.println("branch end: " + start + "->" + end + " len: " + matrix[start][end]);
             Node node = new Node(matrix[start][end], start, end, parent);
-
             //printPath(node);
 
-            if (node.getLengthToTop() < best) {
-                best = node.getLengthToTop();
+            if (node.getRoadLength() < best) {
+                best = node.getRoadLength();
             }
             node.setRoadLength(matrix[start][end]);
             List<Node> nodes = new ArrayList<>();
@@ -81,8 +78,7 @@ public class TSP {
                 //printPath(node);
 
                 //prune branches
-                int calculatedBound = bound(node.getVisitedRows()) + node.getLengthToTop();
-                //System.out.println("add node: " + start + "->" + i + " len: " + matrix[start][i] + " bound: " + (bound - ((bound * 45) / 100)));
+                int calculatedBound = bound(node.getVisitedRows()) + node.getRoadLength();
                 if (calculatedBound <= best) {
                     nodes = dfs(matrix, i, 0, visited, count + 1, node);
                     if (nodes != null && nodes.size() != 0) {
@@ -98,14 +94,11 @@ public class TSP {
                             nodes.remove(nodes.size() - 1);
                         }
                     }
-                } else {
-                    //System.out.println("pruning max: " + best + " calcbound: " + calculatedBound + " tippu " + node.getLengthToTop() + " bound " + bound(node.getVisitedRows()));
                 }
 
                 visited[i] = false;
             }
         }
-        //System.out.println("dfs return min: " + min);
 
         return arr;
     }
@@ -116,7 +109,7 @@ public class TSP {
         System.out.println("");
     }
 
-    protected static int bound(List<Integer> visited) {
+    static int bound(List<Integer> visited) {
         int res = 0;
         for (int i = 0; i < lowestValues.length; i++) {
             if (visited == null || !visited.contains(i)) {
@@ -131,7 +124,7 @@ public class TSP {
         //setup
         best = greedy(adjacencyMatrix);
         lowestValues = new int[adjacencyMatrix.length];
-        winner = null;
+        Node winner = null;
         getEveryRowMin(adjacencyMatrix);
 
         //algorithm
@@ -153,8 +146,8 @@ public class TSP {
                     if (child.getParents().size() == (adjacencyMatrix.length - 1)) { // solution found
                         int col = child.getColumnIndex();
                         Node lastNode = new Node(adjacencyMatrix[col][0], col, 0, child);
-                        if (lastNode.getLengthToTop() <= best) {
-                            best = lastNode.getLengthToTop();
+                        if (lastNode.getRoadLength() <= best) {
+                            best = lastNode.getRoadLength();
                             winner = lastNode;
                         }
                     }
@@ -180,7 +173,7 @@ public class TSP {
     }
 
 
-    public static ArrayList<Node> getNodesSubNodes(int[][] matrix, Node node) {
+    private static ArrayList<Node> getNodesSubNodes(int[][] matrix, Node node) {
         int lastFriend = node.getColumnIndex();
         int[] friends = matrix[lastFriend];
 

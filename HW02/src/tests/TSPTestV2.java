@@ -1,7 +1,7 @@
-package tsp;
+package tests;
 
 import org.junit.Test;
-import tests.TestData;
+import tsp.TSP;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
