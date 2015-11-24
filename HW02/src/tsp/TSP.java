@@ -122,7 +122,9 @@ public class TSP {
     /* Best first search */
     public static int[] bfs(int[][] adjacencyMatrix) {
         //setup
-        best = greedy(adjacencyMatrix);
+        if (adjacencyMatrix.length > 9) {
+            best = greedy(adjacencyMatrix);
+        }
         lowestValues = new int[adjacencyMatrix.length];
         Node winner = null;
         getEveryRowMin(adjacencyMatrix);
