@@ -1,9 +1,6 @@
 package tsp;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 
 public class TSP {
     private static int best = Integer.MAX_VALUE;
@@ -107,7 +104,7 @@ public class TSP {
         System.out.println("");
     }
 
-    static int bound(List<Integer> visited) {
+    static int bound(Set<Integer> visited) {
         int res = 0;
         for (int i = 0; i < lowestValues.length; i++) {
             if (visited == null || !visited.contains(i)) {
@@ -178,8 +175,8 @@ public class TSP {
         ArrayList<Node> children = new ArrayList<>();
 
         for (int i = 0; i < friends.length; i++) {
-            List<Integer> visited = node.getVisitedRows();
-            if (visited == null) visited = new ArrayList<>();
+            Set<Integer> visited = node.getVisitedRows();
+            if (visited == null) visited = new HashSet<>();
             if (friends[i] != 0 && !visited.contains(i)) {
                 children.add(new Node(friends[i], lastFriend, i, node));
             }

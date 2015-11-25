@@ -1,7 +1,9 @@
 package tsp;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by mart on 14.11.15.
@@ -62,9 +64,10 @@ public class Node {
         this.columnIndex = columnIndex;
     }
 
-    public List<Integer> getVisitedRows() {
-        List<Integer> res = parents;
+    public Set<Integer> getVisitedRows() {
+        Set<Integer> res = null;
         if (parents != null) {
+            res = new HashSet<>(parents);
             if (!res.contains(rowIndex)) {
                 res.add(rowIndex);
             }
@@ -94,5 +97,13 @@ public class Node {
 
     public void setBound(int bound) {
         this.bound = bound;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
     }
 }
