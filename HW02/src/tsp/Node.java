@@ -48,7 +48,6 @@ public class Node {
     }
 
     public int getRoadLength() {
-
         return roadLength;
     }
 
