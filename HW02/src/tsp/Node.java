@@ -16,9 +16,9 @@ public class Node {
     private Node parent;
     private int bound;
     private List<Integer> parents = null;
+    private Set<Integer> visited = null;
 
     public Node(int value, int rowIndex, int columnIndex, Node parent) {
-
         this.value = value;
         this.rowIndex = rowIndex;
         this.columnIndex = columnIndex;
@@ -64,15 +64,14 @@ public class Node {
     }
 
     public Set<Integer> getVisitedRows() {
-        Set<Integer> res = null;
-        if (parents != null) {
-            res = new HashSet<>(parents);
-            if (!res.contains(rowIndex)) {
-                res.add(rowIndex);
+        if (visited == null && parents != null) {
+            visited = new HashSet<>(parents);
+            if (!visited.contains(rowIndex)) {
+                visited.add(rowIndex);
             }
         }
 
-        return res;
+        return visited;
     }
 
     public void printPath() {
