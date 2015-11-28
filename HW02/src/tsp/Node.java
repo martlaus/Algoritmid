@@ -36,6 +36,7 @@ public class Node {
             roadLength = value;
             this.parents = null;
         }
+
         this.bound = TSP.bound(getVisitedRows()) + roadLength;
     }
 
