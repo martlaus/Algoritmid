@@ -18,7 +18,7 @@ public class Stamps {
 
         Arrays.sort(stamps);
 
-        for (int i = 0; i < sum+1; i++) {
+        for (int i = 0; i <= sum; i++) {
             m[i] = Integer.MAX_VALUE;
 
             for (Integer j : stamps) {
@@ -31,7 +31,7 @@ public class Stamps {
         ArrayList<Integer> res = new ArrayList<>();
         int n = sum;
         while (n > 0) {
-            System.out.print(v[n] + ",");
+           // System.out.print(v[n] + ",");
             res.add(v[n]);
             n = n - v[n];
         }
