@@ -15,7 +15,6 @@ public class Stamps {
         int[] m = new int[sum+1];
         int[] v = new int[sum+1];
 
-
         Arrays.sort(stamps);
 
         for (int i = 0; i <= sum; i++) {
@@ -28,16 +27,14 @@ public class Stamps {
                 }
             }
         }
+
         ArrayList<Integer> res = new ArrayList<>();
         int n = sum;
         while (n > 0) {
-           // System.out.print(v[n] + ",");
             res.add(v[n]);
             n = n - v[n];
         }
 
         return res;
     }
-
-
 }
