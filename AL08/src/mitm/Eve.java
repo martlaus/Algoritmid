@@ -21,10 +21,8 @@ public class Eve {
     private String lastAliceMessage = "";
     private String lastBobMessage = "";
 
-    private Key bobKey;
-    private Key aliceKey;
-    private SecretKey secretKeyBOB;
-    private SecretKey secretKeyALICE;
+    private SecretKey bobSecret;
+    private SecretKey aliceSecret;
 
 
     //
@@ -48,64 +46,63 @@ public class Eve {
         //TODO: Edit this function
         if (recipient instanceof Bob) {
             System.out.println("Eve: [Alice --[key]--> Bob] key: " + DH.exportKey(key));
-            bobKey = key;
+
             try {
-                secretKeyBOB = (SecretKey) DH.generateAESKey(privateKey, (PublicKey) key);
+                bobSecret = (SecretKey) DH.generateAESKey(privateKey, (PublicKey) key);
             } catch (DHKeyAgreementException e) {
                 e.printStackTrace();
             }
 
-            CommunicationChannel.sendInterceptedKeyTo(recipient, publicKey);
         } else if (recipient instanceof Alice) {
             System.out.println("Eve: [Bob --[key]--> Alice] key: " + DH.exportKey(key));
-            aliceKey = key;
 
             try {
-                secretKeyALICE = (SecretKey) DH.generateAESKey(privateKey, (PublicKey) key);
+                aliceSecret = (SecretKey) DH.generateAESKey(privateKey, (PublicKey) key);
             } catch (DHKeyAgreementException e) {
                 e.printStackTrace();
             }
-
-            CommunicationChannel.sendInterceptedKeyTo(recipient, publicKey);
-
         }
+
+        CommunicationChannel.sendInterceptedKeyTo(recipient, publicKey);
     }
 
     public void interceptMessage(Actor recipient, String msg) {
         //TODO: Edit this function
         if (recipient instanceof Bob) {
-            System.out.println("Eve: [Alice --[msg]--> Bob] msg: " + msg);
             String decrypted = null;
             String encrypted = null;
             try {
-                decrypted = DH.decryptAES(secretKeyBOB, msg);
-                encrypted = DH.encryptAES(secretKeyBOB, decrypted);
+                decrypted = DH.decryptAES(bobSecret, msg);
+                lastAliceMessage = decrypted;
+                encrypted = DH.encryptAES(aliceSecret, decrypted);
             } catch (AESCipherException e) {
                 e.printStackTrace();
             }
+            System.out.println("Eve: [Alice --[msg]--> Bob] msg: " + decrypted);
 
             CommunicationChannel.sendInterceptedMsgTo(recipient, encrypted);
         } else if (recipient instanceof Alice) {
-            System.out.println("Eve: [Alice --[msg]--> Bob] msg: " + msg);
             String decrypted = null;
             String encrypted = null;
             try {
-                decrypted = DH.decryptAES(secretKeyALICE, msg);
-                encrypted = DH.encryptAES(secretKeyALICE, decrypted);
+                decrypted = DH.decryptAES(aliceSecret, msg);
+                lastBobMessage = decrypted;
+                encrypted = DH.encryptAES(bobSecret, decrypted);
             } catch (AESCipherException e) {
                 e.printStackTrace();
             }
+            System.out.println("Eve: [Alice --[msg]--> Bob] msg: " + decrypted);
 
             CommunicationChannel.sendInterceptedMsgTo(recipient, encrypted);
         }
     }
 
     public SecretKey getAliceSecret() {
-        return secretKeyALICE;
+        return aliceSecret;
     }
 
     public SecretKey getBobSecret() {
-        return secretKeyBOB;
+        return bobSecret;
     }
 
     public String getLastAliceMessage() {

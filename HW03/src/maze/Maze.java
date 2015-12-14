@@ -72,11 +72,6 @@ public class Maze {
         }
     }
 
-    /**
-     * Helper function to backtrack.
-     *
-     * @param direction direction character, e.g. 'N'
-     */
     public void goBack(Character direction) {
         switch (direction) {
             case 'N': r.move(SOUTH);
@@ -92,12 +87,7 @@ public class Maze {
         }
     }
 
-    /**
-     * Check specific direction for move opportunity.
-     *
-     * @param direction direction character, e.g. 'N'
-     * @return true, if can move.
-     */
+
     public boolean canMove(Character direction) {
         Node position = r.getSurroundings();
         int[] coordinates = r.getPosition();
@@ -112,11 +102,6 @@ public class Maze {
         return false;
     }
 
-    /**
-     * Check all directions for move opportunities.
-     *
-     * @return true, if can move.
-     */
     public boolean canMove() {
         return canMove(SOUTH) || canMove(EAST) || canMove(WEST) || canMove(NORTH);
     }
