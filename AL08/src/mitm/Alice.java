@@ -67,6 +67,7 @@ public class Alice implements Actor {
 			CommunicationChannel.sendMsgTo(Mitm.bob, DH.encryptAES(secretKey, msg));
 		} catch (AESCipherException e) {
 			System.err.println("Alice failed to send a message to Bob");
+			e.printStackTrace();
 			System.exit(0);
 		}
 	}
